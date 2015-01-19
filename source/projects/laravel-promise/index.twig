@@ -1,0 +1,94 @@
+---
+title: Laravel Promise
+template: default.twig
+images: /uploads/projects/laravel-promise
+github: http://github.com/torann/laravel-promise
+---
+{% include 'project_header.twig' with {'intro': 'Simple Roles and Permissions for Laravel.'} %}
+
+<div class="wrapper">
+    <h2>Installation</h2>
+
+    <p>To get the latest version of Promise simply require it in your <code>composer.json</code> file.</p>
+
+    <pre><code>"torann/promise": "dev-master"</code></pre>
+
+    <p>You'll then need to run <code>composer install</code> to download it and have the autoloader updated.</p>
+
+    <p>Once Promise is installed you need to register the service provider with the application. Open up <code>app/config/app.php</code> and find the <code>providers</code> key.</p>
+
+<pre><code>'providers' => array(
+    'Torann\Promise\PromiseServiceProvider',
+)
+</code></pre>
+
+    <h3>Publish the config</h3>
+
+    <p>Run this on the command line from the root of your project:</p>
+
+    <pre><code>$ php artisan config:publish torann/promise</code></pre>
+
+    <p>This will publish Promise's config to <code>app/config/packages/torann/promise/</code>.</p>
+
+    <h3>Migration</h3>
+
+    <p>Now migrate the database tables for Promise. Run this on the command line from the root of your project:</p>
+
+    <pre><code>$ php artisan migrate --package=torann/promise</code></pre>
+
+    <h3>
+        <a id="user-content-user-model" class="anchor" href="#user-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>User Model</h3>
+
+    <p>Next, use the <code>HasRole</code> trait in your existing <code>User</code> model. For example:</p>
+
+    <pre><code>&lt;?php
+
+use Torann\Promise\HasRole;
+
+class User extends Eloquent {
+
+    use HasRole; // Add this trait to your user model
+
+...
+</code></pre>
+
+    <p>This will do the trick to enable the relation with <code>Role</code> and the following methods within your <code>User</code> model:</p>
+
+    <p><strong>roles()</strong>
+        Roles assigned to a user</p>
+
+    <p><strong>assignRole(:name)</strong> Assign a role to a user</p>
+
+    <pre><code>$user->assignRole('manager');</code></pre>
+
+    <p><strong>revokeRole(:name)</strong> Revoke a role from the user</p>
+
+    <pre><code>$user->revokeRole('manager');</code></pre>
+
+    <p><strong>hasRole(:name)</strong>
+        Determine if a user has a given role</p>
+
+<pre><code>$user->hasRole('manager');
+$user->hasRole('admin,manager,editor'); // Multiple roles
+</code></pre>
+
+    <p><strong>can(:name)</strong> Check if user has a permission by its name</p>
+
+<pre><code>$user->can('edit_posts');
+$user->can('edit_posts,edit_comments'); // Multiple permissions
+</code></pre>
+
+    <h2>Models</h2>
+
+    <p>You add can Roles and Permissions like any other Model.</p>
+
+<pre><code>$role = new Torann\Promise\Models\Role;
+$permission = new Torann\Promise\Models\Permission;
+</code></pre>
+
+    <p>Relationships are handled via the Eloquent ORM:</p>
+
+<pre><code>$user->roles()->sync(array(:role_id, :role_id));
+$role->permissions()->sync(array(:permission_id, :permission_id));
+</code></pre>
+</div>

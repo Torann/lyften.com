@@ -1,0 +1,39 @@
+<header class="jumbotron clearfix" style="background-image: url({{ page.image('bg.png', '/uploads/projects/default-bg.png') }});">
+    <aside>
+        <h1>{{ page.title }}</h1>
+        {{ leader|wordwrap('<h2>', '<,h2>') }}
+        {{ intro|wordwrap('<p>', '</p>') }}
+
+        <div class="actions">
+        {% if page.documentation %}
+            <a href="{{ page.documentation }}" class="btn lite"><i class="icon-book"></i> Documentation</a>
+        {% endif %}
+        {% if page.github %}
+            <a href="{{ page.github }}" class="btn blue"><i class="icon-github"></i> Download</a>
+        {% elseif page.download %}
+            <a href="/skosh.php?dispatch=download&file={{ page.download }}" class="btn blue"><i class="icon-download"></i> Download</a>
+        {% endif %}
+        {% if page.github or page.download %}
+            <form action="https://www.paypal.com/en/cgi-bin/webscr" method="post" target="paypal" class="btn-wrapper">
+                <input name="cmd" value="_donations" type="hidden">
+                <input name="business" value="torann@gmail.com" type="hidden">
+                <input name="return" value="{{ page.full_url }}?msg=Thank you for your donation" type="hidden">
+                <input name="undefined_quantity" value="0" type="hidden">
+                <input name="item_name" value="" type="hidden">
+                <input name="amount" value="" style="width: 30px;" type="hidden">
+
+                <input name="currency_code" value="USD" type="hidden">
+                <input name="charset" value="utf-8" type="hidden">
+                <input name="no_shipping" value="1" type="hidden">
+
+                <input name="cancel_return" value="{{ page.full_url }}" type="hidden">
+                <input name="no_note" value="0" type="hidden">
+                <button name="submit" type="submit" class="btn btn-donate">
+                    <i class="icon-paypal"></i> Donate
+                </button>
+            </form>
+        {% endif %}
+        </div>
+    </aside>
+</header>
+

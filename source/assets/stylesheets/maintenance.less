@@ -1,0 +1,229 @@
+@import "reset.less";
+
+/*-----------------------------------------------------------------------------------*/
+/*  1.  Document Setup (body, common classes, vertical rhythm, structure etc)
+/*-----------------------------------------------------------------------------------*/
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "dejavu sans", "helvetica neue", arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+::selection {
+    background: #7cc576; /* Safari */
+    color: #fff;
+}
+
+::-moz-selection {
+    background: #7cc576; /* Firefox */
+    color: #fff;
+}
+
+a {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    color: #7cc576;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ededed;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbcbcb;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255, 0, 0, 0.4);
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  2.  MAIN
+/*-----------------------------------------------------------------------------------*/
+.header {
+    background: #363f48;
+    padding: 30px 0px;
+    text-align: center;
+}
+
+.wrapper {
+    width: 760px;
+    margin: auto;
+}
+
+.logo {
+    display: block;
+    background: url(../images/logo.png);
+    width: 187px;
+    height: 189px;
+    margin: 0px auto 0px auto;
+    text-indent: -9999px;
+}
+
+.header h1 {
+    font-size: 30px;
+    color: #646f7b;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+.header h2 {
+    font-size: 30px;
+    font-weight: normal;
+    color: #646f7b;
+    margin-top: 30px;
+}
+
+.header p {
+    font-size: 18px;
+    color: #646f7b;
+    margin-top: 30px;
+}
+
+.social-list {
+    margin-top: 30px;
+}
+
+.social-list li {
+    display: inline-block;
+    margin-left: 2px;
+}
+
+.soc-link {
+    display: block;
+    width: 45px;
+    height: 45px;
+    background: url(../images/icons/social-icons.png);
+}
+
+.soc-link:hover {
+    opacity: 0.8;
+}
+
+.soc-link.soc-tw {
+    background-position: -45px 0px;
+}
+
+.soc-link.soc-gg {
+    background-position: -90px 0px;
+}
+
+.soc-link.soc-dr {
+    background-position: -135px 0px;
+}
+
+.soc-link.soc-be {
+    background-position: -180px 0px;
+}
+
+.soc-link.soc-ya {
+    background-position: -225px 0px;
+}
+
+.soc-link.soc-blog {
+    background-position: -270px 0px;
+}
+
+.soc-link.soc-tm {
+    background-position: -315px 0px;
+}
+
+.soc-link.soc-de {
+    background-position: -360px 0px;
+}
+
+.soc-link.soc-pin {
+    background-position: -405px 0px;
+}
+
+.soc-link.soc-vimeo {
+    background-position: -450px 0px;
+}
+
+.soc-link.soc-fl {
+    background-position: -495px 0px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form input[type="text"] {
+    background: #fff;
+    border: 1px solid #eae9e9;
+    height: 45px;
+    font-size: 18px;
+    color: #959799;
+    width: 100%;
+    margin-top: 15px;
+    font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "dejavu sans", "helvetica neue", arial, sans-serif;
+    padding: 0;
+    padding-left: 10px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    position: relative;
+}
+
+form input[type="submit"] {
+    float: right;
+    background: #7cc576;
+    padding: 0 15px;
+    height: 47px;
+    text-align: center;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    border: 0;
+    cursor: pointer;
+    margin-top: -47px;
+    margin-right: -12px;
+    position: relative;
+    z-index: 999999;
+
+}
+
+.wrapper span {
+    color: #d0d0d0;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* mobile */
+@media (max-width: 640px) {
+    .wrapper {
+        width: 530px;
+    }
+}
+
+@media (max-width: 460px) {
+    .wrapper {
+        width: 380px;
+    }
+}
+
+@media (max-width: 320px) {
+    .wrapper {
+        width: 260px;
+    }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{{ isCurrent(page.url, '/') ? '' : page.title~' - ' }}{{ site.title }}{% endblock %}</title>
+        <meta name="description" content="{{ page.description }}">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="alternate" type="application/rss+xml" title="RSS 2.0 feed" href="{{ site.url }}/rss.xml" />
+        <link rel="icon" type="image/x-icon" href="/favicon.png" />
+
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <link rel="stylesheet" href="{{ asset('stylesheets/style.css') }}">
+
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    </head>
+    <body class="{{ isCurrent(page.url, '/projects/*|/portfolio/*') == false ? 'masonry' : '' }}{{ isCurrent(page.url, '/projects/*/documentation/*') ? ' documentation' : '' }}">
+
+        <div class="px1"></div>
+        <a class="ck">
+            <i class="icon-menu"></i>
+        </a>
+
+        <div id="container" class="container clearfix">
+
+            <div id="mobile-header">
+                <a class="ss-mobile-menu-button" href="#menu">
+                    <span class="icon-menu"></span>
+                </a>
+                <a href="/" title="Lyften" class="logo"></a>
+            </div>
+
+            {% include 'asideleft.twig' %}
+
+            <main id="content">
+                <div id="preloader">
+                    <div></div>
+                </div>
+
+                {% block content %}{% endblock %}
+
+                <div class="copyright">
+                    <p>Copyright © 2008-2015 Lyften. All Rights Reserved.</p>
+                </div>
+            </main>
+
+        {% if isCurrent(page.url, '/projects/*/doc/*') %}
+            {% include 'sidebar_documentation.twig' %}
+        {%  else %}
+            {% include 'asideright.twig' %}
+        {% endif %}
+        </div>
+
+        <script type="text/javascript" src="{{ asset('javascripts/app.js') }}"></script>
+
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-9029671-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>
