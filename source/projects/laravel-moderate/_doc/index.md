@@ -20,7 +20,9 @@ Once Moderate is installed you need to register the service provider with the ap
 
 ~~~php
 'providers' => array(
+
     'Torann\Moderate\ModerateServiceProvider',
+
 )
 ~~~
 
@@ -32,11 +34,11 @@ Run this on the command line from the root of your project:
 $ php artisan config:publish torann/moderate
 ~~~
 
-This will publish Moderate's config to ``app/config/packages/torann/moderate/``.
+This will publish Moderate's config to `app/config/packages/torann/moderate/`.
 
 ### Migration
 
-Now migrate the database tables for Moderate. Run this on the command line from the root of your project:
+If blacklists are going to be stored in the database. Run migrate to setup the database table [see [Blacklist Drivers](/projects/laravel-moderate/doc/blacklist-drivers.html)]. Run this on the command line from the root of your project:
 
 ~~~
 $ php artisan migrate --package=torann/moderate

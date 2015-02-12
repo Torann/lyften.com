@@ -1,7 +1,7 @@
 ---
 title: Moderations
 template: documentation.twig::content_inner
-chapter: 3
+chapter: 5
 ---
 ### Rules
 
@@ -11,7 +11,7 @@ chapter: 3
 
 ### Black Lists
 
-The black list is stored in a database. Which database table to used is specified in the config file under `blacklistTable`. Black list elements can be formed from Regular Expressions or a Character Sequence.
+The black list is stored in a number of places using the [Blacklist Drivers](/projects/laravel-moderate/doc/blacklist-drivers.html). Black list elements can be formed from Regular Expressions or a Character Sequence.
 
 **Examples:**
 
@@ -23,6 +23,6 @@ The black list is stored in a database. Which database table to used is specifie
 
 ### Events
 
-`blacklist.updated` must be fired when updating the black list table. This clears the cache. Add this to your black list model or controller.
+`blacklist.updated` must be fired when updating the black list table. This is only needed is caching is turned on. This can be automatically done if using the `BlacklistTrait` on your model [See Models in [Blacklist Management](/projects/laravel-moderate/doc/blacklist-management.html)].
 
-`moderations.moderated` fired with an item is flagged. This can be used to send an email to the site admin.
+`moderation.moderated` fired with an item is flagged. This can be used to send an email to the site admin.

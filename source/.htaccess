@@ -21,3 +21,8 @@ Redirect 301 /blog/css3-in-all-its-glory.html /css3-in-all-its-glory.html
 Redirect 301 /blog/10-useful-jquery-plugins.html /10-useful-jquery-plugins.html
 Redirect 301 /blog/5-ui-freebies.html /5-ui-freebies.html
 Redirect 301 /blog/10-really-high-quality-free-fonts.html /10-really-high-quality-free-fonts.html
+
+# Redirect www urls to non-www
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.lyften\.com [NC]
+RewriteRule (.*) http://lyften.com/$1 [R=301,L]
