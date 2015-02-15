@@ -1,7 +1,7 @@
 ---
-title: Get Started
+title: Laravel 4 Installation
 template: documentation.twig::content_inner
-chapter: 1
+chapter: 4
 ---
 
 ## Installation
@@ -9,7 +9,7 @@ chapter: 1
 To get the latest version of Registry simply require it in your `composer.json` file.
 
 ~~~
-"torann/registry": "0.2.*@dev"
+"torann/registry": "0.1.*@dev"
 ~~~
 
 You'll then need to run `composer install` to download it and have the autoloader updated.
@@ -30,12 +30,20 @@ Registry also ships with a facade which provides the static syntax for creating 
 )
 ```
 
-### Publish the configurations and migration
+### Publish the config
 
 Run this on the command line from the root of your project:
 
 ~~~
-$ php artisan vendor:publish
+$ php artisan config:publish torann/registry
 ~~~
 
-A configuration file will be publish to `config/registry.php` and a migration file to `database/migrations/`
+This will publish Moderate's config to ``app/config/packages/torann/moderate/``.
+
+### Migration
+
+Run this on the command line from the root of your project:
+
+~~~
+$ php artisan migrate --package="torann/registry"
+~~~
