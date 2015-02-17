@@ -6,7 +6,7 @@ chapter: 4
 To get the latest version of Promise simply require it in your `composer.json` file.
 
 ~~~
-"torann/promise": "dev-master"
+"torann/promise": "0.1.*@dev"
 ~~~
 
 You'll then need to run `composer install` to download it and have the autoloader updated.
