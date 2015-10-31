@@ -1,0 +1,42 @@
+<div class="asideright">
+
+    <div class="widget">
+        <div class="heading">Follow me</div>
+
+        <div class="social-share large solid inline">
+            <a href="https://github.com/Torann" class="icon-github"></a>
+            <a href="http://www.facebook.com/daniel.stainback" class="icon-facebook"></a>
+            <a href="http://twitter.com/lyften" class="icon-twitter"></a>
+            <a href="http://www.linkedin.com/profile/view?id=55115056" class="icon-linkedin"></a>
+        </div>
+    </div>
+
+    <div class="widget widget-instagram">
+        <div class="heading">Instagram</div>
+        <script src="http://snapwidget.com/js/snapwidget.js"></script>
+        <iframe src="http://snapwidget.com/in/?u=bHlmdGVufGlufDYwfDN8M3wzNjNmNDh8bm98MTB8bm9uZXxvblN0YXJ0fHllc3x5ZXM=&ve=280914" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%;"></iframe>
+    </div>
+
+    <div class="widget">
+        <div class="heading">Twitter Feed</div>
+        <div class="tweets">
+            <div class="show-tweets"></div>
+            <a href="https://twitter.com/Lyften" class="follow-twitter">follow me</a>
+        </div>
+    </div>
+
+    {% if isCurrent('/blog*') %}
+    <div class="sidebar-sticky">
+        <h4>Share</h4>
+        <div class="social-share large blocks solid">
+            <a href="{{ share_link("facebook", page) }}" class="icon-facebook" data-share="facebook"></a>
+            <a href="{{ share_link("twitter", page) }}" class="icon-twitter" data-share="twitter"></a>
+            <a href="{{ share_link("google", page) }}" class="icon-gplus" data-share="google"></a>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="copyright">
+        <p>Copyright © 2008-2014 Lyften. All Rights Reserved.</p>
+    </div>
+</div>

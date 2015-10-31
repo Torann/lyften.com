@@ -1,0 +1,28 @@
+<div id="asideleft">
+    <div class="navigation_background"></div>
+    <div class="navigation">
+        <ul>
+            <li id="nav-logo">
+                <a id="logo" href="/">Home</a>
+            </li>
+            <li>
+                <a href="/"{{ isCurrent('/projects*|/portfolio*') == false ? ' class="active"' : '' }}>
+                    <span class="icon-beaker"></span>
+                    Projects
+                </a>
+            </li>
+            <li>
+                <a href="/blog"{{ isCurrent('/blog*') ? ' class="active"' : '' }}>
+                    <span class="icon-blog"></span>
+                    Blog
+                </a>
+            </li>
+            <li>
+                <a href="/portfolio"{{ isCurrent('/portfolio*') ? ' class="active"' : '' }}>
+                    <span class="icon-lightbulb"></span>
+                    Portfolio
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

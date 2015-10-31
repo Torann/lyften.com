@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <header class="jumbotron clearfix" style="background-image: url({{ get_default(info.image, '/uploads/projects/default-bg.png') }});">
+        <aside>
+            <h1>{{ info.title }}</h1>
+            {{ info.intro }}
+
+            <div class="actions">
+                {% if info.documentation %}
+                <a href="{{ info.documentation }}" class="btn lite"><i class="icon-book"></i> Documentation</a>
+                {% endif %}
+                {% if info.github %}
+                <a href="{{ info.github }}" class="btn blue"><i class="icon-github"></i> Download</a>
+                {% elseif info.download %}
+                <a href="/skosh.php?dispatch=download&file={{ info.download }}" class="btn blue"><i class="icon-download"></i> Download</a>
+                {% endif %}
+                {% if info.github or info.download %}
+                <form action="https://www.paypal.com/en/cgi-bin/webscr" method="post" target="paypal" class="btn-wrapper">
+                    <input name="cmd" value="_donations" type="hidden">
+                    <input name="business" value="torann@gmail.com" type="hidden">
+                    <input name="return" value="{{ info.full_url }}?msg=Thank you for your donation" type="hidden">
+                    <input name="undefined_quantity" value="0" type="hidden">
+                    <input name="item_name" value="" type="hidden">
+                    <input name="amount" value="" style="width: 30px;" type="hidden">
+
+                    <input name="currency_code" value="USD" type="hidden">
+                    <input name="charset" value="utf-8" type="hidden">
+                    <input name="no_shipping" value="1" type="hidden">
+
+                    <input name="cancel_return" value="{{ info.full_url }}" type="hidden">
+                    <input name="no_note" value="0" type="hidden">
+                    <button name="submit" type="submit" class="btn btn-donate">
+                        <i class="icon-paypal"></i> Donate
+                    </button>
+                </form>
+                {% endif %}
+            </div>
+        </aside>
+    </header>
+
+    {{ content|raw }}
+{% endblock %}

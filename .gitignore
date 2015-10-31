@@ -1,11 +1,8 @@
 .DS_Store
-skosh.phar
+/vendor/
+composer.lock
+composer.phar
 .idea
-/public
-node_modules
-.remote.yml
-.remote_*.yml
-.env.yml
-.env_*.yml
 rev-manifest.json
-downloads.json
+node_modules
+/public/.env.php

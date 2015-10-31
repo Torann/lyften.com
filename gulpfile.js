@@ -6,21 +6,15 @@ var gulp       = require('gulp'),
     uglify     = require('gulp-uglify'),
     watch      = require('gulp-watch'),
     rename     = require('gulp-rename'),
-    imagemin   = require('gulp-imagemin'),
     argv       = require('yargs').argv,
-    prefix     = require('gulp-autoprefixer');
-    connect    = require('gulp-connect'),
-    shell      = require('gulp-shell'),
+    prefix     = require('gulp-autoprefixer'),
     rev        = require('gulp-rev');
 
 // Options
 var options = {
-    target: argv.target || 'public',
-    host: argv.host || 'localhost',
-    port: argv.port || 8000,
-    env: argv.env || 'local',
-    livereload: argv.livereload || false
-}
+    target: argv.target || 'public/assets',
+    env: argv.env || 'local'
+};
 
 // Is a production build
 var IS_PROD_BUILD = (options.env === 'production');
@@ -32,12 +26,12 @@ function swallowError (err) {
 }
 
 // Compile Less and save to stylesheets directory
-gulp.task('less-bootstrap', function () {
+gulp.task('less', function () {
 
-    var destDir = options.target + '/assets/stylesheets/',
+    var destDir = options.target + '/css/',
         destFile = 'style.css';
 
-    return gulp.src('source/assets/stylesheets/master.less')
+    return gulp.src('resources/assets/less/master.less')
         .pipe(less())
         .on('error', swallowError)
         .pipe(prefix('last 2 versions', '> 1%', 'Explorer 7', 'Android 2'))
@@ -46,34 +40,20 @@ gulp.task('less-bootstrap', function () {
         .pipe(gulp.dest(destDir));
 });
 
-// Publish Images
-gulp.task('images', function () {
-    if (IS_PROD_BUILD) {
-        return gulp.src('source/assets/images/*')
-            .pipe(imagemin({
-                progressive: true,
-                svgoPlugins: [{removeViewBox: false}]
-            }))
-            .pipe(gulp.dest(options.target + '/assets/images'));
-    }
-});
-
 // Publish JavaScript
-gulp.task('js-bootstrap', function () {
+gulp.task('scripts', function () {
 
-    var destDir = options.target + '/assets/javascripts/',
+    var destDir = options.target + '/js/',
         destFile = 'app.js';
 
     return gulp.src([
-            //'source/assets/javascripts/jquery.nivo.slider.pack.js',
-            // 'source/assets/javascripts/jquery.jplayer.min.js',
-            'source/assets/javascripts/jquery.tweet.js',
-            'source/assets/javascripts/imagesloaded.pkgd.js',
-            'source/assets/javascripts/isotope.pkgd.js',
-            'source/assets/javascripts/matchMedia.js',
-            'source/assets/javascripts/jquery.throttle.js',
-            'source/assets/javascripts/waypoints.min.js',
-            'source/assets/javascripts/main.js'
+            'resources/assets/js/jquery.tweet.js',
+            'resources/assets/js/imagesloaded.pkgd.js',
+            'resources/assets/js/isotope.pkgd.js',
+            'resources/assets/js/matchMedia.js',
+            'resources/assets/js/jquery.throttle.js',
+            'resources/assets/js/waypoints.min.js',
+            'resources/assets/js/main.js'
         ])
         .on('error', swallowError)
         .pipe(concat(destFile))
@@ -81,46 +61,21 @@ gulp.task('js-bootstrap', function () {
         .pipe(gulp.dest(destDir));
 });
 
-// Webserver
-gulp.task('webserver', function() {
-    connect.server({
-        host: options.host,
-        port: options.port,
-        livereload: options.livereload,
-        root: options.target
-    });
-});
-
-// Run skosh build command on pages
-gulp.task('compile-pages', shell.task([
-    'skosh build --part=pages'
-]));
-
-// Run skosh build command on static content
-gulp.task('compile-images', shell.task([
-    'skosh build --part=static'
-]));
-
 // What tasks does running gulp trigger?
 gulp.task('default', ['build']);
 
-gulp.task('serve', ['compile-pages', 'compile-images', 'webserver', 'watch']);
-
 gulp.task('watch', ['build'], function() {
-    gulp.watch('source/assets/stylesheets/**/*.less', ['less-bootstrap']);
-    gulp.watch('source/assets/javascripts/**/*.js', ['js-bootstrap']);
-    gulp.watch('source/{assets/images,uploads}/**/*', ['compile-images']);
-    //gulp.watch('source/uploads/**/*', ['compile-images']);
-    gulp.watch('source/**/*.{textile,twig,md}', ['compile-pages']);
+    gulp.watch('resources/assets/less/**/*.less', ['less']);
+    gulp.watch('resources/assets/js/**/*.js', ['scripts']);
 });
 
-gulp.task('build', ['images', 'less-bootstrap', 'js-bootstrap'], function () {
+gulp.task('build', ['less', 'scripts'], function () {
     // Create manifest of assets
     if (IS_PROD_BUILD) {
-        return gulp.src(options.target + '/assets/**/*.{css,js,svg,png,gif,jpg,jpeg}')
-            .pipe(gulp.dest(options.target + '/assets/'))
+        return gulp.src(options.target + '/**/*.{css,js}')
+            .pipe(gulp.dest(options.target))
             .pipe(rev())
-            .pipe(gulp.dest(options.target + '/assets/'))
+            .pipe(gulp.dest(options.target))
             .pipe(rev.manifest())
             .pipe(gulp.dest('./'));
     }

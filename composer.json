@@ -1,0 +1,27 @@
+{
+  "name": "bauncms/baun",
+  "description": "A modern, lightweight, extensible CMS for PHP",
+  "keywords": ["cms", "baun"],
+  "license": "MIT",
+  "type": "project",
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/Torann/BaunCMS-Framework.git",
+      "bauncms/framework": "dev-master"
+    }
+  ],
+  "require": {
+    "bauncms/framework": "dev-master",
+    "bauncms/baun-blog-rss": "~1.0",
+    "torann/baun-asset-manifest": "^0.1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    },
+    "files": [
+      "app/helpers.php"
+    ]
+  }
+}
