@@ -339,16 +339,16 @@
         },
         {
             "name": "torann/skosh-generator",
-            "version": "0.2.1",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Torann/skosh-generator.git",
-                "reference": "ccf87fbb80b8ec92ebcec38f2ab3d75bfef0391d"
+                "reference": "3e129404f7378f0ab54eb85381a7c99f459227bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Torann/skosh-generator/zipball/ccf87fbb80b8ec92ebcec38f2ab3d75bfef0391d",
-                "reference": "ccf87fbb80b8ec92ebcec38f2ab3d75bfef0391d",
+                "url": "https://api.github.com/repos/Torann/skosh-generator/zipball/3e129404f7378f0ab54eb85381a7c99f459227bd",
+                "reference": "3e129404f7378f0ab54eb85381a7c99f459227bd",
                 "shasum": ""
             },
             "require": {
@@ -393,7 +393,7 @@
                 "static",
                 "static site"
             ],
-            "time": "2015-10-31 21:13:49"
+            "time": "2015-10-31 21:51:05"
         },
         {
             "name": "twig/twig",
