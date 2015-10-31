@@ -8,7 +8,7 @@ var gulp       = require('gulp'),
     rename     = require('gulp-rename'),
     imagemin   = require('gulp-imagemin'),
     argv       = require('yargs').argv,
-    prefix     = require('gulp-autoprefixer');
+    prefix     = require('gulp-autoprefixer'),
     connect    = require('gulp-connect'),
     shell      = require('gulp-shell'),
     rev        = require('gulp-rev');
@@ -20,7 +20,7 @@ var options = {
     port: argv.port || 8000,
     env: argv.env || 'local',
     livereload: argv.livereload || false
-}
+};
 
 // Is a production build
 var IS_PROD_BUILD = (options.env === 'production');
@@ -32,7 +32,7 @@ function swallowError (err) {
 }
 
 // Compile Less and save to stylesheets directory
-gulp.task('less-bootstrap', function () {
+gulp.task('less', function () {
 
     var destDir = options.target + '/assets/stylesheets/',
         destFile = 'style.css';
@@ -49,17 +49,19 @@ gulp.task('less-bootstrap', function () {
 // Publish Images
 gulp.task('images', function () {
     if (IS_PROD_BUILD) {
+        var destDir = options.target + '/assets/images';
+
         return gulp.src('source/assets/images/*')
             .pipe(imagemin({
                 progressive: true,
                 svgoPlugins: [{removeViewBox: false}]
             }))
-            .pipe(gulp.dest(options.target + '/assets/images'));
+            .pipe(gulp.dest(destDir));
     }
 });
 
 // Publish JavaScript
-gulp.task('js-bootstrap', function () {
+gulp.task('js', function () {
 
     var destDir = options.target + '/assets/javascripts/',
         destFile = 'app.js';
@@ -93,12 +95,12 @@ gulp.task('webserver', function() {
 
 // Run skosh build command on pages
 gulp.task('compile-pages', shell.task([
-    'skosh build --part=pages'
+    'php skosh build --part=pages'
 ]));
 
 // Run skosh build command on static content
 gulp.task('compile-images', shell.task([
-    'skosh build --part=static'
+    'php skosh build --part=static'
 ]));
 
 // What tasks does running gulp trigger?
@@ -107,14 +109,13 @@ gulp.task('default', ['build']);
 gulp.task('serve', ['compile-pages', 'compile-images', 'webserver', 'watch']);
 
 gulp.task('watch', ['build'], function() {
-    gulp.watch('source/assets/stylesheets/**/*.less', ['less-bootstrap']);
-    gulp.watch('source/assets/javascripts/**/*.js', ['js-bootstrap']);
-    gulp.watch('source/{assets/images,uploads}/**/*', ['compile-images']);
-    //gulp.watch('source/uploads/**/*', ['compile-images']);
+    gulp.watch('source/assets/stylesheets/**/*.less', ['less']);
+    gulp.watch('source/assets/javascripts/**/*.js', ['js']);
+    gulp.watch('source/assets/images/*', ['compile-images']);
     gulp.watch('source/**/*.{textile,twig,md}', ['compile-pages']);
 });
 
-gulp.task('build', ['images', 'less-bootstrap', 'js-bootstrap'], function () {
+gulp.task('build', ['images', 'less', 'js'], function () {
     // Create manifest of assets
     if (IS_PROD_BUILD) {
         return gulp.src(options.target + '/assets/**/*.{css,js,svg,png,gif,jpg,jpeg}')

@@ -1,7 +1,7 @@
 # Site configuration
 timezone: America/New_York
 title: Lyften
-url: http://localhost:8080
+url: http://lyften.local:8888
 target: /public
 
 # Pagination
