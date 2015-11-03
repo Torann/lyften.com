@@ -8,7 +8,7 @@ target: /public
 max_per_page: 15
 
 # Files extensions to exclude when copying static files
-exclude: [swp, bak, DS_Store, gitkeep]
+exclude: [swp, bak, DS_Store, gitkeep, vendor]
 
 # Folders and files to copy
-copy: [favicon.png, uploads, skosh.php, skosh, .htaccess]
+copy: [uploads, skosh.php, skosh, .htaccess]

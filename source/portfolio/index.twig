@@ -2,27 +2,37 @@
 title: Portfolio
 template: default.twig
 ---
-<div class="tiles-container ">
-    <div class="tiles-inner-container">
-
-        {% for post in posts %}
-        <div class="tile {{ post.tile }}">
-            <figure>
-                <img src="{{ post.image.full }}" alt="{{ post.title }}">
-            </figure>
-
-            <div class="tile-caption">
-                <div class="caption-wrapper">
-                    <a href="{{ post.url }}" class="caption-content">
-                        <div>
-                            <h1>{{ post.title }}</h1>
-                            <div class="separator"></div>
-                            <span class="subheader">{{ post.tag }}</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
+<div class="page-title">
+    <div class="row">
+        <div class="col-md-9 col-xs-12">
+            <h1><b>Portfolio.</b><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste ratione molestias magni.</h1>
         </div>
+    </div>
+</div>
+
+<div class="portfolio">
+
+    <div class="filters">
+        <span>Filters :</span>
+        <ul id="filters">
+            <li class="active" data-filter="*">All</li>
+            <li data-filter=".web-application">Web Application</li>
+            <li data-filter=".web-design">Web Design</li>
+            {#<li data-filter=".design">Design</li>#}
+            <li data-filter=".branding">Branding</li>
+        </ul>
+    </div>
+
+    <div class="row masonry-container">
+        {% for post in posts %}
+            {% include 'portfolio_item.twig' with {
+                'url': post.url,
+                'image': post.image.full,
+                'title': post.title,
+                'tags': post.tags,
+                'tag_class': post.tag_class,
+            } %}
         {% endfor %}
     </div>
+
 </div>

@@ -1,0 +1,71 @@
+//
+// Documentation Styles
+// --------------------------------------------------
+
+
+#documentation {
+  display: table;
+
+  h1 {
+    padding-bottom: 9px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $border-color;
+
+    .btn.tiny {
+      margin: 6px 0 0;
+    }
+  }
+
+  .aside {
+    display: table-cell;
+    vertical-align: top;
+    border-right: 1px solid $gray-lighter;
+    width: 250px;
+    min-width: 250px;
+    padding-top: 10px;
+  }
+
+  article {
+    display: table-cell;
+    vertical-align: top;
+    padding: 10px 0 0 35px;
+    width: 100%;
+
+    blockquote {
+      font-size: 95%;
+      border-left-color: #9C9C9C;
+      background-color: #B1B1B1;
+      color: #fff;
+    }
+  }
+
+  @media (max-width: 850px) {
+    & {
+      display: block;
+    }
+
+    .aside {
+      display: block;
+      width: 100%;
+      border-right: none;
+      background: #fff;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    article {
+      display: block;
+      padding-left: 0;
+    }
+  }
+
+  @media (max-width: 970px) {
+    .aside {
+      min-width: 200px;
+
+      > ul > li a {
+        font-size: 14px;
+      }
+    }
+  }
+}

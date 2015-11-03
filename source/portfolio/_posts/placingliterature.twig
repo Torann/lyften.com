@@ -1,23 +1,46 @@
 ---
-template: portfolio.twig::content_inner
+template: default.twig
 title: Placing Literature
 date: 07/10/2014
 image: /uploads/portfolio/placingliterature/cover-size-2.png
-tag: Design
-tile: size-2
+tags: Web Design
 ---
-<img src="{{ asset('/uploads/portfolio/placingliterature/new-header.png') }}" alt="">
+<div class="project-single">
+    <div class="row">
 
-<p>
-    Placing Literature is an online database of places from scenes in literature- sourced and plotted by readers and researchers. Created by an author, a geographer and an engineer, the goal of Placing Literature is to connect readers to the places they are reading about, highlighting the meanings, values and emotions attached to a space. Particularly, in this case, the meanings and values created by the author and experienced by the reader.
-</p>
+        <div class="col-md-5">
+            <div class="single-info">
 
-<img src="{{ asset('/uploads/portfolio/placingliterature/new-carousel.png') }}" alt="">
+                <div class="project-description">
+                    <h1>{{ page.title }}</h1>
+                    <span>{{ page.tags }}</span>
+                    <p>
+                        Placing Literature is an online database of places from scenes in literature- sourced and plotted by readers and researchers. Created by an author, a geographer and an engineer, the goal of Placing Literature is to connect readers to the places they are reading about, highlighting the meanings, values and emotions attached to a space. Particularly, in this case, the meanings and values created by the author and experienced by the reader.
+                    </p>
 
-<p>A simplified geo-based carousel picks content randomly and highlights the literary places throughout the site. This pushes new and featured content to users who may not realize the content is relevant to them.</p>
+                    <p>A simplified geo-based carousel picks content randomly and highlights the literary places throughout the site. This pushes new and featured content to users who may not realize the content is relevant to them.</p>
+                </div>
 
-<p>
-    <strong>Client:</strong> <a href="http://www.placingliterature.com/" target="_blank">Placing Literature</a><br>
-    <strong>Status:</strong> Proposal<br>
-    <strong>Categories:</strong> {{ page.tag }}
-</p>
+                <div class="project-services">
+                    <ul>
+                        <li>
+                            <strong>Client:</strong> <a href="http://www.placingliterature.com/" target="_blank">Placing Literature</a>
+                        </li>
+                        <li>
+                            <strong>Date:</strong> {{ page.date|date("M d, Y") }}
+                        </li>
+                        <li>
+                            <strong>Status:</strong> Proposal
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-7 project-photos">
+            <img src="{{ asset('/uploads/portfolio/placingliterature/new-header.png') }}" alt="">
+        </div>
+
+    </div>
+</div>

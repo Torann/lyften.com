@@ -5,7 +5,7 @@ chapter: 5
 ---
 To create an Eloquent repository we need to override the constructor and type-hint against our own model and validator and then call the parent's constructor.
 
-```
+```php
 use Torann\LaravelRepository\EloquentRepository;
 
 class MyRepository extends EloquentRepository
@@ -34,7 +34,7 @@ These are called "inside" of the create/update actions. So the order of methods 
 
 Automatically attach a relationship. `BelongsTo` relationships should be set in beforeCreate/beforeUpdate.
 
-```
+```php
 public function beforeCreate($model, array $attributes)
 {
     if (isset($this->user)) {
@@ -45,7 +45,7 @@ public function beforeCreate($model, array $attributes)
 
 All other types in afterCreate/afterUpdate.
 
-```
+```php
 public function afterCreate($model, array $attributes)
 {
     if (isset($this->user)) {
@@ -62,7 +62,7 @@ public function afterSave($model, array $attributes) {
 
 Advanced queries
 
-```
+```php
 public function getForUser(User $user)
 {
     $query = $this->newQuery()

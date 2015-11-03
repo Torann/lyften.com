@@ -60,7 +60,7 @@ For each action done by the repository ("create" and "update" out of the box), t
 
 Make sure the repository only ever returns rows related to a specific user.
 
-```
+```php
 public function setUser($user)
 {
     $this->user = $user;
@@ -76,7 +76,7 @@ protected function beforeQuery($query, $many)
 
 Add a custom method that fetches all rows related to a specific user.
 
-```
+```php
 public function getForUser($user)
 {
     $query = $this->newQuery();

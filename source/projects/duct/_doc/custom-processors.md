@@ -3,8 +3,6 @@ title: Custom Processors
 template: documentation.twig::content_inner
 chapter: 5
 ---
-
-
 Post processors are used to process assets before they're compiled. Each processor is mapped to one or more file extension (e.g. LESS to `.less`). Which processors are used on the asset and their order is determined by the asset's file extensions.
 
 Here's a list of the processors provided by default and their mapping to file extensions:
@@ -48,14 +46,14 @@ class CoffeeScriptParser extends \Torann\Duct\Processors\AbstractProcessor
 
 Now simple add or change the post processor in the `app/config/packages/torann/duct/config.php` file to reflect your new processor.
 
-```
-    /*
-    |--------------------------------------------------------------------------
-    | Post-processors
-    |--------------------------------------------------------------------------
-    */
+```php
+/*
+ |----------------------------------
+ | Post-processors
+ |----------------------------------
+ */
 
-    'postprocessors' => array(
-        'application/javascript' => '\\YourProcessors\\CoffeeScriptParser',
-    ),
+'postprocessors' => array(
+    'application/javascript' => '\\YourProcessors\\CoffeeScriptParser',
+),
 ```

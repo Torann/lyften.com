@@ -11,9 +11,11 @@ Evaluates the value of select attribute and is a self closing tag.
 * select [string] - expression to evaluate
 
 **Example**
-```
+
+```xml
 <blog:value select="{category.category_name}" />
 ```
+
 <a id="blog_if"></a>
 ### &lt;blog:if>
 Code inside `<blog:if>` is evaluated and displayed if test condition is satisfied.
@@ -31,21 +33,21 @@ Code inside `<blog:if>` is evaluated and displayed if test condition is satisfie
 `in` checks if a value exists in an array
 
 **Example #1**
-```
+```xml
 <blog:if test="{var}">
     Var is not empty
 </blog:if>
 ```
 
 **Example #2**
-```
+```xml
 <blog:if test="!{var}">
     Var is empty
 </blog:if>
 ```
 
 **Example #3**
-```
+```xml
 <blog:if test="{tag.count} &lt; {cat.count}">
     tag. count is smaller than cat. count.
 <blog:else>
@@ -55,14 +57,14 @@ Code inside `<blog:if>` is evaluated and displayed if test condition is satisfie
 ```
 
 **Example #4**
-```
+```xml
 <blog:if test="{tag.name} or {cat.name}>
     cat or tag set
 </blog:if>
 ```
 
 **Example #5**
-```
+```xml
 <blog:if test="{tag.name} != {cat.name} ">
     <blog:value select="{tag.name}" />
 </blog:if>
@@ -74,7 +76,7 @@ When used inside `<blog:if>` value it is evaluated and displayed if `<blog:if>` 
 The `<blog:else>` tag must be within a `<blog:if>` or `<blog:foreach>` tag.
 
 **Example #1**
-```
+```xml
 <blog:if test="{tag.name} = {cat.name}">
     tag.name is equal to cat.name.
 <blog:else>
@@ -84,7 +86,7 @@ The `<blog:else>` tag must be within a `<blog:if>` or `<blog:foreach>` tag.
 ```
 
 **Example #2**
-```
+```xml
 <blog:foreach from="{tags_list}" item="tag">
     <blog:value select="{tag.title}">
 <blog:else>
@@ -105,7 +107,7 @@ This tag is used to loop through an array.
 * key [string] - The name of the variable to hold current index
 
 **Example**
-```
+```xml
 <blog:foreach from="{tag_list}" item="tag">
     <blog:value select="{tag.title}" />
 </blog:foreach>
@@ -119,7 +121,7 @@ This tag is used to format a date using Joomla's date function.
 * format [string] – The date format
 
 **Example**
-```
+```xml
 <blog:value date="{tag.date}" format=” %b %d, %Y”/>
 ```
 <a id="blog_jroute"></a>
@@ -130,7 +132,7 @@ This tag is used to format a URL using Joomla's JRoute function.
 * url[string] - The date you are formatting (required)
 
 **Example**
-```
+```xml
 <blog:jroute url="index.php?&option=com_content&id={article.slug}" class=”link” title="{ article.title }">
     <blog:value select="{ article.title }" />
 </blog:jroute>
@@ -145,7 +147,7 @@ Used to create a new comment form.
 * total [string] – Total comments (required)
 
 **Example**
-```
+```xml
 <blog:commentbox id="{entry.id}" allow="{entry.allowComments}" total="{totalcoms}" />
 ```
 <a id="blog_comments"></a>
@@ -157,6 +159,6 @@ Used for displaying an entry's comments.
 * title [string] – Entry's title (required)
 
 **Example**
-```
+```xml
 <blog:comments id="{entry.id}" title="{entry.title}" />
 ```

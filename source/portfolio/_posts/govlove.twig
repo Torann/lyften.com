@@ -1,20 +1,43 @@
 ---
-template: portfolio.twig::content_inner
+template: default.twig
 title: GovLove
 date: 01/14/2015
 image: /uploads/portfolio/govlove/cover-size-2.png
-tag: Branding
-tile: size-2
+tags: Branding
 ---
-<p>
-    Brnading for a podcast about local government hosted by Caroline Tanbee Smith, produced by Ryan Mannion and recorded in New Haven, CT.
-</p>
+<div class="project-single">
+    <div class="row">
 
-<img src="{{ asset('/uploads/portfolio/govlove/itunes.png') }}" alt="GovLove in iTunes">
+        <div class="col-md-5">
+            <div class="single-info">
 
-<p>
-    <strong>Client:</strong> SeeClickFix <br>
-    <strong>Date:</strong> {{ page.date|date("M d, Y") }}<br>
-    <strong>Categories:</strong> {{ page.tag }}<br>
-    <strong>Link:</strong> <a href="https://itun.es/i6B28DH" target="_blank">View on iTunes</a>
-</p>
+                <div class="project-description">
+                    <h1>{{ page.title }}</h1>
+                    <span>{{ page.tags }}</span>
+                    <p>Brnading for a podcast about local government hosted by Caroline Tanbee Smith, produced by Ryan Mannion and recorded in New Haven, CT.</p>
+                </div>
+
+                <div class="project-services">
+                    <ul>
+                        <li>
+                            <strong>Client:</strong> SeeClickFix
+                        </li>
+                        <li>
+                            <strong>Date:</strong> {{ page.date|date("M d, Y") }}
+                        </li>
+                        <li>
+                            <strong>Link:</strong> <a href="https://itun.es/i6B28DH" target="_blank">View on iTunes</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-7 project-photos">
+            <img src="{{ asset('/uploads/portfolio/govlove/itunes.png') }}" alt="GovLove in iTunes">
+        </div>
+
+    </div>
+</div>
+

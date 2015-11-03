@@ -1,17 +1,42 @@
 {% extends 'default.twig' %}
 
 {% block content %}
-<div class="doc-nav-header">
-    Documentation
+<div class="breadcrumbs">
+    <i class="icon-book"></i>
+    <span class="name">
+        <a class="top-level" href="/">
+            Projects
+        </a>
+        <span class="divider">›</span>
+        <a href="{{ parent.url }}">
+            {{ parent.title }}
+        </a>
+        <span class="divider">›</span>
+        <a href="{{ page.url }}">
+            {{ page.title }}
+        </a>
+    </span>
 </div>
 
 <div id="documentation" class="wrapper">
 
-    <div class="page-header">
-        {{ editButton(page, parent, 'edit_button.twig') }}
-        <h1>{{ page.title}}</h1>
+    <div class="aside">
+        <ul>
+            {% for post in posts %}
+                <li{{ post.url == page.url ? '  class="active"' : '' }}>
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
     </div>
 
-    {% block content_inner %}{% endblock %}
+    <article>
+        <h1>
+            {{ editButton(page, parent, 'edit_button.twig') }}
+            {{ page.title }}
+        </h1>
+
+        {% block content_inner %}{% endblock %}
+    </article>
 </div>
 {% endblock %}

@@ -11,14 +11,14 @@ github: http://github.com/torann/laravel-geoip
 
     <p>To get the latest version of GeoIP simply require it in your <code>composer.json</code> file.</p>
 
-<pre><code>"torann/geoip": "dev-master"
+<pre><code class="language-js">"torann/geoip": "dev-master"
 </code></pre>
 
     <p>You'll then need to run <code>composer install</code> to download it and have the autoloader updated.</p>
 
     <p>Once GeoIP is installed you need to register the service provider with the application. Open up <code>config/app.php</code> and find the <code>providers</code> key.</p>
 
-<pre><code>'providers' => array(
+<pre><code class="language-php">'providers' => array(
     'Torann\GeoIP\GeoIPServiceProvider',
 )
 </code></pre>
@@ -26,20 +26,20 @@ github: http://github.com/torann/laravel-geoip
     <p>GeoIP also ships with a facade which provides the static syntax for creating collections. You can register the facade in the <code>aliases</code> key of your <code>config/app.php</code> file.</p>
 
 
-<pre><code>'aliases' => array(
+<pre><code class="language-php">'aliases' => array(
     'GeoIP' => 'Torann\GeoIP\GeoIPFacade',
 )
 </code></pre>
 
     <p>Create configuration file using artisan</p>
 
-    <pre><code>$ php artisan vendor:publish</code></pre>
+    <pre><code class="language-bash">$ php artisan vendor:publish</code></pre>
 
     <h2>Usage</h2>
 
     <p>Get the location data for a website visitor:</p>
 
-    <pre><code>$location = GeoIP::getLocation();</code></pre>
+    <pre><code class="language-php">$location = GeoIP::getLocation();</code></pre>
 
     <blockquote>
         <p>When an IP is not given the <code>$_SERVER["REMOTE_ADDR"]</code> is used.</p>
@@ -47,11 +47,11 @@ github: http://github.com/torann/laravel-geoip
 
     <p>Getting the location data for a given IP:</p>
 
-    <pre><code>$location = GeoIP::getLocation('232.223.11.11');</code></pre>
+    <pre><code class="language-php">$location = GeoIP::getLocation('232.223.11.11');</code></pre>
 
     <h3>Example Data</h3>
 
-<pre><code>array (
+<pre><code class="language-php">array(
     "ip"           => "232.223.11.11",
     "isoCode"      => "US",
     "country"      => "United States",

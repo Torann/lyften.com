@@ -1,0 +1,35 @@
+<nav>
+    <ul>
+        <li{{ isCurrent(page.url, '/|/projects/*') ? ' class="active"' : '' }}>
+            <a href="/">
+                Projects
+            </a>
+        </li>
+        {#<li{{ isCurrent(page.url, '/projects/*') ? ' class="active"' : '' }}>#}
+            {#<a href="/projects">#}
+                {#Projects#}
+            {#</a>#}
+        {#</li>#}
+        <li{{ isCurrent(page.url, '/journal/*') ? ' class="active"' : '' }}>
+            <a href="/journal">
+                Journal
+            </a>
+        </li>
+        <li{{ isCurrent(page.url, '/portfolio/*') ? ' class="active"' : '' }}>
+            <a href="/portfolio">
+                Portfolio
+            </a>
+        </li>
+        {#<li{{ isCurrent(page.url, '/about') ? ' class="active"' : '' }}>#}
+            {#<a href="/about">#}
+                {#About#}
+            {#</a>#}
+        {#</li>#}
+        <li>
+            <a href="https://github.com/Torann" class="icon icon-github"></a>
+            <a href="http://www.facebook.com/daniel.stainback" class="icon icon-facebook"></a>
+            <a href="http://twitter.com/lyften" class="icon icon-twitter"></a>
+            <a href="http://www.linkedin.com/profile/view?id=55115056" class="icon icon-linkedin"></a>
+        </li>
+    </ul>
+</nav>

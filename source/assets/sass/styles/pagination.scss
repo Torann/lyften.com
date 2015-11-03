@@ -1,0 +1,53 @@
+//
+// Pagination
+// --------------------------------------------------
+
+.pagination {
+  text-align: center;
+  margin: 80px 0 20px;
+  padding: 0 20px;
+
+  span {
+    vertical-align: top;
+    margin-left: 20px;
+    color: darken($border-color, 20%);
+    line-height: 3em;
+  }
+
+  a {
+    border: 3px solid $color-green;
+    color: $color-green;
+    padding: 8px 10px;
+    border-radius: 3px;
+    margin-left: 20px;
+    font-size: 2em;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+      background: $color-green;
+      border-color: $color-green;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    &.disabled,
+    &[disabled] {
+      border-color: $border-color;
+      color: #E0E0E0;
+      cursor: default;
+
+      &:active,
+      &:focus,
+      &:hover {
+        border-color: #E0E0E0;
+        background: none;
+        color: #E0E0E0;
+      }
+    }
+  }
+}

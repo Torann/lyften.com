@@ -7,7 +7,7 @@ This validation class is a layer on top of Laravel's own Validation class (the o
 
 ## Example
 
-```
+```php
 use Torann\LaravelRepository\AbstractValidator;
 
 class MyValidator extends AbstractValidator

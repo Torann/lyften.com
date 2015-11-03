@@ -14,23 +14,23 @@ github: http://github.com/torann/laravel-asana
 
     <p>To get the latest version of Laravel Asana simply require it in your <code>composer.json</code> file.</p>
 
-    <pre><code>"torann/laravel-asana": "0.1.*@dev"</code></pre>
+    <pre><code class="language-js">"torann/laravel-asana": "0.1.*@dev"</code></pre>
 
     <p>You'll then need to run <code>composer install</code> to download it and have the autoloader updated.</p>
 
     <h3>Create configuration file using artisan</h3>
 
-    <pre><code>$ php artisan config:publish torann/laravel-asana</code></pre>
+    <pre><code class="language-php">$ php artisan config:publish torann/laravel-asana</code></pre>
 
     <p>Now add Asana in your providers array <code>app/config/app.php</code></p>
 
-    <pre><code>'Torann\LaravelAsana\ServiceProvider'</code></pre>
+    <pre><code class="language-php">'Torann\LaravelAsana\ServiceProvider'</code></pre>
 
     <h2>Quick Examples</h2>
 
     <h4>Creating a task</h4>
 
-<pre><code>Asana::createTask(array(
+<pre><code class="language-php">Asana::createTask(array(
     'workspace' => '176825', // Workspace ID
     'name'      => 'Hello World!', // Name of task
     'assignee'  => 'foo@bar.com', // Assign task to...
@@ -40,19 +40,19 @@ github: http://github.com/torann/laravel-asana
 
     <h4>Adding task to project</h4>
 
-    <pre><code>Asana::addProjectToTask(:task_id, :project_id);</code></pre>
+    <pre><code class="language-php">Asana::addProjectToTask(:task_id, :project_id);</code></pre>
 
     <h4>Commenting on a task</h4>
 
-    <pre><code>Asana::commentOnTask(:task_id, 'Please please! Don't assign me this task!');</code></pre>
+    <pre><code class="language-php">Asana::commentOnTask(:task_id, 'Please please! Don't assign me this task!');</code></pre>
 
     <h4>Getting projects in all workspaces</h4>
 
-    <pre><code>Asana::getProjects();</code></pre>
+    <pre><code class="language-php">Asana::getProjects();</code></pre>
 
     <h4>Updating project info</h4>
 
-<pre><code>Asana::updateProject(:project_id, array(
+<pre><code class="language-php">Asana::updateProject(:project_id, array(
     'name' => 'This is a new cool project!',
     'notes' => 'At first, it wasn't cool, but after this name change, it is!'
 ));</code></pre>

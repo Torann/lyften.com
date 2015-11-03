@@ -8,9 +8,9 @@ chapter: 1
 
 To get the latest version of Registry simply require it in your `composer.json` file.
 
-~~~
+```js
 "torann/registry": "0.2.*@dev"
-~~~
+```
 
 You'll then need to run `composer install` to download it and have the autoloader updated.
 
@@ -34,8 +34,8 @@ Registry also ships with a facade which provides the static syntax for creating 
 
 Run this on the command line from the root of your project:
 
-~~~
+```bash
 $ php artisan vendor:publish
-~~~
+```
 
 A configuration file will be publish to `config/registry.php` and a migration file to `database/migrations/`

@@ -8,9 +8,9 @@ chapter: 4
 
 To get the latest version of Registry simply require it in your `composer.json` file.
 
-~~~
+```js
 "torann/registry": "0.1.*@dev"
-~~~
+```
 
 You'll then need to run `composer install` to download it and have the autoloader updated.
 
@@ -34,9 +34,9 @@ Registry also ships with a facade which provides the static syntax for creating 
 
 Run this on the command line from the root of your project:
 
-~~~
+```bash
 $ php artisan config:publish torann/registry
-~~~
+```
 
 This will publish Moderate's config to ``app/config/packages/torann/moderate/``.
 
@@ -44,6 +44,6 @@ This will publish Moderate's config to ``app/config/packages/torann/moderate/``.
 
 Run this on the command line from the root of your project:
 
-~~~
+```bash
 $ php artisan migrate --package="torann/registry"
-~~~
+```

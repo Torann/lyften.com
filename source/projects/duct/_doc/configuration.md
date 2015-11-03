@@ -5,7 +5,7 @@ chapter: 2
 ---
 Ensure the configuration file is published using:
 
-```
+```bash
 $ php artisan config:publish torann/duct
 ```
 

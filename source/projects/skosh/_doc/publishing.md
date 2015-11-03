@@ -5,12 +5,13 @@ chapter: 3
 ---
 Update the `remote.yml` file to setup you remote server.
 
+```bash
+$ php skosh publish [server]
 ```
-skosh publish [server]
-```
+
 **Options:**
 
-```
+```bash
  --env,-e            Which environment to publish. (default: "production")
 ```
 

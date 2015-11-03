@@ -1,6 +1,6 @@
 var gulp       = require('gulp'),
     gulpif     = require('gulp-if'),
-    less       = require('gulp-less'),
+    sass       = require('gulp-sass'),
     concat     = require('gulp-concat'),
     minifyCSS  = require('gulp-minify-css'),
     uglify     = require('gulp-uglify'),
@@ -31,14 +31,14 @@ function swallowError (err) {
     throw err;
 }
 
-// Compile Less and save to stylesheets directory
-gulp.task('less', function () {
+// Compile sass and save to css directory
+gulp.task('sass', function () {
 
-    var destDir = options.target + '/assets/stylesheets/',
+    var destDir = options.target + '/assets/css/',
         destFile = 'style.css';
 
-    return gulp.src('source/assets/stylesheets/master.less')
-        .pipe(less())
+    return gulp.src('source/assets/sass/master.scss')
+        .pipe(sass())
         .on('error', swallowError)
         .pipe(prefix('last 2 versions', '> 1%', 'Explorer 7', 'Android 2'))
         .pipe(gulpif(IS_PROD_BUILD, minifyCSS()))
@@ -63,19 +63,15 @@ gulp.task('images', function () {
 // Publish JavaScript
 gulp.task('js', function () {
 
-    var destDir = options.target + '/assets/javascripts/',
+    var destDir = options.target + '/assets/js/',
         destFile = 'app.js';
 
     return gulp.src([
-            //'source/assets/javascripts/jquery.nivo.slider.pack.js',
-            // 'source/assets/javascripts/jquery.jplayer.min.js',
-            'source/assets/javascripts/jquery.tweet.js',
-            'source/assets/javascripts/imagesloaded.pkgd.js',
-            'source/assets/javascripts/isotope.pkgd.js',
-            'source/assets/javascripts/matchMedia.js',
-            'source/assets/javascripts/jquery.throttle.js',
-            'source/assets/javascripts/waypoints.min.js',
-            'source/assets/javascripts/main.js'
+            'source/assets/js/jquery.tweet.js',
+            //'source/assets/js/imagesloaded.pkgd.js',
+            'source/assets/js/isotope.pkgd.js',
+            'source/assets/vendor/prism/prism.js',
+            'source/assets/js/main.js'
         ])
         .on('error', swallowError)
         .pipe(concat(destFile))
@@ -109,13 +105,13 @@ gulp.task('default', ['build']);
 gulp.task('serve', ['webserver', 'watch']);
 
 gulp.task('watch', ['compile-pages', 'compile-images', 'build'], function() {
-    gulp.watch('source/assets/stylesheets/**/*.less', ['less']);
-    gulp.watch('source/assets/javascripts/**/*.js', ['js']);
+    gulp.watch('source/assets/sass/**/*.scss', ['sass']);
+    gulp.watch('source/assets/js/**/*.js', ['js']);
     gulp.watch('source/assets/images/*', ['compile-images']);
     gulp.watch('source/**/*.{textile,twig,md}', ['compile-pages']);
 });
 
-gulp.task('build', ['images', 'less', 'js'], function () {
+gulp.task('build', ['images', 'sass', 'js'], function () {
     // Create manifest of assets
     if (IS_PROD_BUILD) {
         return gulp.src(options.target + '/assets/**/*.{css,js,svg,png,gif,jpg,jpeg}')

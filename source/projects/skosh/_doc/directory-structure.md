@@ -4,6 +4,7 @@ template: documentation.twig::content_inner
 chapter: 4
 ---
 Example sirectory structure
+
 ```
 skosh-project-root
 ├─── config.yml

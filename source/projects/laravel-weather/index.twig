@@ -12,13 +12,13 @@ github: http://github.com/torann/laravel-weather
 
     <p>To get the latest version of Laravel Weather simply require it in your <code>composer.json</code> file.</p>
 
-    <pre><code>"torann/laravel-weather": "0.1.*@dev"</code></pre>
+    <pre><code class="language-js">"torann/laravel-weather": "0.1.*@dev"</code></pre>
 
     <p>You'll then need to run <code>composer install</code> to download it and have the autoloader updated.</p>
 
     <h3>Publish package assets:</h3>
 
-    <pre><code>$ php artisan asset:publish torann/laravel-weather</code></pre>
+    <pre><code class="language-bash">$ php artisan asset:publish torann/laravel-weather</code></pre>
 
     <p>Add the following to the page where the Laravel Weather widget script will be active:</p>
 
@@ -32,11 +32,11 @@ github: http://github.com/torann/laravel-weather
 
     <p>Rendering weather by point:</p>
 
-    <pre><code>Weather::renderByPoint($lat, $lng)</code></pre>
+    <pre><code class="language-php">Weather::renderByPoint($lat, $lng)</code></pre>
 
     <p>Rendering weather by city name:</p>
 
-    <pre><code>Weather::renderByName('Hamden, CT')</code></pre>
+    <pre><code class="language-php">Weather::renderByName('Hamden, CT')</code></pre>
 
     <h2>Example</h2>
 

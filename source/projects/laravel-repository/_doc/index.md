@@ -11,9 +11,9 @@ chapter: 1
 
 To get the latest version of Laravel Repository simply require it in your `composer.json` file.
 
-~~~
+```js
 "torann/laravel-repository": "0.1.*@dev"
-~~~
+```
 
 You'll then need to run `composer install` to download it and have the autoloader updated.
 
@@ -27,6 +27,6 @@ Then register the service provider
 
 ### Publish configuration file using artisan
 
-```
+```bash
 $ php artisan config:publish torann/laravel-repository
 ```
