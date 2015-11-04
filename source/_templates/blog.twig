@@ -28,9 +28,9 @@
                         {{ page.title }}
                     </h2>
 
-                    <ul class="post-info">
-                        <li>by <a href="#"> {{ page.author }}</a></li>
-                        <li>posted <a href="#"> {{ page.date|date("F m, Y") }}</a></li>
+                    <ul>
+                        <li>by <em>{{ page.author }}</em></li>
+                        <li>posted <em>{{ page.date|date("F m, Y") }}</em></li>
                     </ul>
 
                     {% block content_inner %}{% endblock %}
@@ -72,7 +72,7 @@
 
             {% include 'widgets/twitter.twig' %}
 
-            <div class="sidebar-sticky">
+            <div class="sidebar-content sidebar-sticky">
                 <h4>Share</h4>
                 <div class="social-share large blocks solid">
                     <a href="{{ share_link("facebook", page) }}" class="icon-facebook" data-share="facebook"></a>

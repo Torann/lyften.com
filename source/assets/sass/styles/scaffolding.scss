@@ -378,7 +378,8 @@ img {
             font-size: 14px;
             color: #808080;
 
-            a {
+            a, em {
+              font-style: normal;
               font-size: 15px;
               letter-spacing: 1px;
               font-weight: 300;
@@ -449,13 +450,14 @@ img {
     }
 
     .sidebar-sticky {
-      position: fixed;
-      width: 260px;
+      width: 100%;
       top: 30px;
       transition: all .5s ease;
-      background: #2B2F34;
-      color: #fff;
-      padding: 10px;
+
+      &.stuck {
+        position: fixed;
+        width: auto;
+      }
     }
   }
 
@@ -464,6 +466,7 @@ img {
       margin-bottom: 30px;
 
       .blog-info {
+
         h2 a {
           font-size: 20px;
         }
@@ -471,7 +474,7 @@ img {
         ul li {
           font-size: 13px;
 
-          a {
+          a, em {
             font-size: 14px;
           }
         }

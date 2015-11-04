@@ -25,20 +25,23 @@ paginate: true
                 </div>
 
                 <div class="blog-info">
+
                     <h2>
                         <a href="{{ post.url }}">
                             {{ post.title }}
                         </a>
                     </h2>
-                    <ul class="post-info">
-                        <li>by <a href="#"> {{ post.author }}</a></li>
-                        <li>posted <a href="#"> {{ post.date|date("F m, Y") }}</a></li>
+
+                    <ul>
+                        <li>by <em>{{ post.author }}</em></li>
+                        <li>posted <em>{{ post.date|date("F m, Y") }}</em></li>
                     </ul>
+
                     <p>{{ post.excerpt|striptags('<a>')|raw }}</p>
 
-                    <a href="{{ post.url }}" class="button">
-                        Read More
-                    </a>
+                    {#<a href="{{ post.url }}" class="btn">#}
+                        {#Read More#}
+                    {#</a>#}
                 </div>
             </div>
             {% endfor %}

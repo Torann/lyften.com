@@ -69,6 +69,7 @@ gulp.task('js', function () {
     return gulp.src([
             'source/assets/js/jquery.tweet.js',
             //'source/assets/js/imagesloaded.pkgd.js',
+            'source/assets/js/waypoints.min.js',
             'source/assets/js/isotope.pkgd.js',
             'source/assets/vendor/prism/prism.js',
             'source/assets/js/main.js'

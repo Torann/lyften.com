@@ -1,0 +1,74 @@
+//
+// Social Network Share Buttons
+// --------------------------------------------------
+
+
+.social-share {
+
+  a {
+    display: block;
+    background: #b8b8b8;
+    height: 25px;
+    width: 25px;
+    margin-left: 12px;
+    margin-top: 5px;
+    line-height: 25px;
+    color: #fff;
+    font-size: 1em;
+    border-radius: 5px;
+    text-align: center;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &.solid a.icon-twitter,
+  a.icon-twitter:hover {
+    background: #2aa9e0;
+  }
+
+  &.solid a.icon-facebook,
+  a.icon-facebook:hover {
+    background: #4271CA;
+  }
+
+  &.solid a.icon-gplus,
+  a.icon-gplus:hover {
+    background: #d3492c;
+  }
+
+  &.solid a.icon-linkedin,
+  a.icon-linkedin:hover {
+    background: #02669a;
+  }
+
+  &.solid a.icon-github,
+  a.icon-github:hover {
+    background: #e7e7e7;
+    color: #333333;
+  }
+
+  &.inline a {
+    display: inline-block;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &.large a {
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  &.blocks a {
+    height: 45px;
+    width: auto;
+    display: block;
+    margin: 10px 0 0;
+  }
+}

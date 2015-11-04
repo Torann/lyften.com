@@ -53,6 +53,21 @@ $(document).ready(function () {
         $(this).toggleClass("open");
         $("header nav > ul").slideToggle("slow");
     });
+
+    var $stickyShare = $('.sidebar-sticky');
+    $stickyShare.waypoint('sticky', {
+        offset: 30
+    });
+
+    // Fixes waypoint
+    $('iframe.snapwidget-widget').on('load', function() {
+        $(window).trigger("resize");
+    });
+
+    // Fix sticky width
+    $(window).on('resize', function() {
+        $stickyShare.width($stickyShare.parent().width())
+    }).trigger('resize');
 });
 
 $(window).load(function() {
@@ -108,3 +123,8 @@ $(window).load(function() {
     });
 });
 
+function dd() {
+    if(typeof(console) === 'object') {
+        console.log.apply(console, arguments);
+    }
+}
