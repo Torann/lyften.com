@@ -3,7 +3,7 @@ title: Commands
 template: documentation.twig::content_inner
 chapter: 5
 ---
-### $ php skosh build
+### `php skosh build`
 
 To generate an existing site, in the site folder.
 
@@ -16,7 +16,7 @@ To generate an existing site, in the site folder.
  --skip,-s           Which part of the site to skip [config, static, pages, or assets]
 ```
 
-### $ php skosh serve
+### `php skosh serve`
 
 To serve a site using Gulp.
 

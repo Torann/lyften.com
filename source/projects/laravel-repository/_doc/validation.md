@@ -12,18 +12,18 @@ use Torann\LaravelRepository\AbstractValidator;
 
 class MyValidator extends AbstractValidator
 {
-    protected $rules = array(
+    protected $rules = [
         'title'  => 'required',
         'status' => 'required'
-    );
+    ];
 
-    protected $createRules = array(
+    protected $createRules = [
         'user_id' => 'required'
-    );
+    ];
 
-    protected $updateRules = array(
+    protected $updateRules = [
         'id' => 'required|exists:users,id'
-    );
+    ];
 }
 ```
 

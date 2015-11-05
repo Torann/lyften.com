@@ -14,8 +14,8 @@ Adding the BlacklistTrait will register the **saved** and **deleted** events tha
 
 use Torann\Moderate\BlacklistTrait;
 
-class Blacklist extends Eloquent {
-
+class Blacklist extends Eloquent
+{
     use BlacklistTrait;
 
     /**
@@ -51,8 +51,8 @@ class Blacklist extends Eloquent {
 
 use Blacklist;
 
-class BlacklistsController extends Eloquent {
-
+class BlacklistsController extends Eloquent
+{
     /**
      * Display a listing of the resource.
      *

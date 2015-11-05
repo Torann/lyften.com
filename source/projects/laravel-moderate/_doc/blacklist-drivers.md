@@ -21,10 +21,12 @@ Drivers are stored in the Moderate's config file `app/config/packages/torann/mod
 **Example driver**
 
 ```php
-<?php namespace MyAppModeration\Drivers;
+<?php
 
-class FileSystem extends AbstractDriver {
+namespace MyAppModeration\Drivers;
 
+class FileSystem extends AbstractDriver
+{
     /**
      * @return array
      */

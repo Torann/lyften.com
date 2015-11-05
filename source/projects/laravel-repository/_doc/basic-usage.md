@@ -81,6 +81,7 @@ public function getForUser($user)
 {
     $query = $this->newQuery();
     $query->where('user_id', '=', $user->id);
+
     return $this->fetchMany($query);
 }
 ```

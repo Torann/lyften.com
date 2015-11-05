@@ -13,6 +13,6 @@ $permission = new Torann\Promise\Models\Permission;
 Relationships are handled via the Eloquent ORM:
 
 ~~~php
-$user->roles()->sync(array(:role_id, :role_id));
-$role->permissions()->sync(array(:permission_id, :permission_id));
+$user->roles()->sync([:role_id, :role_id]);
+$role->permissions()->sync([:permission_id, :permission_id]);
 ~~~

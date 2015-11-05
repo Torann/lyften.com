@@ -53,7 +53,8 @@ public function afterCreate($model, array $attributes)
     }
 }
 
-public function afterSave($model, array $attributes) {
+public function afterSave($model, array $attributes)
+{
     if (isset($attributes['related'])) {
         $model->related()->sync($attributes['related']);
     }

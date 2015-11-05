@@ -51,14 +51,6 @@ template: default.twig
         } %}
 
         {% include 'project_item.twig' with {
-        'url': '/projects/laravel-weather',
-        'image': '/uploads/projects/laravel-weather/logo.png',
-        'title': 'Laravel Weather',
-        'description': 'Weather forecast',
-        'tags': 'laravel php'
-        } %}
-
-        {% include 'project_item.twig' with {
         'url': '/projects/laravel-currency',
         'image': '/uploads/projects/laravel-currency/logo.png',
         'title': 'Laravel Currency',
@@ -87,6 +79,14 @@ template: default.twig
         'image': '/uploads/projects/laravel-geoip/logo.png',
         'title': 'Laravel Geoip',
         'description': 'Visitors geographical data',
+        'tags': 'laravel php'
+        } %}
+
+        {% include 'project_item.twig' with {
+        'url': '/projects/laravel-weather',
+        'image': '/uploads/projects/laravel-weather/logo.png',
+        'title': 'Laravel Weather',
+        'description': 'Weather forecast',
         'tags': 'laravel php'
         } %}
 

@@ -49,10 +49,41 @@
     }
 
     blockquote {
+      position: relative;
       font-size: 95%;
-      border-left-color: #9C9C9C;
-      background-color: #B1B1B1;
-      color: #fff;
+      border-left: 0;
+      background-color: #F7EED1;
+      padding: 15px 25px;
+      color: #424242;
+
+      &:before {
+        content: "!";
+        position: absolute;
+        background: #A0987D;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        left: -10px;
+        top: -10px;
+        font-size: 2.1rem;
+        line-height: 27px;
+        text-align: center;
+        border: 3px solid #F7F7F7;
+        color: #F7F7F7;
+        font-weight: 700;
+      }
+
+      a {
+        color: #424242;
+        text-decoration: underline;
+
+        &:active,
+        &:focus,
+        &:hover {
+          color: #0e0e0e;
+          text-decoration: none;
+        }
+      }
     }
   }
 

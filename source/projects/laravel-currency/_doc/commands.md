@@ -19,7 +19,7 @@ To upate from OpenExchangeRates.org
 php artisan currency:update --openexchangerates
 ~~~
 
- > Note: An API key is needed to use [OpenExchangeRates.org](http://OpenExchangeRates.org). Add yours to the config file.
+ > **Note:** An API key is needed to use [OpenExchangeRates.org](http://OpenExchangeRates.org). Add yours to the config file.
 
 ### Cleanup
 

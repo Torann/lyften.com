@@ -12,8 +12,8 @@ Use the `HasModerate` trait in a existing model. For example:
 
 use Torann\Moderate\HasModerate;
 
-class Comment extends Eloquent {
-
+class Comment extends Eloquent
+{
     use HasModerate;
 
     /**
@@ -21,9 +21,9 @@ class Comment extends Eloquent {
      *
      * @var array
      */
-    private $moderate = array(
+    private $moderate = [
         'title' => 'blacklist|links:2'
-    );
+    ];
 
     /**
      * The "booting" method of the model.
@@ -50,8 +50,7 @@ $table->boolean('moderated')->default(false);
 Checking to see if an resource is moderated is simple. The trait carries with it a simple method called `isModerated`, calling this will tell you if the resource has been moderated or not.
 
 ~~~php
-if ($post->isModerated()) 
-{
+if ($post->isModerated()) {
     // Something...
 }
 ~~~

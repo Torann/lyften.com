@@ -37,9 +37,9 @@ class CoffeeScriptParser extends \Torann\Duct\Processors\AbstractProcessor
         $coffee = file_get_contents($context->path);
 
         // Return parsed CoffeeScript.
-        return CoffeeScript\Compiler::compile($coffee, array(
+        return CoffeeScript\Compiler::compile($coffee, [
             'filename' => $context->path
-        ));
+        ]);
     }
 }
 ```
@@ -53,7 +53,7 @@ Now simple add or change the post processor in the `app/config/packages/torann/d
  |----------------------------------
  */
 
-'postprocessors' => array(
+'postprocessors' => [
     'application/javascript' => '\\YourProcessors\\CoffeeScriptParser',
-),
+],
 ```

@@ -16,7 +16,7 @@ Registry::get('foo', 'undefined') // will return undefined if key does not exist
 
 ```php
 Registry::set('foo', 'bar');
-Registry::set('foo', array('bar' => 'foobar'));
+Registry::set('foo', ['bar' => 'foobar']);
 
 Registry::get('foo'); // bar
 Registry::get('foo.bar'); // foobar
@@ -38,11 +38,11 @@ Registry::flush();
 **Mass update**
 
 ```php
-$settings = array(
+$settings = [
     'site_name' => 'FooBar, Inc.',
     'address'   => '11 Bean Street',
     'email'     => 'foo@bar.com'
-);
+];
 
 Registry::store($settings);
 ```

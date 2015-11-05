@@ -13,31 +13,16 @@ Environment specific meta data overrides generic meta data so same defaults can 
 
 ### Options
 
-#### timezone
+ - **timezone**: Used to set the system timezone.
 
-Used to set the system timezone.
+ - **title**: Website title.
 
-#### title
+ - **url**: This URL is used by the console to properly generate URLs
 
-Website title.
+ - **target**: The build directory, relative to the root directory.
 
-#### url
+ - **max_per_page**: Pagination setting for the max number of post per page.
 
-This URL is used by the console to properly generate URLs
+ - **exclude**: Files extensions to exclude when copying static files.
 
-#### target
-
-The build directory, relative to the root directory.
-
-
-#### max_per_page
-
-Pagination setting for the max number of post per page.
-
-#### exclude
-
-Files extensions to exclude when copying static files.
-
-#### copy
-
-Folders and files to copy.
+ - **copy**: Folders and files to copy.

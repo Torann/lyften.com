@@ -6,7 +6,7 @@ chapter: 6
 Update the `.remote.yml` file to setup you remote server.
 
 ```bash
-$ php skosh publish [server]
+php skosh publish [server]
 ```
 
 **Options:**

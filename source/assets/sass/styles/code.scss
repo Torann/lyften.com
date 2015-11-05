@@ -14,7 +14,6 @@ samp {
 // Inline code
 code {
   padding: 0.2em 0;
-  font-size: 85%;
   color: $code-color;
   background-color: $code-bg;
   white-space: nowrap;
@@ -54,8 +53,6 @@ pre {
   // Account for some code outputs that place code tags in pre tags
   code {
     padding: 0;
-    font-size: inherit;
-    color: inherit;
     white-space: pre-wrap;
     background-color: transparent;
     border-radius: 0;

@@ -14,12 +14,12 @@ This will create the **app/config/packages/torann/duct/config.php** file.
 ### Paths
 
 ```php
-'paths' => array(
+'paths' => [
     'app/assets/javascripts',
     'app/assets/stylesheets',
     'provider/assets',
     'public/packages'
-),
+],
 ```
 
 These are the directories we search for files in. You can think of this like PATH environment variable on your OS. We search for files in the path order listed above.
@@ -29,10 +29,10 @@ These are the directories we search for files in. You can think of this like PAT
 By default, Duct will look for @imports in the directory of the file passed. If @imports reside in different directories, this will tell Duct where to look.
 
 ```php
-'less_import_dirs' => array(
+'less_import_dirs' => [
     'provider/assets'    => '/provider/',
     'public/packages'    => '/packages/',
-),
+],
 ```
 
 ### Asset File Extensions
@@ -40,7 +40,7 @@ By default, Duct will look for @imports in the directory of the file passed. If 
 This setting maps a file extensions to its mime type.
 
 ```php
-'contentTypes' => array(
+'contentTypes' => [
     '.css'  => 'text/css',
     '.less' => 'text/css',
     '.js'   => 'application/javascript',
@@ -48,7 +48,7 @@ This setting maps a file extensions to its mime type.
     '.jpg'  => 'image/jpeg',
     '.png'  => 'image/png',
     '.gif'  => 'image/gif'
-),
+],
 ```
 
 ### Post Processors
@@ -56,9 +56,9 @@ This setting maps a file extensions to its mime type.
 Post processors are used to process assets before they're compiled. Each processor is mapped to one or more file extension (e.g. LESS to `.less`). Which processors are used on the asset and their order is determined by the asset's file extensions. For more info see [Custom Processors](custom-processors.html)
 
 ```php
-'postprocessors' => array(
+'postprocessors' => [
     'text/css' => '\\Torann\\Duct\\Processors\\LessParser',
-),
+],
 ```
 
 ### Asset compressors
@@ -67,10 +67,10 @@ Matches a mime type to a compressor. For more info see [Custom Compressors](cust
 
 
 ```php
-'compressors' => array(
+'compressors' => [
     'text/css'                => '\\Torann\\Duct\\Compressor\\UglifyCss',
     'application/javascript'  => '\\Torann\\Duct\\Compressor\\UglifyJs'
-),
+],
 ```
 
 ### Local assets directory
@@ -95,9 +95,9 @@ If enabled this will append a fingerprint to the static files when copied in pro
 An array of destinations and sources of static files to publish to the public assets directory
 
 ```php
-'static_files' => array(
-    'images' => array(
+'static_files' => [
+    'images' => [
         'app/assets/images'
-    ),
-),
+    ],
+],
 ```
