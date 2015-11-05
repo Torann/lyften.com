@@ -3,23 +3,6 @@
 {% block title %}{{ parent.title }}::{{ page.title }} - {% endblock %}
 
 {% block content %}
-<div class="breadcrumbs">
-    <i class="icon-book"></i>
-    <span class="name">
-        <a class="top-level" href="{{ url('/') }}">
-            Projects
-        </a>
-        <span class="divider">›</span>
-        <a href="{{ parent.url }}">
-            {{ parent.title }}
-        </a>
-        <span class="divider">›</span>
-        <a href="{{ page.url }}">
-            {{ page.title }}
-        </a>
-    </span>
-</div>
-
 <div id="documentation" class="wrapper">
 
     <div class="aside">
@@ -33,6 +16,26 @@
     </div>
 
     <article>
+        <div class="breadcrumbs">
+            <ul class="name">
+                <li>
+                    <a class="top-level" href="{{ url('/') }}">
+                        Projects
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ parent.url }}">
+                        {{ parent.title }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ page.url }}">
+                        {{ page.title }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+
         <h1>
             {{ editButton(page, parent, 'edit_button.twig') }}
             {{ page.title }}

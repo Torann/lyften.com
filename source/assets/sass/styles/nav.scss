@@ -266,13 +266,15 @@
         line-height: 1.5;
         display: block;
         padding: 5px 0;
+
+        &:hover {
+          color: darken($link-color, 30%);
+        }
       }
 
-      &.active {
-        a {
-          color: darken($link-color, 30%);
-          font-weight: 500;
-        }
+      &.active a {
+        color: darken($link-color, 30%);
+        font-weight: 500;
       }
     }
   }

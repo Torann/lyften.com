@@ -7,9 +7,9 @@
   display: table;
 
   h1 {
-    padding-bottom: 9px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid $border-color;
+    //padding-bottom: 9px;
+    //margin-bottom: 20px;
+    //border-bottom: 1px solid $border-color;
 
     .btn.tiny {
       margin: 6px 0 0;
@@ -19,17 +19,34 @@
   .aside {
     display: table-cell;
     vertical-align: top;
-    border-right: 1px solid $gray-lighter;
     width: 250px;
     min-width: 250px;
     padding-top: 10px;
+
+    > ul > li {
+      border-bottom: 1px solid $gray-lighter;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
   }
 
   article {
     display: table-cell;
     vertical-align: top;
-    padding: 10px 0 0 35px;
+    padding: 0 0 0 35px;
     width: 100%;
+
+    .content-tools {
+      float: right;
+      font-size: 12px;
+      margin: .3em 0 1em 1em;
+    }
 
     blockquote {
       font-size: 95%;

@@ -4,31 +4,40 @@
 
 
 .breadcrumbs {
-  //margin: 0 0 $breadcrumb-padding;
-  padding: $breadcrumb-padding;
-  background: $breadcrumb-bg;
-  border-radius: $border-radius-large;
+  padding: 0 0 $breadcrumb-padding;
 
-  i {
-    font-size: 14px;
-    line-height: 29px;
-  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-  .name {
-    font-size: 14px;
-    line-height: 25px;
-  }
+    li {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 25px;
 
-  .top-level {
-    color: $color-midnight;
-  }
+      &:before {
+        content: '›';
+        color: #d9d9d9;
+        font-size: 20px;
+        line-height: 25px;
+        padding: 0 5px;
+        position: relative;
+        top: 1px;
+      }
 
-  .divider {
-    color: #d9d9d9;
-    font-size: 20px;
-    line-height: 25px;
-    padding: 0 5px;
-    position: relative;
-    top: 1px;
+      &:first-child {
+        &:before {
+          display: none;
+        }
+      }
+
+      &:last-child {
+        a {
+          color: #B3B3B3;
+          font-weight: normal;
+        }
+      }
+    }
   }
 }

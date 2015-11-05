@@ -5,8 +5,8 @@
         {{ intro|wordwrap('<p>', '</p>') }}
 
         <div class="actions">
-        {% if page.documentation %}
-            <a href="{{ page.documentation }}" class="btn lite"><i class="icon-book"></i> Documentation</a>
+        {% if page.doc_url %}
+            <a href="{{ page.doc_url }}" class="btn lite"><i class="icon-book"></i> Documentation</a>
         {% endif %}
         {% if page.github %}
             <a href="{{ page.github }}" class="btn blue"><i class="icon-github"></i> Download</a>
