@@ -1,17 +1,19 @@
 ---
 title: Directory Structure
 template: documentation.twig::content_inner
-chapter: 4
+chapter: 7
 ---
-Example sirectory structure
+Example directory structure
 
 ```
 skosh-project-root
 ├─── config.yml
-├─── config_prod.yml
+├─── config_production.yml
 ├─── gulpfile.js
 ├─── package.json
+├─── .env.yml
 ├─── .remote.yml
+├─── skosh
 └─── source
      ├─── about.textile
      ├─── index.twig

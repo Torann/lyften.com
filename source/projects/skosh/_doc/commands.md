@@ -1,20 +1,9 @@
 ---
 title: Commands
 template: documentation.twig::content_inner
-chapter: 2
+chapter: 5
 ---
-### php skosh init
-
-Create the skeleton for a new site.
-
-**Options:**
-
-```bash
- --force,-f          Force creation even if the project directory already exists.
- --gulp,-g           Reinitialize Gulp if the project directory already exists.
-```
-
-### php skosh build
+### $ php skosh build
 
 To generate an existing site, in the site folder.
 
@@ -24,9 +13,10 @@ To generate an existing site, in the site folder.
  --env,-e            Which environment to build for. (default: "local")
  --part,-p           Which part of the site to build pages, assets, or
                      all. (default: "all")
+ --skip,-s           Which part of the site to skip [config, static, pages, or assets]
 ```
 
-### php skosh serve
+### $ php skosh serve
 
 To serve a site using Gulp.
 

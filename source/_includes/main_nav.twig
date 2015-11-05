@@ -1,27 +1,27 @@
 <nav>
     <ul>
-        <li{{ isCurrent(page.url, '/|/projects/*') ? ' class="active"' : '' }}>
-            <a href="/">
+        <li{{ isCurrent(page.url, '/|/projects*') ? ' class="active"' : '' }}>
+            <a href="{{ url('/') }}">
                 Projects
             </a>
         </li>
         {#<li{{ isCurrent(page.url, '/projects/*') ? ' class="active"' : '' }}>#}
-            {#<a href="/projects">#}
+            {#<a href="{{ url('/projects') }}">#}
                 {#Projects#}
             {#</a>#}
         {#</li>#}
-        <li{{ isCurrent(page.url, '/journal/*') ? ' class="active"' : '' }}>
-            <a href="/journal">
+        <li{{ isCurrent(page.url, '/journal*') ? ' class="active"' : '' }}>
+            <a href="{{ url('/journal') }}">
                 Journal
             </a>
         </li>
-        <li{{ isCurrent(page.url, '/portfolio/*') ? ' class="active"' : '' }}>
-            <a href="/portfolio">
+        <li{{ isCurrent(page.url, '/portfolio*') ? ' class="active"' : '' }}>
+            <a href="{{ url('/portfolio') }}">
                 Portfolio
             </a>
         </li>
         {#<li{{ isCurrent(page.url, '/about') ? ' class="active"' : '' }}>#}
-            {#<a href="/about">#}
+            {#<a href="{{ url('/about') }}">#}
                 {#About#}
             {#</a>#}
         {#</li>#}

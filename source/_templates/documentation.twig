@@ -1,10 +1,12 @@
 {% extends 'default.twig' %}
 
+{% block title %}{{ parent.title }}::{{ page.title }} - {% endblock %}
+
 {% block content %}
 <div class="breadcrumbs">
     <i class="icon-book"></i>
     <span class="name">
-        <a class="top-level" href="/">
+        <a class="top-level" href="{{ url('/') }}">
             Projects
         </a>
         <span class="divider">›</span>

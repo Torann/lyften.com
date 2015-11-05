@@ -17,9 +17,7 @@
 
                 {% if file_exists(page.image.full) %}
                 <div class="blog-img">
-                    <a href="#">
-                        <img src="{{ page.image.full }}" alt="{{ page.title }}">
-                    </a>
+                    <img src="{{ page.image.full }}" alt="{{ page.title }}">
                 </div>
                 {% endif %}
 
@@ -48,7 +46,7 @@
                         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                     })();
                 </script>
-                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript" target="_blank">comments powered by Disqus.</a></noscript>
             </div>
         </div>
 

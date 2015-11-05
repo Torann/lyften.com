@@ -14,7 +14,7 @@ Here's a list of the processors provided by default and their mapping to file ex
         <th>Engine</th>
     </tr>
     <tr>
-        <td><a href="http://lesscss.org">LESS</a></td>
+        <td><a href="http://lesscss.org" target="_blank">LESS</a></td>
         <td>.less</td>
         <td><code>oyejorge/less.php</code></td>
     </tr>

@@ -1,9 +1,9 @@
 ---
 title: Publishing
 template: documentation.twig::content_inner
-chapter: 3
+chapter: 6
 ---
-Update the `remote.yml` file to setup you remote server.
+Update the `.remote.yml` file to setup you remote server.
 
 ```bash
 $ php skosh publish [server]
