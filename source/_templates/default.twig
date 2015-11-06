@@ -8,8 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="google-site-verification" content="Wxg7tJp05VnlIn94qbUhmilbQFZKp8iBpyflVrOoAkY" />
 
-        <meta property="og:url" content="{{ url('/') }}"/>
-        <meta property="og:image" content="{{ asset('images/share-og.png') }}"/>
+        <meta property="og:url" content="{{ page.url }}"/>
+        <meta property="og:image" content="{{ ogImage(page, parent, 'images/share-og.png') }}"/>
         <meta property="og:site_name" content="Lyften"/>
         <meta property="og:title" content="{{ block('title') }}Lyften.com"/>
         <meta property="og:description" content="{{ metaDesc(page) }}"/>
@@ -20,7 +20,7 @@
         <meta name="twitter:title" content="{{ block('title') }}Lyften.com">
         <meta name="twitter:description" content="{{ metaDesc(page) }}">
         <meta name="twitter:creator" content="@lyften">
-        <meta name="twitter:image:src" content="{{ asset('images/share-twitter.png') }}">
+        <meta name="twitter:image:src" content="{{ ogImage(page, parent, 'images/share-twitter.png') }}">
         <meta name="twitter:domain" content="lyften.com">
 
         <link rel="alternate" type="application/rss+xml" title="RSS 2.0 feed" href="{{ site.url }}/rss.xml" />
