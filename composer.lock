@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f8473b28ba9d5a3121bd3039f5f2c370",
+    "hash": "804a66a259fa7f5686e3081f433f7173",
     "content-hash": "51a899f1a2ce1f69799d09bfb8041107",
     "packages": [
         {
@@ -339,16 +339,16 @@
         },
         {
             "name": "torann/skosh-generator",
-            "version": "0.2.10",
+            "version": "0.2.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Torann/skosh-generator.git",
-                "reference": "1321cda64a50dff0a57c26c99fd3206e64997b17"
+                "reference": "827182bb438ac90ce76851428bfe6c5642bce012"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Torann/skosh-generator/zipball/1321cda64a50dff0a57c26c99fd3206e64997b17",
-                "reference": "1321cda64a50dff0a57c26c99fd3206e64997b17",
+                "url": "https://api.github.com/repos/Torann/skosh-generator/zipball/827182bb438ac90ce76851428bfe6c5642bce012",
+                "reference": "827182bb438ac90ce76851428bfe6c5642bce012",
                 "shasum": ""
             },
             "require": {
@@ -393,7 +393,7 @@
                 "static",
                 "static site"
             ],
-            "time": "2015-11-05 22:31:04"
+            "time": "2015-11-06 21:54:29"
         },
         {
             "name": "twig/twig",

@@ -12,3 +12,9 @@ exclude: [swp, bak, DS_Store, gitkeep, vendor]
 
 # Folders and files to copy
 copy: [uploads, skosh.php, skosh, .htaccess]
+
+twig_extensions: ['\App\TwigExtension\Metadata']
+
+# Register custom events
+#events:
+#  builder.booted: ['\App\Events\TwigProvider']
