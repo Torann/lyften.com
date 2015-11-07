@@ -40,7 +40,7 @@ class Metadata extends AbstractExtension
      * @param  string $default
      * @return string
      */
-    public function getOpenGraphImage($page, $parent, $default = 'images/share-og.png')
+    public function getOpenGraphImage($page, $parent, $default = 'assets/images/share-og.png')
     {
         if($page instanceof \Skosh\Content\Post) {
             return $page->image['full'];
