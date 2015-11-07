@@ -3,6 +3,7 @@ timezone: America/New_York
 title: Lyften
 url: http://lyften.local:8888
 target: /public
+url_trailing_slash: true
 
 # Pagination
 max_per_page: 15
@@ -13,8 +14,9 @@ exclude: [swp, bak, DS_Store, gitkeep, vendor]
 # Folders and files to copy
 copy: [uploads, skosh.php, skosh, .htaccess]
 
+# Register twig extensions
 twig_extensions: ['\App\TwigExtension\Metadata']
 
 # Register custom events
 #events:
-#  builder.booted: ['\App\Events\TwigProvider']
+#  paginate.before: ['\App\Events\Tester']

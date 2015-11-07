@@ -21,8 +21,14 @@ Environment specific meta data overrides generic meta data so same defaults can 
 
  - **target**: The build directory, relative to the root directory.
 
+ - **url_trailing_slash**: Appends a trailing slash to URL. This is helpful for some servers and SEO.
+
  - **max_per_page**: Pagination setting for the max number of post per page.
 
  - **exclude**: Files extensions to exclude when copying static files.
 
  - **copy**: Folders and files to copy.
+ 
+ - **twig_extensions**: See [Extending](/projects/skosh/doc/extending.html).
+ 
+ - **events**: See [Extending](/projects/skosh/doc/extending.html).

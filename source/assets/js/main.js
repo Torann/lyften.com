@@ -54,9 +54,14 @@ $(document).ready(function () {
         $("header nav > ul").slideToggle("slow");
     });
 
+    // Waypoints
     var $stickyShare = $('.sidebar-sticky');
     $stickyShare.waypoint('sticky', {
         offset: 30
+    });
+
+    $('#documentation .aside').waypoint('sticky', {
+        offset: 10
     });
 
     // Fixes waypoint
@@ -66,7 +71,7 @@ $(document).ready(function () {
 
     // Fix sticky width
     $(window).on('resize', function() {
-        $stickyShare.width($stickyShare.parent().width())
+        $stickyShare.width($stickyShare.parent().width());
     }).trigger('resize');
 });
 

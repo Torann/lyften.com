@@ -1,7 +1,7 @@
 ---
 title: Directory Structure
 template: documentation.twig::content_inner
-chapter: 7
+chapter: 9
 ---
 Example directory structure
 

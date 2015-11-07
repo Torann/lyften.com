@@ -1,7 +1,7 @@
 ---
 title: Publishing
 template: documentation.twig::content_inner
-chapter: 6
+chapter: 8
 ---
 Update the `.remote.yml` file to setup you remote server.
 

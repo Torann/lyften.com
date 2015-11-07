@@ -7,9 +7,9 @@
     </url>
 {% endfor %}
 {% for page in site.pages %}
-{% if page.url != "/sitemap.xml" %}
+{% if page.id != "sitemap.xml" %}
     <url>
-      <loc>{{ site.url }}{{ page.url }}</loc>
+      <loc>{{ page.url }}</loc>
 	  <lastmod>{{ page.date|date("Y/m/d") }}</lastmod>
     </url>
 {% endif %}

@@ -109,7 +109,7 @@ gulp.task('watch', ['compile-pages', 'compile-images', 'build'], function() {
     gulp.watch('source/assets/sass/**/*.scss', ['sass']);
     gulp.watch('source/assets/js/**/*.js', ['js']);
     gulp.watch('source/assets/images/*', ['compile-images']);
-    gulp.watch('source/**/*.{textile,twig,md}', ['compile-pages']);
+    gulp.watch('source/**/*.{textile,twig,md,xml}', ['compile-pages']);
 });
 
 gulp.task('build', ['images', 'sass', 'js'], function () {
