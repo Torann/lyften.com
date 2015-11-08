@@ -1,8 +1,7 @@
 ---
 template: blog.twig::content_inner
-style: has-leftbar-post
 title: 10 Really High Quality Free Fonts
-author: Daniel S.
+author: Daniel Stainback
 image: /uploads/posts/10-really-high-quality-free-fonts.jpg
 date: 03/13/2012
 ---

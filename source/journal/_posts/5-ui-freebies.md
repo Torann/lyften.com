@@ -1,8 +1,7 @@
 ---
 template: blog.twig::content_inner
-style: has-leftbar-post
 title: 5 UI Freebies
-author: Daniel S.
+author: Daniel Stainback
 image: /uploads/posts/5-ui-freebies.jpg
 date: 05/09/2012
 tag: Freebies

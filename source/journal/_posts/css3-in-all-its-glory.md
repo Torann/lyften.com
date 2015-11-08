@@ -1,8 +1,7 @@
 ---
 template: blog.twig::content_inner
-style: has-leftbar-post
 title: CSS3 in all its Glory
-author: Daniel S.
+author: Daniel Stainback
 image: /uploads/posts/css3-in-all-its-glory.png
 date: 04/17/2013
 ---

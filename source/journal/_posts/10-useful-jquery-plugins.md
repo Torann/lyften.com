@@ -1,8 +1,7 @@
 ---
 template: blog.twig::content_inner
-style: has-leftbar-post
 title: 10 Useful jQuery Plugins
-author: Daniel S.
+author: Daniel Stainback
 image: /uploads/posts/10-useful-jquery-plugins.png
 date: 04/17/2013
 ---
