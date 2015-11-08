@@ -11,13 +11,13 @@
         <meta property="og:url" content="{{ page.url }}"/>
         <meta property="og:image" content="{{ ogImage(page, parent, 'assets/images/share-og.png') }}"/>
         <meta property="og:site_name" content="Lyften"/>
-        <meta property="og:title" content="{{ block('title') }}Lyften.com"/>
+        <meta property="og:title" content="{{ page.title }}"/>
         <meta property="og:description" content="{{ metaDesc(page) }}"/>
         <meta property="og:type" content="website">
 
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@lyften">
-        <meta name="twitter:title" content="{{ block('title') }}Lyften.com">
+        <meta name="twitter:title" content="{{ page.title }}">
         <meta name="twitter:description" content="{{ metaDesc(page) }}">
         <meta name="twitter:creator" content="@lyften">
         <meta name="twitter:image:src" content="{{ ogImage(page, parent, 'assets/images/share-twitter.png') }}">
