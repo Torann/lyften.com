@@ -17,7 +17,7 @@
 
             <div class="blog-post">
 
-                {% if file_exists(page.image.full) %}
+                {% if page.image.full %}
                 <div class="blog-img">
                     <img src="{{ page.image.full }}" alt="{{ page.title }}">
                 </div>
@@ -32,10 +32,9 @@
                         <li>by <em>{{ page.author }}</em></li>
                         <li>posted <em>{{ page.date|date("F m, Y") }}</em></li>
                     </ul>
-
-                    {% block content_inner %}{% endblock %}
                 </div>
 
+                {% block content_inner %}{% endblock %}
             </div>
 
             <div id="comments">
