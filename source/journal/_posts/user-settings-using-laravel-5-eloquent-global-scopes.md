@@ -3,7 +3,7 @@ template: blog.twig::content_inner
 title: User Settings Using Laravel 5 Eloquent Global Scopes
 author: Daniel Stainback
 image: /uploads/posts/user-settings-using-laravel-5-eloquent-global-scopes.png
-date: 11/08/2015
+date: 2015-11-08 14:00
 ---
 <!--excerpt-->
 While working with user settings, I noticed that when retrieving a user from the database it was performing two queries. So I decided to play with the Eloquent global scopes to see if I could cut the query down to just one and this is what happened.

@@ -3,7 +3,7 @@ template: blog.twig::content_inner
 title: 10 Useful jQuery Plugins
 author: Daniel Stainback
 image: /uploads/posts/10-useful-jquery-plugins.png
-date: 04/17/2013
+date: 2013-04-17 16:00
 ---
 <!--excerpt-->
 The quantity and quality of amazingly useful and completely free tools the jQuery developer community has been constantly churning out simply amazes me. I’ve been keeping a list of some great ones that I’ve found lately and I thought I’d share it with you.

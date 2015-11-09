@@ -3,7 +3,7 @@ template: blog.twig::content_inner
 title: CSS3 in all its Glory
 author: Daniel Stainback
 image: /uploads/posts/css3-in-all-its-glory.png
-date: 04/17/2013
+date: 2013-04-17 10:00
 ---
 <!--excerpt-->
 While looking for some inspiration on a project that I am currently working on I came across some truly interesting uses of CSS3 and thought I would share.

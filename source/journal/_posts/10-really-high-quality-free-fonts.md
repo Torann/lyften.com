@@ -3,7 +3,7 @@ template: blog.twig::content_inner
 title: 10 Really High Quality Free Fonts
 author: Daniel Stainback
 image: /uploads/posts/10-really-high-quality-free-fonts.jpg
-date: 03/13/2012
+date: 2012-03-13 14:00
 ---
 <!--excerpt-->If you are looking for new interesting fonts, here is a collection of ten beautiful, free and must have fonts for the web and print.<!--endexcerpt--> This collection includes Fertigo Pro Typeface, Megalopolis Extra Typeface, Nadia Serif Typeface, Fontin Sans Typeface, Museo Typeface, OFTEN Typeface, Medio Typeface, Mentone Typeface, Existence Light, and Chunk Typeface.
 

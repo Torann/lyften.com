@@ -3,8 +3,7 @@ template: blog.twig::content_inner
 title: 5 UI Freebies
 author: Daniel Stainback
 image: /uploads/posts/5-ui-freebies.jpg
-date: 05/09/2012
-tag: Freebies
+date: 2012-05-09 16:00
 ---
 <!--excerpt-->
 Whether you're creating a website or mobile app, well designed UI elements are key to a good user experience. Here are a few useful freebies that can help in creating a modern, sleek style.

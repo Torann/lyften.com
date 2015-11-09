@@ -13,22 +13,24 @@ Environment specific meta data overrides generic meta data so same defaults can 
 
 ### Options
 
- - **timezone**: Used to set the system timezone.
+- **timezone**: Used to set the system timezone.
 
- - **title**: Website title.
+- **title**: Website title.
 
- - **url**: This URL is used by the console to properly generate URLs
+- **url**: This URL is used by the console to properly generate URLs
 
- - **target**: The build directory, relative to the root directory.
+- **target**: The build directory, relative to the root directory.
 
- - **url_trailing_slash**: Appends a trailing slash to URL. This is helpful for some servers and SEO.
+- **url_trailing_slash**: Appends a trailing slash to URL. This is helpful for some servers and SEO.
 
- - **max_per_page**: Pagination setting for the max number of post per page.
+- **date_format**: Default date format for post content. [PHP Date](http://php.net/manual/en/function.date.php).
 
- - **exclude**: Files extensions to exclude when copying static files.
+- **max_per_page**: Pagination setting for the max number of post per page.
 
- - **copy**: Folders and files to copy.
- 
- - **twig_extensions**: See [Extending](/projects/skosh/doc/extending.html).
- 
- - **events**: See [Extending](/projects/skosh/doc/extending.html).
+- **exclude**: Files extensions to exclude when copying static files.
+
+- **copy**: Folders and files to copy.
+
+- **twig_extensions**: See [Extending](/projects/skosh/doc/extending.html).
+
+- **events**: See [Extending](/projects/skosh/doc/extending.html).
