@@ -6,15 +6,15 @@ chapter: 6
 Create a media item named 'picture', with both thumbnail (100x100) and large (300x300) styles, using custom url and default_url configurations.
 
 ```php
-public function __construct(array $attributes = []) 
+public function __construct(array $attributes = [])
 {
     $this->hasMediaFile('picture', [
         'styles' =>  [
             'thumbnail' => '100x100',
             'large' => '300x300'
         ],
-        'url' => '/system/:media/:style/:filename',
-        'default_url' => '/:media/:style/missing.jpg'
+        'url' => '/system/{media}/{style}/{filename}',
+        'default_url' => '/{media}/{style}/missing.jpg'
     ]);
 
     parent::__construct($attributes);
@@ -24,15 +24,15 @@ public function __construct(array $attributes = [])
 Create a media item named 'picture', with both thumbnail (100x100) and large (300x300) styles, using custom url and default_url configurations, with the keep_old_files flag set to true (so that older file uploads aren't deleted from the file system) and image cropping turned on.
 
 ```php
-public function __construct(array $attributes = []) 
+public function __construct(array $attributes = [])
 {
     $this->hasMediaFile('picture',  [
         'styles' =>  [
             'thumbnail' => '100x100#',
             'large' => '300x300#'
         ],
-        'url' => '/system/:media/:style/:filename',
-        'default_url' => '/:media/:style/missing.jpg',
+        'url' => '/system/{media}/{style}/{filename}',
+        'default_url' => '/{media}/{style}/missing.jpg',
         'keep_old_files' => true
     ]);
 
@@ -40,7 +40,7 @@ public function __construct(array $attributes = [])
 }
 ```
 
-MeidaSort makes it easy to manage multiple file uploads as well.  In MeidaSort, media items (and the uploaded file objects they represent) are tied directly to database records.  Because of this, processing multiple file uploads is simply a matter of defining the correct Eloquent relationships between models.  
+MeidaSort makes it easy to manage multiple file uploads as well.  In MeidaSort, media items (and the uploaded file objects they represent) are tied directly to database records.  Because of this, processing multiple file uploads is simply a matter of defining the correct Eloquent relationships between models.
 
 As an example of how this works, let's assume that we have a system where users need to have multiple profile pictures (let's say 3).  Also, let's assume that users need to have the ability to upload all three of their photos from the user creation form. To do this, we'll need two tables (users and profile_pictures) and we'll need to set their relationships such that profile pictures belong to a user and a user has many profile pictures.  By doing this, uploaded images can be attached to the ProfilePicture model and instances of the User model can in turn access the uploaded files via their hasMany relationship to the ProfilePicture model.  Here's what this looks like:
 
@@ -55,7 +55,7 @@ public function profilePictures(){
 
 In models/ProfilePicture.php:
 ```php
-public function __construct(array $attributes = []) 
+public function __construct(array $attributes = [])
 {
     // Profile pictures have an attached file (we'll call it photo).
     $this->hasMediaFile('photo',  [
@@ -79,12 +79,12 @@ In the user create view:
 <form role="form" method="POST" action="/users" enctype="multipart/form-data">
 	<input type="text" name="first_name">
 	<input type="text" name="last_name">
-	
+
 	<input type="file" name="photos[]">
 	<input type="file" name="photos[]">
 	<input type="file" name="photos[]">
-	
-    <button type="submit">Create</button>  
+
+    <button type="submit">Create</button>
 </form>
 ```
 
@@ -97,7 +97,7 @@ public function store()
     $user->save();
 
     // Loop through each of the uploaded files:
-    // 1. Create a new ProfilePicture instance. 
+    // 1. Create a new ProfilePicture instance.
     // 2. Attach the file to the new instance (MeidaSort will process it once it's saved).
     // 3. Attach the ProfilePicture instance to the user and save it.
     foreach(Input::file('photos') as $photo)
