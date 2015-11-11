@@ -3,9 +3,38 @@ title: MediaSort
 template: default.twig
 images: /uploads/projects/mediasort
 github: http://github.com/torann/mediasort
+edit_url: https://github.com/torann/lyften.com/tree/master/source/projects/mediasort/_doc/{filename}
+doc_url: /projects/mediasort/doc
 ---
 {% include 'project_header.twig' with {'intro': 'MediaSort upload manager using Laravel 5\'s builtin Filesystem / Cloud Storage. Store your files locally, Amazon S3, or Rackspace.'} %}
 
 <div class="wrapper">
-    MediaSort takes advantage of the powerful Laravel Flysystem. The Laravel Flysystem integration provides simple to use drivers for working with local filesystems, Amazon S3, and Rackspace Cloud Storage. Even better, it's amazingly simple to switch between these storage options as the API remains the same for each system.
+    <p>MeidaSort works by attaching file uploads to database table records.  This is done by defining media items inside the table's corresponding model and then assigning uploaded files (from your forms) as properties (named after the media items) on the model before saving it.  In essence, this allows uploaded files to be treated just like any other property on the model; MeidaSort will abstract away all of the file processing, storage, etc so you can focus on the rest of your project without having to worry about where your files are at or how to retrieve them.</p>
+
+    <p>A model can have multiple media items defined (avatar, photo, foo, etc) and in turn each media item can have multiple sizes (styles) defined.  When an image or file is uploaded, MeidaSort will handle all the file processing (moving, resizing, etc) and provide a media item object (as a model property) with methods for working with the uploaded file.  To accomplish this, four fields (named after the media item) will need to be created (via MeidaSort:fasten or manually) in the corresponding table for any model containing a file media item.  For example, for a media item named 'avatar' defined inside a model named 'User', the following fields would need to be added to the 'users' table:</p>
+
+    <ul>
+        <li>(string) avatar_file_name</li>
+        <li>(integer) avatar_file_size</li>
+        <li>(string) avatar_content_type</li>
+        <li>(timestamp) avatar_updated_at</li>
+    </ul>
+
+    <p>Inside your table migration file, something like this should suffice:</p>
+
+<pre><code class="language-php">$table->string("avatar_file_name")->nullable();
+$table->integer("avatar_file_size")->nullable();
+$table->string("avatar_content_type")->nullable();
+$table->timestamp("avatar_updated_at")->nullable();</code></pre>
+
+    <h2>Features</h2>
+    <p>This package provides tools for the following, and more:</p>
+
+    <ul>
+        <li>Supports Cloud Storage</li>
+        <li>Upload any file type</li>
+        <li>Resize Images</li>
+        <li>Image defaults</li>
+        <li>Watermarks</li>
+    </ul>
 </div>
