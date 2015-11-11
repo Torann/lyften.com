@@ -35,6 +35,22 @@ template: default.twig
         } %}
 
         {% include 'project_item.twig' with {
+        'url': '/projects/localization-helpers',
+        'image': '/uploads/projects/localization-helpers/logo.png',
+        'title': 'Localization Helpers',
+        'description': 'Tools to help you manage translations',
+        'tags': 'laravel php'
+        } %}
+
+        {% include 'project_item.twig' with {
+        'url': '/projects/mediasort',
+        'image': '/uploads/projects/mediasort/logo.png',
+        'title': 'MediaSort',
+        'description': 'Upload manager for Laravel',
+        'tags': 'laravel php'
+        } %}
+
+        {% include 'project_item.twig' with {
         'url': '/projects/laravel-repository',
         'image': '/uploads/projects/laravel-repository/logo.png',
         'title': 'Laravel Repository',
