@@ -73,6 +73,10 @@ In your show view:
 <img src="{{ $user->avatar->url() }}" >
 <img src="{{ $user->avatar->url('medium') }}" >
 <img src="{{ $user->avatar->url('thumb') }}" >
+
+@if($user->avatar->hasMedia())
+    <img src="{{ $user->avatar->url() }}" >
+@endif
 ```
 
 To detach (reset) a file, simply call the clear() method of the media item attribute before saving:
