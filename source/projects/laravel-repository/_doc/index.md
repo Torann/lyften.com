@@ -9,24 +9,32 @@ chapter: 1
 - [Laravel Repository on Packagist](https://packagist.org/packages/torann/laravel-repository)
 - [Laravel Repository on GitHub](https://github.com/torann/laravel-repository)
 
-To get the latest version of Laravel Repository simply require it in your `composer.json` file.
+### Composer
 
-```js
-"torann/laravel-repository": "0.1.*@dev"
+From the command line run:
+
+``` 
+$ composer require torann/laravel-repository
 ```
 
-You'll then need to run `composer install` to download it and have the autoloader updated.
+### Laravel
 
-Once Laravel Repository is installed you need to register the service provider with the application. Open up `app/config/app.php` and find the `providers` key.
+Once installed you need to register the service provider with the application. Open up `config/app.php` and find the `providers` key.
 
-Then register the service provider
+``` php
+'providers' => [
 
-```php
-'Torann\LaravelRepository\ServiceProvider'
+    \Torann\LaravelRepository\RepositoryProvider::class,
+
+]
 ```
 
-### Publish configuration file using artisan
+### Publish the configurations
 
-```bash
-$ php artisan config:publish torann/laravel-repository
+Run this on the command line from the root of your project:
+
+``` 
+$ php artisan vendor:publish --provider="Torann\LaravelRepository\RepositoryProvider"
 ```
+
+A configuration file will be publish to `config/repositories.php`.
