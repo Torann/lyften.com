@@ -21,6 +21,7 @@ The following methods are available:
 - with(array $relations)
 - toSql()
 - getErrors()
+- getErrorMessage($default = '')
 
 ### Torann\LaravelRepository\RepositoryFactory
 
