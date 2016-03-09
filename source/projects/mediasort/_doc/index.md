@@ -11,14 +11,24 @@ From the command line run:
 composer require torann/mediasort
 ```
 
+### Laravel
+
 Once installed you need to register the service provider with the application. Open up `config/app.php` and find the `providers` key.
 
-```php
+``` php
 'providers' => [
 
     \Torann\MediaSort\MediaSortServiceProvider::class,
 
 ]
+```
+
+### Lumen
+
+For Lumen register the service provider in `bootstrap/app.php`.
+
+``` php
+$app->register(\Torann\MediaSort\MediaSortServiceProvider::class);
 ```
 
 ### Publish the configurations
