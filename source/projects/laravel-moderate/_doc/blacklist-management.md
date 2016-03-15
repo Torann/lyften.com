@@ -12,6 +12,8 @@ Adding the BlacklistTrait will register the **saved** and **deleted** events tha
 ```php
 <?php
 
+namespace App;
+
 use Torann\Moderate\BlacklistTrait;
 
 class Blacklist extends Eloquent
@@ -40,7 +42,7 @@ class Blacklist extends Eloquent
 ```php
 <?php
 
-use Blacklist;
+use App\Blacklist;
 use Illuminate\Http\Request;
 
 class BlacklistsController extends Eloquent
