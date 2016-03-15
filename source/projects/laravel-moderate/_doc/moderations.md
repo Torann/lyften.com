@@ -30,6 +30,6 @@ buttface
 
 ### Events
 
-`blacklist.updated` must be fired when updating the black list table. This is only needed is caching is turned on. This can be automatically done if using the `BlacklistTrait` on your model [See Models in [Blacklist Management](/projects/laravel-moderate/doc/blacklist-management.html)].
+- `blacklist.updated` must be fired when updating the black list table. This is only needed if caching is turned on. This can be automatically done if using the `BlacklistTrait` on your blacklist model [See Models in [Blacklist Management](/projects/laravel-moderate/doc/blacklist-management.html)].
 
-`moderation.moderated` fired with an item is flagged. This can be used to send an email to the site admin.
+- `\Torann\Moderate\Events\Moderated` fired with an item is flagged. This can be used to send an email to the site admin.
