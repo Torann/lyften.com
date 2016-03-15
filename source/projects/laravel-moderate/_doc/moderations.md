@@ -17,13 +17,13 @@ The black list is stored in a number of places using the [Blacklist Drivers](/pr
 
 - 10.0.2.2
 - spammingsite.com
-- [suck|ugly|buttface]
+- [suck(er|ers|s|ing)|ugly|buttface]
 - [\d{3}\.\d{3}\.\d{3}\.\d{3}]
 
 or using newlines:
 
 ```
-suck
+suck(er|ers|s|ing)
 ugly
 buttface
 ```

@@ -5,41 +5,48 @@ chapter: 1
 ---
 ## Installation
 
-- [Moderate on Packagist](https://packagist.org/packages/torann/moderate)
-- [Moderate on GitHub](https://github.com/torann/laravel-moderate)
+From the command line run:
 
-To get the latest version of Moderate simply require it in your `composer.json` file.
+```bash
+composer require torann/moderate
+```
 
-~~~
-"torann/moderate": "dev-master"
-~~~
+### Laravel
 
-You'll then need to run `composer install` to download it and have the autoloader updated.
+Once installed you need to register the service provider with the application. Open up `config/app.php` and find the `providers` key.
 
-Once Moderate is installed you need to register the service provider with the application. Open up `app/config/app.php` and find the `providers` key.
-
-~~~php
+```php
 'providers' => [
 
-    'Torann\Moderate\ModerateServiceProvider',
+    Torann\Moderate\ModerateServiceProvider::class,
 
 ]
-~~~
+```
 
-### Publish the config
+This package also comes with a facade, which provides an easy way to call the the class. Open up `config/app.php`` and find the aliases key.
+
+```php
+'aliases' => [
+
+    'Moderate' => Torann\Moderate\Facades\Moderate::class,
+
+];
+```
+
+### Publish the configurations
 
 Run this on the command line from the root of your project:
 
-~~~
-$ php artisan config:publish torann/moderate
-~~~
+```bash
+php artisan vendor:publish --provider="Torann\Moderate\ModerateServiceProvider"
+```
 
-This will publish Moderate's config to `app/config/packages/torann/moderate/`.
+A configuration file will be publish to `config/moderate.php`.
 
 ### Migration
 
 If blacklists are going to be stored in the database. Run migrate to setup the database table [see [Blacklist Drivers](/projects/laravel-moderate/doc/blacklist-drivers.html)]. Run this on the command line from the root of your project:
 
-~~~
+```bash
 $ php artisan migrate --package=torann/moderate
-~~~
+```

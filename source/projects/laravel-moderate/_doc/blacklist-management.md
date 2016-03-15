@@ -9,7 +9,7 @@ Using the default Database Driver you can setup your model and controller like b
 
 Adding the BlacklistTrait will register the **saved** and **deleted** events that trigger cache flushing. This is only needed is caching is turned on.
 
-~~~php
+```php
 <?php
 
 use Torann\Moderate\BlacklistTrait;
@@ -28,39 +28,31 @@ class Blacklist extends Eloquent
      *
      * @var string
      */
-    protected $fillable = ['title', 'element'];
-
-    /**
-     * The "booting" method of the model.
-     *
-     * @return void
-     */
-    public static function boot()
-    {
-        parent::boot();
-
-        static::bootBlacklist();
-    }
+    protected $fillable = [
+        'title',
+        'element'
+    ];
 }
-~~~
+```
 
 ### Controller
 
-~~~php
+```php
 <?php
 
 use Blacklist;
+use Illuminate\Http\Request;
 
 class BlacklistsController extends Eloquent
 {
     /**
      * Display a listing of the resource.
      *
-     * @return View
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return View::make('admin/blacklists/index')->with([
+        return view('admin/blacklists/index')->with([
             'blacklists' => Blacklist::paginate()
         ]);
     }
@@ -68,110 +60,109 @@ class BlacklistsController extends Eloquent
     /**
      * Show the form for creating a new resource.
      *
-     * @return View
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        return View::make('admin/blacklists/create');
+        return view('admin/blacklists/create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @return Redirect
+     * @param Request $request
+     *
+     * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
         // New Blacklist
-        $blacklist = new Blacklist;
-        $blacklist->title = Input::get('title');
-        $blacklist->element = Input::get('element');
+        $blacklist = new Blacklist();
+        $blacklist->title = $request->get('title');
+        $blacklist->element = $request->get('element');
 
         // Was the blacklist created?
-        if ($blacklist->save())
-        {
-            // Redirect to the new blacklist page
-            return Redirect::route('admin.blacklists.index')
+        if ($blacklist->save()) {
+            return redirect()
+                ->route('admin.blacklists.index')
                 ->with('success', 'Blacklist created successfully');
         }
 
         // Redirect to the new blacklist page
-        return Redirect::route('admin.blacklists.create')
+        return redirect()
+            ->route('admin.blacklists.create')
             ->with('error', 'Error creating blacklist');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
-     * @return View
+     * @param  Request $request
+     * @param  int     $id
+     *
+     * @return \Illuminate\Http\Response
      */
-    public function edit($id = null)
+    public function edit($id)
     {
-        $blacklist = Blacklist::find($id)
+        $blacklist = Blacklist::findOrFail($id);
 
         // Show the page
-        return View::make('admin/blacklists/edit', compact('blacklist'));
+        return view('admin/blacklists/edit')->with([
+           'blacklists' => $blacklist
+       ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  int $id
-     * @return Redirect
+     * @param Request $request
+     * @param int     $id
+     *
+     * @return \Illuminate\Http\Response
      */
-    public function update($id = null)
+    public function update(Request $request, $id)
     {
-        if( ! $blacklist = Blacklist::find($id))
-        {
-            // Redirect to the blacklists management page
-            return Redirect::route('admin.blacklists.index')
-                ->with('error', 'Blacklist not found');
-        }
+        $blacklist = Blacklist::findOrFail($id);
 
         // Update the blacklist data
-        $blacklist->title = Input::get('title');
-        $blacklist->element = Input::get('element');
+        $blacklist->title = $request->get('title');
+        $blacklist->element = $request->get('element');
 
         // Was the blacklist updated?
-        if ($blacklist->save())
-        {
-            // Redirect to the blacklist page
-            return Redirect::route('admin.blacklists.edit', $id)
+        if ($blacklist->save()) {
+            return redirect()
+                ->route('admin.blacklists.edit', $id)
                 ->with('success', 'Blacklist updated successfully.');
         }
 
         // Redirect to the blacklist page
-        return Redirect::route('admin.blacklists.edit', $id)
+        return redirect()
+            ->route('admin.blacklists.edit', $id)
             ->with('error', 'Error updating blacklist');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
-     * @return Redirect
+     * @param int $id
+     *
+     * @return \Illuminate\Http\Response
      */
-    public function destroy($id = null)
+    public function destroy($id)
     {
-        if( ! $blacklist = Blacklist::find($id))
-        {
-            // Redirect to the blacklists management page
-            return Redirect::route('admin.blacklists.index')
-                ->with('error', 'Blacklist not found');
-        }
+        $blacklist = Blacklist::findOrFail($id);
 
         // Delete the blacklist
-        if ($blacklist->delete())
-        {
-            // Redirect to the blacklist page
-            return Redirect::route('admin.blacklists.index')
+        if ($blacklist->delete()) {
+            return redirect()
+                ->route('admin.blacklists.index')
                 ->with('success', 'Blacklist removed successfully.');
         }
 
         // Redirect to the blacklist page
-        return Redirect::route('admin.blacklists.index')
+        return redirect()
+            ->route('admin.blacklists.index')
             ->with('error', 'Error removing blacklist');
     }
 }
-~~~
+```
