@@ -48,5 +48,5 @@ A configuration file will be publish to `config/moderate.php`.
 If blacklists are going to be stored in the database. Run migrate to setup the database table [see [Blacklist Drivers](/projects/laravel-moderate/doc/blacklist-drivers.html)]. Run this on the command line from the root of your project:
 
 ```bash
-$ php artisan migrate --package=torann/moderate
+$ php artisan migrate
 ```
