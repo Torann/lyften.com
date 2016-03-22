@@ -27,6 +27,14 @@ template: default.twig
     <div class="row masonry-container">
 
         {% include 'project_item.twig' with {
+        'url': '/projects/laravel-moderate',
+        'image': '/uploads/projects/laravel-moderate/logo.png',
+        'title': 'Laravel Moderate',
+        'description': 'Moderation system for Laravel',
+        'tags': 'laravel php'
+        } %}
+
+        {% include 'project_item.twig' with {
         'url': '/projects/skosh',
         'image': '/uploads/projects/skosh/logo.png',
         'title': 'Skosh.',
@@ -35,10 +43,10 @@ template: default.twig
         } %}
 
         {% include 'project_item.twig' with {
-        'url': '/projects/localization-helpers',
-        'image': '/uploads/projects/localization-helpers/logo.png',
-        'title': 'Localization Helpers',
-        'description': 'Tools to help you manage translations',
+        'url': '/projects/laravel-currency',
+        'image': '/uploads/projects/laravel-currency/logo.png',
+        'title': 'Laravel Currency',
+        'description': 'Currency functions for Laravel',
         'tags': 'laravel php'
         } %}
 
@@ -47,6 +55,14 @@ template: default.twig
         'image': '/uploads/projects/mediasort/logo.png',
         'title': 'MediaSort',
         'description': 'Upload manager for Laravel',
+        'tags': 'laravel php'
+        } %}
+
+        {% include 'project_item.twig' with {
+        'url': '/projects/localization-helpers',
+        'image': '/uploads/projects/localization-helpers/logo.png',
+        'title': 'Localization Helpers',
+        'description': 'Tools to help you manage translations',
         'tags': 'laravel php'
         } %}
 
@@ -63,22 +79,6 @@ template: default.twig
         'image': '/uploads/projects/laravel-registry/logo.png',
         'title': 'Laravel Registry',
         'description': 'Settings manager',
-        'tags': 'laravel php'
-        } %}
-
-        {% include 'project_item.twig' with {
-        'url': '/projects/laravel-currency',
-        'image': '/uploads/projects/laravel-currency/logo.png',
-        'title': 'Laravel Currency',
-        'description': 'Currency functions for Laravel',
-        'tags': 'laravel php'
-        } %}
-
-        {% include 'project_item.twig' with {
-        'url': '/projects/laravel-moderate',
-        'image': '/uploads/projects/laravel-moderate/logo.png',
-        'title': 'Laravel Moderate',
-        'description': 'Moderation system for Laravel',
         'tags': 'laravel php'
         } %}
 
