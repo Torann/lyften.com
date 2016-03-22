@@ -9,38 +9,50 @@ chapter: 1
 - [Currency on Packagist](https://packagist.org/packages/torann/currency)
 - [Currency on GitHub](https://github.com/torann/laravel-currency)
 
-To get the latest version of Currency simply require it in your `composer.json` file.
+### Composer
 
-~~~
-"torann/currency": "dev-master"
-~~~
+From the command line run:
 
-You'll then need to run `composer install` to download it and have the autoloader updated.
+```
+$ composer require torann/currency
+```
 
-Once Currency is installed you need to register the service provider with the application. Open up `app/config/app.php` and find the `providers` key.
+### Laravel
 
-~~~php
+Once installed you need to register the service provider with the application. Open up `config/app.php` and find the `providers` key.
+
+``` php
 'providers' => [
-    'Torann\Currency\CurrencyServiceProvider',
+
+    \Torann\Currency\CurrencyServiceProvider::class,
+
 ]
-~~~
+```
 
-Currency also ships with a facade which provides the static syntax for creating collections. You can register the facade in the `aliases` key of your `app/config/app.php` file.
+This package also comes with a facade, which provides an easy way to call the the class. Open up `config/app.php`` and find the aliases key.
 
-~~~php
 'aliases' => [
-    'Currency' => 'Torann\Currency\Facades\Currency',
-]
-~~~
 
-Create configuration file using artisan
+    'Currency' => Torann\Currency\Facades\Currency::class,
 
-~~~
-$ php artisan config:publish torann/currency
-~~~
+];
 
-Generate the table by running
+### Publish the configurations
 
-~~~
-$ php artisan migrate --package=torann/currency
-~~~
+Run this on the command line from the root of your project:
+
+```bash
+php artisan vendor:publish --provider="Torann\Currency\CurrencyServiceProvider"
+```
+
+A configuration file will be publish to `config/currency.php`.
+
+### Migration
+
+If currencies are going to be stored in the database. Run migrate to setup the database table [see [Storage Drivers](/projects/laravel-currency/doc/storage-drivers.html)]. Run this on the command line from the root of your project:
+
+Run this on the command line from the root of your project to generate the table for storing currencies:
+
+```bash
+$ php artisan migrate
+```
