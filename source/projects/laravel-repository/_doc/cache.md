@@ -20,9 +20,24 @@ use Torann\LaravelRepository\Repositories\AbstractCacheDecorator;
 
 class CacheDecorator extends AbstractCacheDecorator implements UsersInterface
 {
-    ...
+    /**
+     * Methods to skip when caching.
+     *
+     * @var array
+     */
+    protected $skipCache = [
+        'find',
+        'findBy',
+        'findAllBy',
+        'findWhere',
+        'all',
+        'lists',
+        'paginate',
+    ];
 }
 ```
+
+> **NOTE:** Caching for all methods by default are disabled. This is to ensure that things don't get out of hand. To enable simple remove all or some from the `$skipCache` array in your cache decorator class.
 
 Before our repository is cached we must update the repository service provider so that it will use the `createWithCache` method:
 
