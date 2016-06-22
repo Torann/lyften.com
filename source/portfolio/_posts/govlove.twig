@@ -1,10 +1,10 @@
 ---
 template: default.twig
 title: GovLove
-description: GovLove - Brnading for a podcast about local government hosted by Caroline Tanbee Smith, produced by Ryan Mannion and recorded in New Haven, CT.
+description: GovLove - Branding for a podcast about local government hosted by Caroline Tanbee Smith, produced by Ryan Mannion and recorded in New Haven, CT.
 date: 01/14/2015
 image: /uploads/portfolio/govlove/cover-size-2.png
-tags: Branding
+tags: Branding|Web Application
 ---
 <div class="project-single">
     <div class="row">
@@ -15,7 +15,7 @@ tags: Branding
                 <div class="project-description">
                     <h1>{{ page.title }}</h1>
                     <span>{{ page.tags }}</span>
-                    <p>Brnading for a podcast about local government hosted by Caroline Tanbee Smith, produced by Ryan Mannion and recorded in New Haven, CT.</p>
+                    <p>Branding for a podcast about local government hosted by Caroline Tanbee Smith, produced by Ryan Mannion and recorded in New Haven, CT.</p>
                 </div>
 
                 <div class="project-services">
@@ -27,7 +27,7 @@ tags: Branding
                             <strong>Date:</strong> {{ page.date|date("M d, Y") }}
                         </li>
                         <li>
-                            <strong>Link:</strong> <a href="https://itun.es/i6B28DH" target="_blank">View on iTunes</a>
+                            <strong>Link:</strong> <a href="http://govlove.us/" target="_blank">http://govlove.us</a>
                         </li>
                     </ul>
                 </div>
@@ -36,7 +36,64 @@ tags: Branding
         </div>
 
         <div class="col-md-7 project-photos">
-            <img src="{{ asset('/uploads/portfolio/govlove/itunes.png') }}" alt="GovLove in iTunes">
+            <img src="{{ asset('/uploads/portfolio/govlove/homepage.png') }}" alt="GovLove.us">
+        </div>
+
+        <div class="col-md-12">
+
+            <div class="row m-t-l">
+                <div class="col-md-7">
+                    <img src="{{ asset('/uploads/portfolio/govlove/itunes.png') }}" alt="GovLove in iTunes">
+                </div>
+                <div class="col-md-5">
+                    <h3>Podcast</h3>
+                    <p>With chunk uploading I was able upload the large Podcast audio files to Amazon's S3 server where they will be served from and with the use of my <a href="https://github.com/Torann/podcastfeed/" target="_blank">Podcast Feed</a> package was able to generate a valid Podcast RSS feed.</p>
+                </div>
+            </div>
+
+            <div class="row m-t-l">
+                <div class="col-md-5">
+                    <h3>jPlayer</h3>
+                    <p>The jQuery plugin <a href="http://jplayer.org/" target="_blank">jPlayer</a> allowed me to offer cross platform audio playback from the website without the users having to go to iTunes.</p>
+                </div>
+                <div class="col-md-7">
+                    <img src="{{ asset('/uploads/portfolio/govlove/playback.png') }}" alt="GovLove in iTunes">
+                </div>
+            </div>
+
+            <h2 id="summit">GovLove Summit 2015</h2>
+
+            <p>SeeClickFix's first user conference that will bring the nation's top civic innovators together around learning, connection, and fun.</p>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <h3>Homepage Animation</h3>
+                    <p>Given full creative freedom for the <a href="http://summit.govlove.us/" target="_blank">GovLove Summit</a> pages, I decided to have a little fun with CSS3 animation and SVG images.</p>
+                </div>
+                <div class="col-md-7">
+                    <img src="{{ asset('/uploads/portfolio/govlove/summit.png') }}" alt="GovLove Summit Homepage">
+                </div>
+            </div>
+
+            <div class="row m-t-l">
+                <div class="col-md-7">
+                    <img src="{{ asset('/uploads/portfolio/govlove/unconference.png') }}" alt="GovLove Summit Homepage">
+                </div>
+                <div class="col-md-5">
+                    <h3>Unconference</h3>
+                    <p>With the last day of the conference schedule as an unconference, I decided to give the attendees the ability to suggest and vote on topics they would like to cover using a custom built discussion board.</p>
+                </div>
+            </div>
+
+            <div class="row m-t-l">
+                <div class="col-md-5">
+                    <h3>Scheduling</h3>
+                    <p>With the attendees suggesting and voting on topics I thought it would be nice to have the admin easily schedule topics that will appear in the agenda. To do this I created a simple popup that allows the admins to set a time during the unconference slots to discuss the topic from the discussion board.</p>
+                </div>
+                <div class="col-md-7">
+                    <img src="{{ asset('/uploads/portfolio/govlove/scheduling.png') }}" alt="Scheduling">
+                </div>
+            </div>
         </div>
 
     </div>
