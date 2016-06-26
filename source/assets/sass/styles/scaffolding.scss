@@ -154,10 +154,15 @@ img {
 .wrapper .page-title {
 
   h1 {
-    font-size: 30px;
-    line-height: 40px;
+    font-size: 25px;
+    line-height: 33px;
     letter-spacing: 1px;
     font-weight: 300;
+
+    b {
+      font-size: 30px;
+      line-height: 40px;
+    }
   }
 
   @media screen and (max-width: 375px) {
@@ -354,6 +359,59 @@ img {
   }
 }
 
+//= Resume Style
+//
+.wrapper .resume {
+  margin-top: 60px;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    margin-top: 0;
+  }
+
+  .resume-role {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 50%;
+    line-height: 17.5px;
+    padding: 10px 0 10px 10px;
+  }
+
+  .resume-category {
+    border-bottom: 1px solid #e2e2e2;
+    padding: 0 0 40px;
+    margin: 10px 0 50px;
+
+    @media (min-width: 544px) {
+      margin: 0 0 50px;
+    }
+  }
+
+  .resume-position {
+    margin: 0 0 60px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .resume-list {
+    display: inline-block;
+    margin: 0;
+    padding: 0 0 20px 20px;
+
+    @media (min-width: 993px) {
+      padding: 0 0 0 20px;
+    }  }
+}
+
+
+//= Blog Style
+//
 .wrapper .blog {
   margin-top: 30px;
 

@@ -20,8 +20,13 @@
                 Portfolio
             </a>
         </li>
-        {#<li{{ isCurrent(page.url, '/about') ? ' class="active"' : '' }}>#}
-            {#<a href="{{ url('/about') }}">#}
+        <li{{ isCurrent(page.url, '/resume.html') ? ' class="active"' : '' }}>
+            <a href="{{ url('/resume.html') }}">
+                Resume
+            </a>
+        </li>
+        {#<li{{ isCurrent(page.url, '/about.html') ? ' class="active"' : '' }}>#}
+            {#<a href="{{ url('/about.html') }}">#}
                 {#About#}
             {#</a>#}
         {#</li>#}
