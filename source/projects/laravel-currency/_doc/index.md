@@ -56,3 +56,17 @@ Run this on the command line from the root of your project to generate the table
 ```bash
 $ php artisan migrate
 ```
+
+### Middleware
+
+Once installed you need to append the middleware class within the Http kernel. This allows visitors to change the viewed currency using the query parameter `?currency=usd`.
+
+Open up `app/Http/Kernel.php` and find the `$middleware` variable.
+
+```php
+protected $middleware = [
+
+    \Torann\Currency\Middleware\CurrencyMiddleware::class,
+
+]
+```
