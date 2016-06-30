@@ -9,7 +9,7 @@ Add a layer of cache easily to your repository by using the a cache decorator.
 
 > **Note**: Caching uses [Cache Tags](http://laravel.com/docs/5.1/cache#cache-tags), so caching is not supported when using the `file` or `database` cache drivers. This makes the Laravel Repository super scalable.
 
-We will create a cache decorator for our repository `App\Repositories\Users\UsersRepository` from the [Basic Setup](#basic-setup) section. **Note:** you must implement you `UsersInterface` on the decorator.
+We will create a cache decorator for our repository `App\Repositories\Users\UsersRepository` from the [Basic Setup](basic-setup.html) section. **Note:** you must implement you `UsersInterface` on the decorator.
 
 ``` php
 <?php
