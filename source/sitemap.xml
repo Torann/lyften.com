@@ -3,14 +3,14 @@
 {% for post in site.posts %}
     <url>
       <loc>{{ site.url }}{{ post.url }}</loc>
-      <lastmod>{{ post.date|date("Y/m/d") }}</lastmod>
+      <lastmod>{{ post.date|date("Y-m-d") }}</lastmod>
     </url>
 {% endfor %}
 {% for page in site.pages %}
 {% if page.id != "sitemap.xml" %}
     <url>
       <loc>{{ page.url }}</loc>
-	  <lastmod>{{ page.date|date("Y/m/d") }}</lastmod>
+	  <lastmod>{{ page.date|date("Y-m-d") }}</lastmod>
     </url>
 {% endif %}
 {% endfor %}
