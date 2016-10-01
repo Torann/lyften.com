@@ -1,40 +1,10 @@
 ---
 title: Methods
 template: documentation.twig::content_inner
-chapter: 4
+chapter: 5
 ---
-The simplest way to use these method is though the helper function `currency()` or by using the facade. For the examples below we will use the helper method.
 
-## Formatting a Currency Shortcut
-
-This is a shortcut to the most commonly used `format` method.
-
-```php
-currency($number, $currency, $symbolStyle, $inverse, $roundingType, $precision, $decimalPlace)
-```
-
-**Arguments:**
-
-- $number
-- $currency _(default null)_
-- $symbolStyle _(default %symbol%)_
-- $inverse _(default false)_
-- $roundingType _(default '')_
-- $precision _(default null)_
-- $decimalPlace _(default null)_
-
-**Usage:**
-
-```php
-echo currency(12.00);        // Will format the value using the user selected currency
-echo currency(12.00, 'EUR'); // Will format the value from the default currency to EUR
-```
-
-> **NOTE:** If the `$currency` argument is not set it will use the user selected currency.
-
-## The Power of the `currency()` Function
-
-When the currency function is used without arguments it will return the `\Torann\Currency\Currency` instance, and with this we can do all types of amazing things.
+When the `currency()` helper function is used without arguments it will return the `\Torann\Currency\Currency` instance, and with this we can do all types of amazing things.
 
 ### `hasCurrency($code)`
 
@@ -44,20 +14,20 @@ Determine if given currency exists.
 currency()->hasCurrency('EUR');
 ```
 
-### `setCurrency($code)`
+### `setUserCurrency($code)`
 
 Set user's currency.
 
 ```php
-currency()->setCurrency('EUR');
+currency()->setUserCurrency('EUR');
 ```
 
-### `getCurrencyCode()`
+### `getUserCurrency()`
 
 Return the user's currency code.
 
 ```php
-currency()->getCurrencyCode();
+currency()->getUserCurrency();
 ```
 
 ### `getCurrency($code = null)`
@@ -84,20 +54,22 @@ Get a currency configuration value.
 currency()->getConfig('default');
 ```
 
+## Managing Currencies
+
+This can be helpful when manually managing currencies. The following methods access the default [storage driver](/projects/laravel-currency/doc/storage-drivers.html).
+
 ### `create(array $params)`
 
 Create a currency using the default driver.
 
 ```php
 currency()->create([
-    'title' => 'U.S. Dollar',
-    'symbol_left' => '$',
-    'symbol_right' => '',
-    'decimal_place': 2,
-    'value' => '1.0000',
-    'decimal_point' => '.',
-    'thousand_point' => ',',
-    'code' => 'USD',
+    'currency_name' => 'U.S. Dollar',
+    'currency_code' => 'USD',
+    'currency_symbol' => '$',
+    'currency_format' => '$1,0.00',
+    'exchange_rate' => 1.00000000,
+    'active' => 1,
 ]);
 ```
 

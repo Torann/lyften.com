@@ -1,9 +1,22 @@
 ---
 title: Artisan Commands
 template: documentation.twig::content_inner
-chapter: 3
+chapter: 4
 ---
-## Artisan Commands
+### Manage
+
+Easily add, update, or delete currencies from the default storage. This is extremely helpful when there are changes to currecny data, such as symbols and such.
+
+```
+php artisan currency:manage <action> <currency>
+```
+
+**Arguments:**
+
+```
+ action              Action to perform (add, update, or delete)
+ currency            Code or comma separated list of codes for currencies
+```
 
 ### Updating Exchange
 
@@ -13,7 +26,7 @@ By default exchange rates are updated from Finance Yahoo.com.
 php artisan currency:update
 ```
 
-To upate from OpenExchangeRates.org
+To update from OpenExchangeRates.org
 
 ```bash
 php artisan currency:update --openexchangerates

@@ -13,7 +13,7 @@ chapter: 1
 
 From the command line run:
 
-```
+```bash
 $ composer require torann/currency
 ```
 
@@ -21,7 +21,7 @@ $ composer require torann/currency
 
 Once installed you need to register the service provider with the application. Open up `config/app.php` and find the `providers` key.
 
-``` php
+```php
 'providers' => [
 
     \Torann\Currency\CurrencyServiceProvider::class,
@@ -31,31 +31,41 @@ Once installed you need to register the service provider with the application. O
 
 This package also comes with a facade, which provides an easy way to call the the class. Open up `config/app.php`` and find the aliases key.
 
+```php
 'aliases' => [
 
-    'Currency' => Torann\Currency\Facades\Currency::class,
+    'Currency' => \Torann\Currency\Facades\Currency::class,
 
 ];
+```
 
 ### Publish the configurations
 
 Run this on the command line from the root of your project:
 
 ```bash
-php artisan vendor:publish --provider="Torann\Currency\CurrencyServiceProvider"
+php artisan vendor:publish --provider="Torann\Currency\CurrencyServiceProvider" --tag=config
 ```
 
 A configuration file will be publish to `config/currency.php`.
 
 ### Migration
 
-If currencies are going to be stored in the database. Run migrate to setup the database table [see [Storage Drivers](/projects/laravel-currency/doc/storage-drivers.html)]. Run this on the command line from the root of your project:
+If currencies are going to be stored in the database. Run migrate to setup the database table [see [Storage Drivers](/projects/laravel-currency/doc/storage-drivers.html)].
+
+```bash
+php artisan vendor:publish --provider="Torann\Currency\CurrencyServiceProvider" --tag=migrations
+```
 
 Run this on the command line from the root of your project to generate the table for storing currencies:
 
 ```bash
 $ php artisan migrate
 ```
+
+### Preset Currencies
+
+The package comes with a set of preset currencies. To add them use the [artisan manage command](/projects/laravel-currency/doc/commands.html).
 
 ### Middleware
 
@@ -70,3 +80,5 @@ protected $middleware = [
 
 ]
 ```
+
+> **Note:** The currency middleware uses the session to store the user selected currency, because of this the middleware will need to be added somewhere after `\Illuminate\Session\Middleware\StartSession::class`.

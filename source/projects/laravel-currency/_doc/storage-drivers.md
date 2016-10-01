@@ -1,7 +1,7 @@
 ---
 title: Storage Drivers
 template: documentation.twig::content_inner
-chapter: 5
+chapter: 6
 ---
 
 ### Database (default)
@@ -22,7 +22,7 @@ By using Laravel's built in Filesystem we have the ability to store the currency
 
 ### Custom Driver
 
-Drivers are stored in the Currency's config file `config/currency.php`. Simple update the `driver` with the name of you custom driver and add it to the `drivers` specific configuration section with the `class` value as the custom classname.
+Drivers are stored in the Currency's config file `config/currency.php`. Simply update the `driver` with the name of your custom driver and add it to the `drivers` specific configuration section with the `class` value as the custom classname.
 
 **Example driver**
 
@@ -52,15 +52,12 @@ class Local extends AbstractDriver
         $created = new DateTime('now');
 
         $currencies[$params['code']] = array_merge([
-            'title' => '',
-            'symbol_left' => '',
-            'symbol_right' => '',
+            'name' => '',
             'code' => '',
-            'decimal_place' => 2,
-            'value' => 1.00000000,
-            'decimal_point' => '.',
-            'thousand_point' => ',',
-            'status' => 0,
+            'symbol' => '',
+            'format' => '',
+            'exchange_rate' => 1,
+            'active' => 0,
             'created_at' => $created->format('Y-m-d H:i:s'),
             'updated_at' => $created->format('Y-m-d H:i:s'),
         ], $params);
@@ -97,7 +94,7 @@ class Local extends AbstractDriver
 
         // Update given code
         if (isset($currencies[$code])) {
-            $currencies[$code]['value'] = $value;
+            $currencies[$code]['exchange_rate'] = $value;
             $currencies[$code]['updated_at'] = new DateTime('now');
 
             return file_put_contents($path, json_encode($currencies));
