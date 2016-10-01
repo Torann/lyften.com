@@ -27,6 +27,22 @@ template: default.twig
     <div class="row masonry-container">
 
         {% include 'project_item.twig' with {
+        'url': '/projects/laravel-geoip',
+        'image': '/uploads/projects/laravel-geoip/logo.png',
+        'title': 'Laravel Geoip',
+        'description': 'Visitors geographical data',
+        'tags': 'laravel php'
+        } %}
+
+        {% include 'project_item.twig' with {
+        'url': '/projects/laravel-currency',
+        'image': '/uploads/projects/laravel-currency/logo.png',
+        'title': 'Laravel Currency',
+        'description': 'Currency functions for Laravel',
+        'tags': 'laravel php'
+        } %}
+
+        {% include 'project_item.twig' with {
         'url': '/projects/laravel-moderate',
         'image': '/uploads/projects/laravel-moderate/logo.png',
         'title': 'Laravel Moderate',
@@ -40,14 +56,6 @@ template: default.twig
         'title': 'Skosh.',
         'description': 'Simple static site generator',
         'tags': 'php'
-        } %}
-
-        {% include 'project_item.twig' with {
-        'url': '/projects/laravel-currency',
-        'image': '/uploads/projects/laravel-currency/logo.png',
-        'title': 'Laravel Currency',
-        'description': 'Currency functions for Laravel',
-        'tags': 'laravel php'
         } %}
 
         {% include 'project_item.twig' with {
@@ -87,14 +95,6 @@ template: default.twig
         'image': '/uploads/projects/laravel-promise/logo.png',
         'title': 'Laravel Promise',
         'description': 'Roles and Permissions',
-        'tags': 'laravel php'
-        } %}
-
-        {% include 'project_item.twig' with {
-        'url': '/projects/laravel-geoip',
-        'image': '/uploads/projects/laravel-geoip/logo.png',
-        'title': 'Laravel Geoip',
-        'description': 'Visitors geographical data',
         'tags': 'laravel php'
         } %}
 
