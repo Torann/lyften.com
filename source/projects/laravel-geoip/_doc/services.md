@@ -122,16 +122,16 @@ class FooBar extends AbstractService
 **In the config file**
 
 ```php
-    'service' => 'foobar',
+'service' => 'foobar',
 
-    'services' => [
+'services' => [
 
-        ...
+    ...
 
-        'foobar' => [
-            'class' => \App\GeoIP\Services\FooBar::class,
-            'some_option'  => 'some_option_value',
-        ],
-
+    'foobar' => [
+        'class' => \App\GeoIP\Services\FooBar::class,
+        'some_option'  => 'some_option_value',
     ],
+
+],
 ```

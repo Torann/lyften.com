@@ -1,9 +1,11 @@
 ---
 title: Upgrade
 template: documentation.twig::content_inner
-chapter: 6
+chapter: 7
 ---
 ## Upgrading To 0.2 From 1.0
+
+The location return when using the `getLocation()` method now returns an array accessible `Torann\GeoIP\Location` object.
 
 ### Facade
 

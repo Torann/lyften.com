@@ -10,3 +10,11 @@ Some services may need to update local files. For example the [MaxMind Database 
 ```bash
 php artisan geoip:update
 ```
+
+### Clearing Cached Locations
+
+Some cache drivers offer the ability to clear stored location.
+
+```bash
+php artisan geoip:clear
+```

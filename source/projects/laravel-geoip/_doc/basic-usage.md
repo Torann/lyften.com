@@ -15,24 +15,27 @@ geoip($ip = null);
 
 `$ip` - The Ip to look up. If not set the application default to the remote address.
 
-### Example Data
+### Example Location Object
 
 ```php
-[
-    'ip'           => '232.223.11.11',
-    'iso_code'     => 'US',
-    'country'      => 'United States',
-    'city'         => 'New Haven',
-    'state'        => 'CT',
-    'state_name'   => 'Connecticut',
-    'postal_code'  => '06510',
-    'lat'          => 41.28,
-    'lon'          => -72.88,
-    'timezone'     => 'America/New_York',
-    'continent'    => 'NA',
-    'currency'     => 'USD',
-    'default'      => false,
-]
+\Torann\GeoIP\Location {
+
+    #attributes:array [
+        'ip'           => '232.223.11.11',
+        'iso_code'     => 'US',
+        'country'      => 'United States',
+        'city'         => 'New Haven',
+        'state'        => 'CT',
+        'state_name'   => 'Connecticut',
+        'postal_code'  => '06510',
+        'lat'          => 41.28,
+        'lon'          => -72.88,
+        'timezone'     => 'America/New_York',
+        'continent'    => 'NA',
+        'currency'     => 'USD',
+        'default'      => false,
+    ]
+}
 ```
 
 #### Default Location
