@@ -14,6 +14,14 @@ Determine if given currency exists.
 currency()->hasCurrency('EUR');
 ```
 
+### `isActive($code)`
+
+Determine if the provided currency is active.
+
+```php
+currency()->isActive('EUR');
+```
+
 ### `setUserCurrency($code)`
 
 Set user's currency.
@@ -46,12 +54,12 @@ Clear all cached currencies.
 currency()->clearCache();
 ```
 
-### `getConfig($key, $default = null)`
+### `config($key, $default = null)`
 
-Get a currency configuration value.
+The `config` method gets the value of a configuration variable. The configuration values may be accessed using "dot" syntax. A default value may be specified and is returned if the configuration option does not exist:
 
 ```php
-currency()->getConfig('default');
+currency()->config('default');
 ```
 
 ## Managing Currencies
