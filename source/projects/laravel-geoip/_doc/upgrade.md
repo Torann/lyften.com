@@ -1,7 +1,7 @@
 ---
 title: Upgrade
 template: documentation.twig::content_inner
-chapter: 7
+chapter: 6
 ---
 ## Upgrading To 0.2 From 1.0
 

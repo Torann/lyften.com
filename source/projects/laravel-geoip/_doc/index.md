@@ -51,8 +51,22 @@ php artisan vendor:publish --provider="Torann\GeoIP\GeoIPServiceProvider" --tag=
 
 A configuration file will be publish to `config/geoip.php`.
 
-## Service Configuration
+## Configuration
+
+Quick breakdown of the two main options in the configuration file. To find out more simple open the `config/geoip.php` file.
+
+### Service Configuration
 
 To simplify and keep things clean, all third party composer packages, that are needed for a service, are installed separately.
 
 For further configuration options checkout the [services](/projects/laravel-geoip/doc/services.html) page.
+
+### Caching Configuration
+
+GeoIP uses Laravel's default caching to store queried IP locations. This is done to reduce the number of calls made to the selected service, as some of them are rate limited.
+
+**Options:**
+
+- `all` all location are cached
+- `some` cache only the requesting user
+- `none` caching is completely disable
