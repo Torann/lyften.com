@@ -3,7 +3,13 @@ title: Upgrade
 template: documentation.twig::content_inner
 chapter: 6
 ---
-## Upgrading To 0.2 From 1.0
+## Upgrading To 1.0 From 0.2
+
+### Updating Dependencies
+
+Update your `composer.json` file to point to `torann/geoip 1.0.*`.
+
+### Get location
 
 The location return when using the `getLocation()` method now returns an array accessible `Torann\GeoIP\Location` object.
 
