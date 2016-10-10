@@ -46,6 +46,22 @@ Return the current currency if the one supplied is not valid
 currency()->getCurrency();
 ```
 
+### `getCurrencies()`
+
+Return the all currencies.
+
+```php
+currency()->getCurrencies();
+```
+
+### `getActiveCurrencies()`
+
+Return the all **active** currencies.
+
+```php
+currency()->getActiveCurrencies();
+```
+
 ### `clearCache()`
 
 Clear all cached currencies.
