@@ -10,7 +10,7 @@ The simplest way to use these method is though the helper function `currency()` 
 This is a shortcut to the most commonly used `convert` method. Which converts the given amount into the provided currency.
 
 ```php
-currency($amount, $from = null, $to = null)
+currency($amount, $from = null, $to = null, $format = true)
 ```
 
 **Arguments:**
@@ -18,12 +18,14 @@ currency($amount, $from = null, $to = null)
 `$amount` - The float amount to convert
 `$from` - The current currency code of the amount. If not set the application default will be used (see `config/currency.php` file).
 `$to` - The currency code to convert the amount to. If not set the user set currency is used.
+`$format` - Defines if the function is going to return the converted amount formatted or not.
 
 **Usage:**
 
 ```php
 echo currency(12.00);               // Will format the amount using the user selected currency
 echo currency(12.00, 'USD', 'EUR'); // Will format the amount from the default currency to EUR
+echo currency(12.00, 'USD', 'EUR', false); // Will format the amount from the default currency to EUR without applying any format to the result
 ```
 
 ## Formatting
