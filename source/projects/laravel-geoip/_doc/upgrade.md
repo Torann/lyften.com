@@ -19,7 +19,7 @@ The namespace for the facade has changed to `\Torann\GeoIP\Facades\GeoIP::class`
 
 ### Config
 
-The config file has completely changed [geoip.php](https://github.com/Torann/laravel-geoip/tree/master/src/config/geoip.php).
+The config file has completely changed [geoip.php](https://github.com/Torann/laravel-geoip/blob/master/config/geoip.php).
 
 ### Service Changes
 
