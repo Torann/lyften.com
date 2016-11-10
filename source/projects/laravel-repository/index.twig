@@ -9,9 +9,18 @@ doc_url: /projects/laravel-repository/doc
 {% include 'project_header.twig' with {'intro': 'The Laravel Repository package is meant to be a generic repository implementation for Laravel.'} %}
 
 <div class="wrapper">
+
     <h2>What is a repository?</h2>
+
+    <p><a href="https://travis-ci.org/Torann/laravel-repository"><img src="https://camo.githubusercontent.com/18946ada53704db3ed7a46e5fee4e8ed7ae9273f/68747470733a2f2f7472617669732d63692e6f72672f546f72616e6e2f6c61726176656c2d7265706f7369746f72792e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/Torann/laravel-repository.svg?branch=master" style="max-width:100%;"></a>
+        <a href="https://packagist.org/packages/torann/laravel-repository"><img src="https://camo.githubusercontent.com/2e023dc15e5341d74f9871583509cb158e72e0e8/68747470733a2f2f706f7365722e707567782e6f72672f746f72616e6e2f6c61726176656c2d7265706f7369746f72792f762f737461626c652e706e67" alt="Latest Stable Version" data-canonical-src="https://poser.pugx.org/torann/laravel-repository/v/stable.png" style="max-width:100%;"></a>
+        <a href="https://packagist.org/packages/torann/laravel-repository"><img src="https://camo.githubusercontent.com/1eea06c80235bf30ac57cf92965fc9086e3f9508/68747470733a2f2f706f7365722e707567782e6f72672f746f72616e6e2f6c61726176656c2d7265706f7369746f72792f646f776e6c6f6164732e706e67" alt="Total Downloads" data-canonical-src="https://poser.pugx.org/torann/laravel-repository/downloads.png" style="max-width:100%;"></a>
+        <a href="https://www.patreon.com/torann"><img src="https://camo.githubusercontent.com/6446a7907a4d4f8de024ec85750feb07d7914658/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f70617472656f6e2d646f6e6174652d79656c6c6f772e737667" alt="Patreon donate button" data-canonical-src="https://img.shields.io/badge/patreon-donate-yellow.svg" style="max-width:100%;"></a>
+        <a href="https://gratipay.com/%7Etorann"><img src="https://camo.githubusercontent.com/37f25e7bb5950e4cb64b8e49a6096ae7da6cca29/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f67726174697061792d646f6e6174652d79656c6c6f772e737667" alt="Donate weekly to this project using Gratipay" data-canonical-src="https://img.shields.io/badge/gratipay-donate-yellow.svg" style="max-width:100%;"></a>
+        <a href="https://flattr.com/profile/torann"><img src="https://camo.githubusercontent.com/23203e80fef2506733f965dc8b56e68bf865941a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f666c617474722d646f6e6174652d79656c6c6f772e737667" alt="Donate to this project using Flattr" data-canonical-src="https://img.shields.io/badge/flattr-donate-yellow.svg" style="max-width:100%;"></a>
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=4CJA2A97NPYVU"><img src="https://camo.githubusercontent.com/d5d24e33e2f4b6fe53987419a21b203c03789a8f/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f6e6174652d50617950616c2d677265656e2e737667" alt="Donate to this project using Paypal" data-canonical-src="https://img.shields.io/badge/Donate-PayPal-green.svg" style="max-width:100%;"></a></p>
 
     <p>A repository is a class that lies somewhere between the controller and the database logic to make your application's service layers (including controllers) more lightweight and allows you to more easily re-use database logic in your application.</p>
 
-    <p>A pure repository implementation means that it is the gateway from your application logic to the database - only the repository knows how to read/write from/to the database, the rest of your application has to go through a repository to achieve persistance.</p>
+    <p>A pure repository implementation means that it is the gateway from your application logic to the database - only the repository knows how to read/write from/to the database, the rest of your application has to go through a repository to achieve persistence.</p>
 </div>

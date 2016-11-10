@@ -1,18 +1,18 @@
 ---
 title: Scopes
 template: documentation.twig::content_inner
-chapter: 4
+chapter: 6
 ---
-Scopes are a way to change the criteria of the query by applying specific conditions according to your needs. You can add multiple Criteria in your repository.
+Scopes are a way to change the repository of the query by applying specific conditions according to your needs. You can add multiple Criteria in your repository.
 
 ``` php
 <?php
 
-namespace App\Repositories\Users;
+namespace App\Repositories;
 
 use Torann\LaravelRepository\Repositories\AbstractRepository;
 
-class UsersRepository extends AbstractRepository implements UsersInterface
+class UsersRepository extends AbstractRepository
 {
     /**
      * Specify Model class name
@@ -42,21 +42,21 @@ class UsersRepository extends AbstractRepository implements UsersInterface
 
 namespace App\Http\Controllers;
 
-use App\Repositories\Users\UsersInterface;
+use App\Repositories\UserRepository;
 
 class UsersController extends Controller
 {
     /**
-     * @var UsersInterface
+     * @var UserRepository
      */
     protected $repository;
 
     /**
      * Create a new Controller instance.
      *
-     * @param UsersInterface $repository
+     * @param UserRepository $repository
      */
-    public function __construct(UsersInterface $repository)
+    public function __construct(UserRepository $repository)
     {
         $this->repository = $repository;
     }
