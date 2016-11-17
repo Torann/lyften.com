@@ -18,9 +18,13 @@ Get a new entity instance
 - `$attributes` - The array of attributes to fill the new model instance.
 
 
-### `newQuery()`
+### `newQuery($skipOrdering = false)`
 
-Get a new query builder instance
+Get a new query builder instance with the applied the order by and scopes.
+
+**Arguments:**
+
+- `$skipOrdering` - Skip the preset order by options.
 
 ### `find($id, $columns = ['*'])`
 
