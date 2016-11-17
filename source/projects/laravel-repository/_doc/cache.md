@@ -83,8 +83,6 @@ class UsersController extends Controller
 }
 ```
 
-The repository cache is cleared whenever an item is created, modified or deleted.
-
 #### Cache Config
 
 Enabling and disabling the cache globally can be done in the settings file `config/repositories.php`.
@@ -110,3 +108,30 @@ class UserRepository extends AbstractRepository
     ...
 }
 ```
+
+#### Clearing the Cache
+
+The repository cache can be automatically cleared whenever an item is created, modified or deleted. To do this you must set the `$eventFlushCache` value to `true` on in each repository that utilizes the caching method.
+
+
+``` php
+<?php
+
+namespace App\Repositories;
+
+use Torann\LaravelRepository\Repositories\AbstractRepository;
+
+class UserRepository extends AbstractRepository
+{
+    /**
+     * Flush the cache after create/update/delete events.
+     *
+     * @var bool
+     */
+    protected $eventFlushCache = true;
+
+    ...
+}
+```
+
+> This basically runs the `flushCache()` method on the repository after the item was created, modified or deleted.
