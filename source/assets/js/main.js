@@ -1,7 +1,7 @@
 $(document).ready(function () {
     'use strict';
 
-    var menu_closed = false;
+    var menu_closed = true;
 
     function getUrlParameter(sParam) {
         var sPageURL = window.location.search.substring(1);
@@ -48,7 +48,9 @@ $(document).ready(function () {
         template: "<div class=\"tweet\">{text}<div class=\"date-tweet\">{time}</div></div>"
     });
 
-    $('.mobile-menu').on('touchend', function () {
+    $('.mobile-menu').on('touchend', function (ev) {
+        ev && ev.preventDefault();
+
         $(this).toggleClass('open', menu_closed);
         $('header nav').toggleClass('open', menu_closed);
         $('body').toggleClass('menu-open', menu_closed);
