@@ -32,6 +32,10 @@ body {
   background-color: $body-bg;
   margin: 0;
   padding: 0;
+
+  &.menu-open {
+    overflow: hidden;
+  }
 }
 
 //= Reset fonts for relevant elements
@@ -116,32 +120,30 @@ img {
     line-height: 75px;
 
     img {
-      width: 202px;
-      margin-top: -12px;
+      width: 215px;
+      margin-top: -17px;
     }
   }
 
   @media screen and (max-width: 767px) {
-    & {
-      padding: 0 0 20px;
-      margin: 0;
-      height: auto;
+    padding: 10px 0 20px;
+    margin: 0;
+    height: inherit;
 
-      .logo {
-        position: absolute;
-        top: 2px;
-        left: 20px;
-        line-height: 0;
+    .logo {
+      line-height: 0;
+      display: block;
+      float: none;
 
-        img {
-          margin-top: -5px;
-        }
+      img {
+        margin-top: -5px;
+        width: 151px;
       }
     }
   }
 
   @media screen and (max-width: 300px) {
-    & .logo img {
+    .logo img {
       margin-top: 5px;
       width: 160px;
     }

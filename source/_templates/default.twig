@@ -4,8 +4,13 @@
         <meta charset="utf-8">
         <title>{% block title %}{{ isCurrent(page.url, '/') ? '' : page.title~' - ' }}{% endblock %}{{ site.title }}</title>
         <meta name="description" content="{{ metaDesc(page) }}">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta content="IE=edge" http-equiv="x-ua-compatible">
+        <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <meta name="theme-color" content="#7cc576">
+
         <meta name="google-site-verification" content="Wxg7tJp05VnlIn94qbUhmilbQFZKp8iBpyflVrOoAkY" />
 
         <meta property="og:url" content="{{ page.url }}"/>
@@ -43,13 +48,13 @@
 
                     <div class="logo">
                         <a href="{{ url('/') }}">
-                            <img src="{{ asset('/assets/images/logo.png') }}" alt="">
+                            <img src="{{ asset('/assets/images/logo.svg') }}" alt="Lyften.com">
                         </a>
                     </div>
 
-                    <div class="mobile-menu">
+                    <a href="#" class="mobile-menu">
                         <span class="line"></span>
-                    </div>
+                    </a>
 
                     {% include 'main_nav.twig' %}
 

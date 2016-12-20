@@ -24,10 +24,10 @@ composer create-project torann/skosh --prefer-dist
 
 ### Gulp
 
-Next, you'll want to pull in Gulp as a global NPM package
+Next, you'll want to pull in [Gulp](http://gulpjs.com) as a global NPM package
 
 ```bash
-npm install --global gulp
+npm install --global gulp-cli
 ```
 
 This will put the Gulp command in your system path, allowing it to be run from any directory.

@@ -91,58 +91,85 @@
   }
 
   @media screen and (max-width: 767px) {
+    float: none;
+    line-height: 25px;
+    padding-top: 90px;
+    display: block;
+    width: 100%;
+    transform: translate3d(100%, 0, 0);
+    right: 0;
+    height: 100vh;
+    background: $color-green;
+    position: absolute;
+    z-index: 9998;
+    transition: transform 0.3s ease-in-out;
+    top: 0;
+    overflow: hidden;
+    overflow-y: auto;
 
-    & {
-      float: none;
-      line-height: 25px;
-      margin-top: 90px;
-      width: 100%;
-      background-color: #3b3b3b;
+    &.open {
+      //right: 0;
+      transform: translate3d(0, 0, 0);
+    }
 
-      ul {
-        display: none;
-        padding: 0;
+    ul {
+      padding: 0;
 
-        li {
+      li {
+        display: block;
+        margin: 0;
+        padding: 0 15px;
+
+        a {
+          font-size: 17px;
+          font-weight: bold;
           display: block;
-          margin: 0;
-          border-bottom: 1px solid #757575;
-          padding: 8px 15px;
+          padding: 10px 0;
+          color: #000;
+        }
+
+        &.active a,
+        a:hover {
+          color: rgba(0, 0, 0, 0.31);
+        }
+
+        &.social {
+          margin: 15px 0 0;
+
+          a.icon {
+            display: inline-block;
+          }
+        }
+
+        ul {
+          display: block;
+          position: relative;
+          opacity: 1;
+          visibility: visible;
+        }
+
+        ul li {
+          padding: 0;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          a {
+            padding: 8px 15px;
+            color: #848484;
+          }
 
           ul {
             display: block;
             position: relative;
-            opacity: 1;
-            visibility: visible;
+            left: 0;
+            opacity: 1 !important;
+            visibility: visible !important;
           }
 
           ul li {
-            padding: 0;
-
-            &:last-child {
-              border-bottom: none;
-            }
-
-            a {
-              padding: 8px 15px;
-              color: #848484;
-            }
-
-            ul {
-              display: block;
-              position: relative;
-              left: 0;
-              opacity: 1 !important;
-              visibility: visible !important;
-            }
-
-            ul li {
-              margin-left: 12px !important;
-            }
-          }
-
-          a {
-            font-size: 13px;
+            margin-left: 12px !important;
           }
         }
       }
@@ -154,12 +181,13 @@
 //
 .wrapper header .mobile-menu {
   width: 32px;
-  height: 25px;
+  height: 32px;
   position: absolute;
   cursor: pointer;
   right: 20px;
   top: 30px;
   display: none;
+  z-index: 10000;
 
   ul {
     margin: 0;

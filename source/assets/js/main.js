@@ -1,15 +1,14 @@
 $(document).ready(function () {
-    "use strict";
+    'use strict';
 
-    function getUrlParameter(sParam)
-    {
+    var menu_closed = false;
+
+    function getUrlParameter(sParam) {
         var sPageURL = window.location.search.substring(1);
         var sURLVariables = sPageURL.split('&');
-        for (var i = 0; i < sURLVariables.length; i++)
-        {
+        for (var i = 0; i < sURLVariables.length; i++) {
             var sParameterName = sURLVariables[i].split('=');
-            if (sParameterName[0] == sParam)
-            {
+            if (sParameterName[0] == sParam) {
                 return decodeURIComponent(sParameterName[1]);
             }
         }
@@ -18,40 +17,43 @@ $(document).ready(function () {
     // Simple alerts
     var msg = getUrlParameter('msg');
     if (msg) {
-        var $alert = $('<div class="snackbar notice"><div class="container"><i class="icon-megaphone"></i> '+msg+'<a href="#" title="Close" class="close">×</a></div></div>').prependTo('body');
+        var $alert = $('<div class="snackbar notice"><div class="container"><i class="icon-megaphone"></i> ' + msg + '<a href="#" title="Close" class="close">×</a></div></div>').prependTo('body');
 
-        $alert.find('.close').bind('click', function(ev) {
+        $alert.find('.close').bind('click', function (ev) {
             $alert.remove();
         });
     }
 
     // Social Share
-    $('a[data-share]').bind('click', function(e) {
+    $('a[data-share]').bind('click', function (e) {
         e && e.preventDefault();
 
         var $this = $(this),
             site = $this.data('share'),
             url = $this.attr('href');
 
-        var shareWindow = window.open(url,'','resizable=yes,scrollbars=yes,'+(site === 'facebook' ? 'width=660,height=300' : 'width=580,height=420'));
+        var shareWindow = window.open(url, '', 'resizable=yes,scrollbars=yes,' + (site === 'facebook' ? 'width=660,height=300' : 'width=580,height=420'));
 
         // Popup was blocked
-        if(! shareWindow) {
+        if (!shareWindow) {
             window.location = url;
         }
     });
 
-    $(".show-tweets").tweet({
-        modpath: "/skosh.php?dispatch=twitter",
-        username: "lyften",
-        join_text: "auto",
-        loading_text: "loading tweet...",
+    $('.show-tweets').tweet({
+        modpath: '/skosh.php?dispatch=twitter',
+        username: 'lyften',
+        join_text: 'auto',
+        loading_text: 'loading tweet...',
         template: "<div class=\"tweet\">{text}<div class=\"date-tweet\">{time}</div></div>"
     });
 
-    $(".mobile-menu").click(function() {
-        $(this).toggleClass("open");
-        $("header nav > ul").slideToggle("slow");
+    $('.mobile-menu').on('touchend', function () {
+        $(this).toggleClass('open', menu_closed);
+        $('header nav').toggleClass('open', menu_closed);
+        $('body').toggleClass('menu-open', menu_closed);
+
+        menu_closed = !menu_closed;
     });
 
     // Waypoints
@@ -65,24 +67,24 @@ $(document).ready(function () {
     });
 
     // Fixes waypoint
-    $('iframe.snapwidget-widget').on('load', function() {
-        $(window).trigger("resize");
+    $('iframe.snapwidget-widget').on('load', function () {
+        $(window).trigger('resize');
     });
 
     // Fix sticky width
-    $(window).on('resize', function() {
+    $(window).on('resize', function () {
         $stickyShare.width($stickyShare.parent().width());
     }).trigger('resize');
 });
 
-$(window).load(function() {
-    "use strict";
+$(window).load(function () {
+    'use strict';
 
     $('.masonry-container').isotope({
         itemSelector: '[class^="col-"], [class*=" col-"]'
     });
 
-    $(function() {
+    $(function () {
         var $filters = $('.filters');
 
         // init Isotope
@@ -93,20 +95,20 @@ $(window).load(function() {
         // Filter functions
         var filterFns = {
             // show if number is greater than 50
-            numberGreaterThan50: function() {
+            numberGreaterThan50: function () {
                 var number = $(this).find('.number').text();
                 return parseInt(number, 10) > 50;
             },
 
             // show if name ends with -ium
-            ium: function() {
+            ium: function () {
                 var name = $(this).find('.name').text();
                 return name.match(/ium$/);
             }
         };
 
         // Bind filter button click
-        $filters.on('click', 'li', function() {
+        $filters.on('click', 'li', function () {
             var filterValue = $(this).attr('data-filter');
 
             // use filterFn if matches value
@@ -117,10 +119,10 @@ $(window).load(function() {
         });
 
         // Change is-checked class on buttons
-        $filters.each(function(i, buttonGroup) {
+        $filters.each(function (i, buttonGroup) {
             var $buttonGroup = $(buttonGroup);
 
-            $buttonGroup.on('click', 'li', function() {
+            $buttonGroup.on('click', 'li', function () {
                 $buttonGroup.find('.active').removeClass('active');
                 $(this).addClass('active');
             });
@@ -129,7 +131,7 @@ $(window).load(function() {
 });
 
 function dd() {
-    if(typeof(console) === 'object') {
+    if (typeof(console) === 'object') {
         console.log.apply(console, arguments);
     }
 }
