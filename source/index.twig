@@ -83,6 +83,14 @@ template: default.twig
         } %}
 
         {% include 'project_item.twig' with {
+        'url': '/projects/laravel-asana',
+        'image': '/uploads/projects/laravel-asana/logo.png',
+        'title': 'Laravel Asana',
+        'description': 'Asana API Wrapper for Laravel',
+        'tags': 'laravel php'
+        } %}
+
+        {% include 'project_item.twig' with {
         'url': '/projects/laravel-registry',
         'image': '/uploads/projects/laravel-registry/logo.png',
         'title': 'Laravel Registry',
@@ -111,14 +119,6 @@ template: default.twig
         'image': '/uploads/projects/duct/logo.png',
         'title': 'Duct',
         'description': 'Asset management duckwork',
-        'tags': 'laravel php'
-        } %}
-
-        {% include 'project_item.twig' with {
-        'url': '/projects/laravel-asana',
-        'image': '/uploads/projects/laravel-asana/logo.png',
-        'title': 'Laravel Asana',
-        'description': 'Asana API Wrapper for Laravel',
         'tags': 'laravel php'
         } %}
 
