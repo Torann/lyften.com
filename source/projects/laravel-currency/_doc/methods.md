@@ -88,10 +88,10 @@ Create a currency using the default driver.
 
 ```php
 currency()->create([
-    'currency_name' => 'U.S. Dollar',
-    'currency_code' => 'USD',
-    'currency_symbol' => '$',
-    'currency_format' => '$1,0.00',
+    'name' => 'U.S. Dollar',
+    'code' => 'USD',
+    'symbol' => '$',
+    'format' => '$1,0.00',
     'exchange_rate' => 1.00000000,
     'active' => 1,
 ]);
