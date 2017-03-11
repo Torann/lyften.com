@@ -29,12 +29,6 @@ php artisan localization:missing -n
 php artisan localization:missing -b
 ```
 
-##### Generate all lang files without keeping obsolete lemmas
-
-```bash
-php artisan localization:missing -o
-```
-
 ##### Generate all lang files without any comment for new found lemmas
 
 ```bash
