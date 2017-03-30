@@ -3,11 +3,11 @@ title: Basic usage
 template: documentation.twig::content_inner
 chapter: 2
 ---
-The simplest way to use these method is though the helper function `currency()` or by using the facade. For the examples below we will use the helper method.
+The simplest way to use these methods is through the helper function `currency()` or by using the facade. For the examples below we will use the helper method.
 
 ## Converting
 
-This is a shortcut to the most commonly used `convert` method. Which converts the given amount into the provided currency.
+This is a shortcut to the most commonly used `convert` method, which converts the given amount into the provided currency.
 
 ```php
 currency($amount, $from = null, $to = null, $format = true)
@@ -16,8 +16,8 @@ currency($amount, $from = null, $to = null, $format = true)
 **Arguments:**
 
 `$amount` - The float amount to convert
-`$from` - The current currency code of the amount. If not set the application default will be used (see `config/currency.php` file).
-`$to` - The currency code to convert the amount to. If not set the user set currency is used.
+`$from` - The current currency code of the amount. If not set, the application default will be used (see `config/currency.php` file).
+`$to` - The currency code to convert the amount to. If not set, the user-set currency is used.
 `$format` - Should the returned value be formatted.
 
 **Usage:**
@@ -38,7 +38,7 @@ currency_format($amount, $code = null)
 **Arguments:**
 
 `$amount` - The float amount to convert
-`$code` - The current currency code of the amount. If not set the application default will be used (see `config/currency.php` file).
+`$code` - The current currency code of the amount. If not set, the application default will be used (see `config/currency.php` file).
 
 **Usage:**
 
