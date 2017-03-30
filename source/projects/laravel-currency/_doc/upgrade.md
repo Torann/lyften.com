@@ -5,7 +5,7 @@ chapter: 7
 ---
 ## Upgrading To 1.0 From 0.3
 
-There was a move to simplify the entire package, it was getting a little to crazy.
+There was a move to simplify the entire package, it was getting a little too crazy.
 
 ### Updating Dependencies
 
@@ -13,7 +13,7 @@ Update your `composer.json` file to point to `torann/currency 1.0.*`.
 
 ### Preset Currencies
 
-The preset currencies that once shipped with the package inside of the migration file have been moved to an [artisan command](/projects/laravel-currency/doc/commands.html) where you can pick and choose which currencies to support. Where as the old method installed all of them.
+The preset currencies that once shipped with the package inside of the migration file have been moved to an [artisan command](/projects/laravel-currency/doc/commands.html) where you can pick and choose which currencies to support. Whereas the old method installed all of them.
 
 See the [manage artisan command](/projects/laravel-currency/doc/commands.html) for more.
 
