@@ -84,7 +84,7 @@ class UsersController extends Controller
 
 ### More Complex Searching
 
-For a more complex search, we added the columns `confirmed` adn `user_role_id` to searchable array.
+For a more complex search, we added the columns `confirmed` and `user_role_id` to the searchable array.
 
 ```php
 <?php
@@ -167,7 +167,7 @@ class UsersController extends Controller
 
 The columns names can also include joined tables. To do this simple prefix the column with the table name.
 
-For example let's say we have a table that is called `profiles` and it is joined using a [Global Scope](https://laravel.com/docs/master/eloquent#global-scopes). We searching the user's name, we can also search their profile's slug for the same value.
+For example let's say we have a table that is called `profiles` and it is joined using a [Global Scope](https://laravel.com/docs/master/eloquent#global-scopes). We are searching the user's name, we can also search their profile's slug for the same value.
 
 ```php
 <?php
