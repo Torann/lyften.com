@@ -19,7 +19,7 @@ See the [manage artisan command](/projects/laravel-currency/doc/commands.html) f
 
 ### Database Changes
 
-The database columns names were changed see [/migrations/2013_11_26_161501_create_currency_table.php](https://github.com/Torann/laravel-currency/blob/master/src/migrations/2013_11_26_161501_create_currency_table.php)
+The database columns names were changed see [/migrations/2013_11_26_161501_create_currency_table.php](https://github.com/Torann/laravel-currency/blob/master/database/migrations/2013_11_26_161501_create_currency_table.php)
 
 **Changes:**
 
