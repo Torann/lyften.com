@@ -53,7 +53,7 @@ Run this on the command line from the root of your project:
 php artisan vendor:publish --provider="Torann\Currency\CurrencyServiceProvider" --tag=config
 ```
 
-A configuration file will be publish to `config/currency.php`.
+A configuration file will be published to `config/currency.php`.
 
 ### Migration
 
