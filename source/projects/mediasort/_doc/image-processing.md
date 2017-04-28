@@ -11,6 +11,7 @@ MeidaSort makes use of the [Imagine Image](https://packagist.org/packages/imagin
 * **widthxheight#**: Resize then crop.
 * **widthxheight!**: Resize by exacty width and height.  Width and height emphatically given, original aspect ratio will be ignored.
 * **widthxheight**: Auto determine both width and height when resizing.  This will resize as close as possible to the given dimensions while still preserving the original aspect ratio.
+* **widthxheight?**: By including a question mark this ensures the system doesn't enlarge images that are smaller than what's specified.
 
 To create styles for a media item, simply define them (you may use any style name you like: foo, bar, baz, etc) inside the media item's styles array using a combination of the directives defined above:
 
