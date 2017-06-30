@@ -48,10 +48,20 @@ currency()->getCurrency();
 
 ### `getCurrencies()`
 
-Return the all currencies.
+Return the all currencies as named array.
 
 ```php
 currency()->getCurrencies();
+```
+
+Sample code:
+
+```php
+$currencies = currency()->getCurrencies();
+foreach($currencies as $currency) {
+    echo $currency['code']; // Print the code USD for US Dollar
+    echo $currency['name']; // Print the string "US Dollar"
+}
 ```
 
 ### `getActiveCurrencies()`
