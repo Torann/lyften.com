@@ -20,19 +20,13 @@ php artisan currency:manage <action> <currency>
 
 ### Updating Exchange
 
-By default exchange rates are updated from Finance Yahoo.com.
+Update exchange rates from OpenExchangeRates.org. An API key is needed to use [OpenExchangeRates.org](http://OpenExchangeRates.org). Add yours to the config file.
 
 ```bash
 php artisan currency:update
 ```
 
-To update from OpenExchangeRates.org
-
-```bash
-php artisan currency:update --openexchangerates
-```
-
-> Note: An API key is needed to use [OpenExchangeRates.org](http://OpenExchangeRates.org). Add yours to the config file.
+> Note: Yahoo has discontinued the use of their exchange rate API, so it has been removed from the package.
 
 ### Cleanup
 
