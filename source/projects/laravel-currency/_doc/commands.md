@@ -5,7 +5,7 @@ chapter: 4
 ---
 ### Manage
 
-Easily add, update, or delete currencies from the default storage. This is extremely helpful when there are changes to currecny data, such as symbols and such.
+Easily add, update, or delete currencies from the default storage. This is extremely helpful when there are changes to currency data, such as symbols and such.
 
 ```
 php artisan currency:manage <action> <currency>
