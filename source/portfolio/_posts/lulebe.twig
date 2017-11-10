@@ -1,0 +1,150 @@
+---
+template: default.twig
+title: Lulebe
+description: An online resource, community and marketplace for people who love plants..
+date: 07/14/2016
+image: /uploads/portfolio/lulebe/cover.png
+tags: Branding|Web Application
+---
+<div class="project-single">
+    <div class="row">
+
+        <div class="col-md-5">
+            <div class="single-info">
+
+                <div class="project-description">
+                    <h1>{{ page.title }}</h1>
+                    <span>{{ page.tags }}</span>
+                    <p>An online resource, community and marketplace for people who love plants.</p>
+                </div>
+
+                <div class="project-services">
+                    <ul>
+                        <li>
+                            <strong>Client:</strong> Personal Project
+                        </li>
+                        <li>
+                            <strong>Date:</strong> {{ page.date|date("M d, Y") }}
+                        </li>
+                        <li>
+                            <strong>Link:</strong> <a href="https://lulebe.com" target="_blank">https://lulebe.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-7 project-photos">
+            <img src="{{ asset('/uploads/portfolio/lulebe/homepage.png') }}" alt="Lulebe">
+        </div>
+
+        <div class="col-md-12">
+
+            <div class="row m-t-l">
+                <div class="col-md-7">
+                    <img src="{{ asset('/uploads/portfolio/lulebe/plants-trending.png') }}" alt="Lulebe plants">
+                </div>
+                <div class="col-md-5">
+                    <h3>Plants</h3>
+                    <p>With over 97,000 plants index along with the attributes such as foliage colors, light requirements, planting space and depth, germination times, and many other attributes I decided to create a robust search system. Which led me to Amazon's CloudSearch service and the creation of my <a href="https://github.com/Torann/laravel-cloudsearch" target="_blank">CloudSearch Package</a> for Laravel. But sadly the cost coming in from the site and the cost to run the CloudSearch service was too much, so I had to go back to PostgreSQL's built in search.</p>
+                </div>
+            </div>
+
+            <div class="row m-t-l">
+                <div class="col-md-5">
+                    <h3>Plants Attributes</h3>
+                    <p>At the time of release only basic plant attributes were displayed at the top of a plant's page. In future interactions I plan of adding a blooming time chart and planting depth and time chart (based on zone).</p>
+                </div>
+                <div class="col-md-7">
+                    <img src="{{ asset('/uploads/portfolio/lulebe/plants-view.png') }}" alt="Lulebe a single plant">
+                </div>
+            </div>
+
+            <div class="row m-t-l">
+                <div class="col-md-7">
+                    <img src="{{ asset('/uploads/portfolio/lulebe/plants-editing.png') }}" alt="Lulebe plant editing">
+                </div>
+                <div class="col-md-5">
+                    <h3>Plant Editing</h3>
+                    <p>With plant editing I had a little fun. I created a simple (for the end user at least) Markdown editor. With it came support for citations and image uploading (view a simple in editor preview).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="spacer">
+
+    <div class="row">
+        <h2 id="marketplace">Marketplace</h2>
+
+        <p>The marketplace was built using Etsy as inspiration, such as it's real-time shipping quotes, shipping profiles, sales tax management, and orders system.</p>
+
+        <div class="row">
+            <div class="col-md-5">
+                <h3>Product Management</h3>
+                <p>With a simple overview page, the shop owner can review products and see how many views a product has received. All analytic data is stored and processed using <a href="https://piwik.org" target="_blank">Piwik</a>, with it's easy to use API and fast response time it gives the shop owners (and export article authors) near real-time data.</p>
+                <p><strong>Note</strong> in a future release I will expose more analytic data</p>
+            </div>
+            <div class="col-md-7">
+                <img src="{{ asset('/uploads/portfolio/lulebe/shop-products.png') }}" alt="Marketplace products">
+            </div>
+        </div>
+
+        <div class="row m-t-l">
+            <div class="col-md-7">
+                <img src="{{ asset('/uploads/portfolio/lulebe/shop-product-edit.png') }}" alt="Marketplace product management">
+            </div>
+            <div class="col-md-5">
+                <h3>Product Editing</h3>
+                <p>Managing products was created to be as smooth as possible. A product can have a sinlge or multiple plants attached to it. This helps show the number of plants for sale on the plants main page.</p>
+            </div>
+        </div>
+
+        <div class="row m-t-l">
+            <div class="col-md-5">
+                <h3>Product View</h3>
+                <p>Since a shop owner has a profile page I thought it would help make the site a little more social by having the product page be inside of the sellers profile. Doing this increases the chance of a user looking around.</p>
+            </div>
+            <div class="col-md-7">
+                <img src="{{ asset('/uploads/portfolio/lulebe/shop-product-view.png') }}" alt="Marketplace product view">
+            </div>
+        </div>
+    </div>
+
+    <hr class="spacer">
+
+    <div class="row">
+        <div class="row">
+            <div class="col-md-7">
+                <img src="{{ asset('/uploads/portfolio/lulebe/experts-trending.png') }}" alt="Marketplace experts">
+            </div>
+            <div class="col-md-5">
+                <h2 id="experts">Expert Articles</h2>
+                <p>Lulebe allows users to create expert articles which are used to better help the community or explain how to care for a plant the author is selling.</p>
+
+                <h3>Trending</h3>
+                <p>As with the plants index page, the expert page shows the top trending articles and allows for in depth searching.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="spacer">
+
+    <div class="row">
+        <h2 id="nearby">Nearby</h2>
+
+        <p>A bit of an experimental feature (currently turned off), this section of Lulebe allows user to find nearby parks, nurseries, botanical gardens, and other plant related businesses or locations.</p>
+
+        <div class="row">
+            <div class="col-md-5">
+                <h3>Map View</h3>
+                <p>Using <a href="http://leafletjs.com" target="_blank">Leaflet.js</a> and Wikimedia maps, I was able to create a interactive map to highlight locations of interest. </p>
+            </div>
+            <div class="col-md-7">
+                <img src="{{ asset('/uploads/portfolio/lulebe/nearby-map.png') }}" alt="Nearby">
+            </div>
+        </div>
+    </div>
+</div>
+

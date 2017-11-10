@@ -1,7 +1,7 @@
 # Site configuration
 timezone: America/New_York
 title: Lyften
-url: http://lyften.local:8888
+url: http://localhost:8000
 target: /public
 url_trailing_slash: true
 date_format: F m, Y
