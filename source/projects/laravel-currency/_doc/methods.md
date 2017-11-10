@@ -58,6 +58,7 @@ Sample code:
 
 ```php
 $currencies = currency()->getCurrencies();
+
 foreach($currencies as $currency) {
     echo $currency['code']; // Print the code USD for US Dollar
     echo $currency['name']; // Print the string "US Dollar"
