@@ -23,11 +23,11 @@ From the command line run:
 $ composer require torann/currency
 ```
 
-### Laravel's >=5.5 auto discovery
+### Laravel's >=5.5 Auto-Discovery
 
 Simply install the package and let Laravel do its magic.
 
-### Manual installation
+### Manual Setup
 
 Once installed you need to register the service provider with the application. Open up `config/app.php` and find the `providers` key.
 
