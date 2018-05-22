@@ -213,6 +213,7 @@ joining_table:column,foreign_key,related_key
 - **column** this is the column we perform the were query
 - **foreign_key** the key on the joining table to create the join with
 - **related_key** the local or related key, this will be auto-created if not provided
+- **joining_table_alias** optional attribute used as the joining table alias
 
 #### Example
 
