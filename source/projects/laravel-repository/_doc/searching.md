@@ -198,3 +198,48 @@ class UsersRepository extends AbstractRepository
     ];
 }
 ```
+
+### Searching Relationship Tables
+
+Sometimes you may need to search an attribute that's located a relationship table. To do that we use a special syntax as the value for the searchable key. Keep in mind this is not intended for `query` searching.
+
+**Syntax**
+
+```
+joining_table:column,foreign_key,related_key
+```
+
+- **joining_table** is the table used for joining
+- **column** this is the column we perform the were query
+- **foreign_key** the key on the joining table to create the join with
+- **related_key** the local or related key, this will be auto-created if not provided
+
+```php
+<?php
+
+namespace App\Repositories;
+
+use Torann\LaravelRepository\Repositories\AbstractRepository;
+
+class PostsRepository extends AbstractRepository
+{
+    /**
+     * Specify Model class name
+     *
+     * @return string
+     */
+    protected $model = \App\Post::class;
+
+    /**
+     * Valid searchable columns
+     *
+     * @return array
+     */
+    protected $searchable = [
+        'author' => 'users:name,id,user_id',
+        'query' => [
+            'title',
+        ],
+    ];
+}
+```
