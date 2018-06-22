@@ -17,12 +17,6 @@ Use `php artisan localization:missing` for more information about options.
 php artisan localization:missing
 ```
 
-##### Generate all lang files and backup the old files
-
-```bash
-php artisan localization:missing --backup
-```
-
 ##### Generate all lang files and set new lemma values
 
 3 commands below produce the same output:
