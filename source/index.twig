@@ -25,6 +25,21 @@ template: default.twig
     {#</div>#}
 
     <div class="row masonry-container">
+        {% include 'project_item.twig' with {
+        'url': '/projects/mediasort',
+        'image': '/uploads/projects/mediasort/logo.png',
+        'title': 'MediaSort',
+        'description': 'Upload manager for Laravel',
+        'tags': 'laravel php'
+        } %}
+
+        {% include 'project_item.twig' with {
+        'url': '/projects/localization-helpers',
+        'image': '/uploads/projects/localization-helpers/logo.png',
+        'title': 'Localization Helpers',
+        'description': 'Tools to help you manage translations',
+        'tags': 'laravel php'
+        } %}
 
         {% include 'project_item.twig' with {
         'url': '/projects/laravel-repository',
@@ -64,22 +79,6 @@ template: default.twig
         'title': 'Skosh.',
         'description': 'Simple static site generator',
         'tags': 'php'
-        } %}
-
-        {% include 'project_item.twig' with {
-        'url': '/projects/mediasort',
-        'image': '/uploads/projects/mediasort/logo.png',
-        'title': 'MediaSort',
-        'description': 'Upload manager for Laravel',
-        'tags': 'laravel php'
-        } %}
-
-        {% include 'project_item.twig' with {
-        'url': '/projects/localization-helpers',
-        'image': '/uploads/projects/localization-helpers/logo.png',
-        'title': 'Localization Helpers',
-        'description': 'Tools to help you manage translations',
-        'tags': 'laravel php'
         } %}
 
         {% include 'project_item.twig' with {
