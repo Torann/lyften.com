@@ -35,6 +35,16 @@ Register for a license key and user ID at [www.maxmind.com](https://www.maxmind.
 'service' => 'maxmind_api',
 ```
 
+### IPGEOLOCATION API
+
+Register at [ipgeolocation.io/](https://ipgeolocation.io/signup) to get api key and add it into your env file as:
+IPGEOLOCATION_KEY = YOUR_API_KEY
+
+
+```php
+'service' => 'ipgeolocation',
+```
+
 ## Custom Service
 
 Services are stored in the GeoIP's config file `config/geoip.php`. Simply update the `service` with the name of your custom service and add it to the `services` specific configuration section with the `class` value as the custom classname.
