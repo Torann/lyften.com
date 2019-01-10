@@ -18,9 +18,10 @@ The following configuration settings apply to MeidaSort in general.
 - **prefix_url**: Prefix URL used when displaying a media item. This is helpful for cloud storage or a subdomain location. If left blank the URL will be the same as the requesting domain.
 - **image_processing**: The underlying image processing library being used.  Defaults to `\\Imagine\\Gd\\Imagine` but can also be set to `\\Imagine\\Imagick\\Imagine` or `\\Imagine\\Gmagick\\Imagine`.
 - **auto_orient**: Automatically orient images that are positioned incorrectly. This is helpful for mobile uploads.
-- **convert_tiff**: Automatically convert TIFF images to PNG. This option works with the Imagick image processor
 - **color_palette**: Set a palette for the image. Useful to change colorspace. Value must be a class that implements the `\Imagine\Image\Palette\PaletteInterface`
 - **default_url**: The default file returned when no file upload is present for a record.
+- **loading_url**: The loading file returned when a model is marked as in progress.
+- **processing_key**: Model attribute used to determine if the file is being processed.
 - **visibility**: Here you may configure the visibility of the newly uploaded file. This primarily pertains to cloud based file storage. Options are `public` or `private`.
 - **styles**: An array of image sizes defined for the file attachment. MeidaSort will attempt to use to format the file upload into the defined style.
 -   **keep_old_files**: Set this to true in order to prevent older file uploads from being deleted from the file system when a record is updated.
