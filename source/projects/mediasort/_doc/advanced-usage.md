@@ -40,3 +40,66 @@ Reprocess a list of media items on the ProfilePicture model:
 ```bash
 php artisan media:refresh TestPhoto --media="foo, bar, baz, etc"
 ```
+
+### Queued Processing
+
+For larger files that may timeout the server when trying to upload them we can use a queue. This was added for a project I did that allowed for multiple images to be uploaded at once, and some of those images needed further processing.
+
+To handing this the MediaSort config needs to be set to allow for queuing. This can be done globally in the `mediasort.php` or on a per attachment passes. See `loading_url`, `queueable`, and `queue_path` options in the config file.
+
+After creation send the media to queue:
+
+```php
+$media  = Media::create([
+    'video' => Input::file('video')
+]);
+
+dispatch(
+    new ProcessAttachments($media)
+);
+```
+
+This is the what a basic job file would look like:
+ 
+```php
+<?php 
+
+namespace App\Jobs;
+
+use Illuminate\Bus\Queueable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Queue\ShouldQueue;
+
+class ProcessAttachments implements ShouldQueue
+{
+    use Queueable;
+
+    /**
+     * @var Model
+     */
+    public $model;
+
+    /**
+     * Create a new job instance.
+     *
+     * @param Model $model
+     */
+    public function __construct(Model $model)
+    {
+        $this->model = $model;
+    }
+    
+    /**
+     * Execute the job.
+     *
+     * @return void
+     */
+    public function handle()
+    {
+        /** @var \Torann\MediaSort\Manager $attachment */
+        foreach ($this->model->getQueuedAttachments() as $attachment) {
+            $attachment->processQueue($this->model);
+        }
+    }
+}
+```
