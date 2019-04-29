@@ -48,7 +48,7 @@ IPGEOLOCATION_KEY = YOUR_API_KEY
 ### IPFINDER API
 
 Register at [ipfinder.io/](https://ipfinder.io/auth/signup) to get api key and add it into your env file as:
-IPGEOLOCATION_KEY = YOUR_API_KEY
+IPFINDER_API_KEY = YOUR_API_KEY
 
 
 ```php
