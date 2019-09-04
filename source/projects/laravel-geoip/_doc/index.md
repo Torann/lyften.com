@@ -14,9 +14,8 @@ chapter: 1
 
 ## Installation
 
-- [GeoIP for Laravel 5 on Packagist](https://packagist.org/packages/torann/geoip)
-- [GeoIP for Laravel 5 on GitHub](https://github.com/Torann/laravel-geoip)
-- [Laravel 5.0/Pre-5.5 PHP Installation](https://github.com/Torann/laravel-geoip/tree/0.2.2)
+- [GeoIP for Laravel on Packagist](https://packagist.org/packages/torann/geoip)
+- [GeoIP for Laravel on GitHub](https://github.com/Torann/laravel-geoip)
 - [Laravel 4 Installation](https://github.com/Torann/laravel-geoip/tree/0.1.1)
 
 ### Composer
