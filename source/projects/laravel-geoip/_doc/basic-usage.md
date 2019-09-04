@@ -3,7 +3,7 @@ title: Basic usage
 template: documentation.twig::content_inner
 chapter: 2
 ---
-The simplest way to use these method is though the helper function `geoip()` or by using the facade `\Torann\GeoIP\Facades\GeoIP`. For the examples below we will use the helper method.
+The simplest way to use these method is through the helper function `geoip()` or by using the facade `\Torann\GeoIP\Facades\GeoIP`. For the examples below we will use the helper method.
 
 Get the location data for a website visitor:
 
