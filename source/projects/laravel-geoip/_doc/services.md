@@ -37,7 +37,7 @@ Register for a license key and user ID at [www.maxmind.com](https://www.maxmind.
 
 ### IPGEOLOCATION API
 
-Register at [ipgeolocation.io/](https://ipgeolocation.io/signup) to get api key and add it into your env file as:
+Register at [ipgeolocation.io](https://ipgeolocation.io/signup) to get api key and add it into your env file as:
 IPGEOLOCATION_KEY = YOUR_API_KEY
 
 
@@ -47,7 +47,7 @@ IPGEOLOCATION_KEY = YOUR_API_KEY
 
 ### IPFINDER API
 
-Register at [ipfinder.io/](https://ipfinder.io/auth/signup) to get api key and add it into your env file as:
+Register at [ipfinder.io](https://ipfinder.io/auth/signup) to get api key and add it into your env file as:
 IPFINDER_API_KEY = YOUR_API_KEY
 
 
