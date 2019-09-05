@@ -45,6 +45,16 @@ IPGEOLOCATION_KEY = YOUR_API_KEY
 'service' => 'ipgeolocation',
 ```
 
+### IPFINDER API
+
+Register at [ipfinder.io/](https://ipfinder.io/auth/signup) to get api key and add it into your env file as:
+IPFINDER_API_KEY = YOUR_API_KEY
+
+
+```php
+'service' => 'ipfinder',
+```
+
 ## Custom Service
 
 Services are stored in the GeoIP's config file `config/geoip.php`. Simply update the `service` with the name of your custom service and add it to the `services` specific configuration section with the `class` value as the custom classname.
