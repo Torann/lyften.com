@@ -3,6 +3,22 @@ title: Upgrade
 template: documentation.twig::content_inner
 chapter: 6
 ---
+## Upgrading to 1.1 from 1.0
+
+### Updating Dependencies
+
+Update your `composer.json` file to point to `torann/geoip 1.1.*`.
+
+### Config
+
+The `update_url` for the `maxmind_database` service has changed to support the new endpoint that requires authentication. Read [more about this change and how to get the required licence key on the MaxMind blog](https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/). Then update your configuration with the following URL, or reference the latest [geoip.php](https://github.com/Torann/laravel-geoip/blob/master/config/geoip.php).
+
+```
+'update_url' => sprintf('https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key=%s&suffix=tar.gz', env('MAXMIND_LICENSE_KEY')),
+```
+
+Note that the `MAXMIND_LICENCE_KEY` environment variable name is shared with the `maxmind_api` service should you be using both.
+
 ## Upgrading To 1.0 From 0.2
 
 ### Updating Dependencies
