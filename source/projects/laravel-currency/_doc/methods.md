@@ -121,7 +121,9 @@ currency()->find('USD');
 Update the provided currency's value using the default driver
 
 ```php
-currency()->update('USD', 1.22);
+currency()->update('USD', [
+    'exchange_rate' => 1.22
+]);
 ```
 
 ### `delete($code)`
