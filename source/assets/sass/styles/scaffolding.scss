@@ -493,27 +493,6 @@ hr.spacer {
             text-decoration: none;
           }
         }
-
-        &.tweet_list {
-
-          li {
-            margin-bottom: 20px;
-
-            a {
-              color: $link-color;
-            }
-
-            .date-tweet {
-              display: block;
-              font-size: 12px;
-
-              &, a {
-                color: #A7A7A7;
-              }
-            }
-          }
-        }
-
       }
 
       &.tags ul li {

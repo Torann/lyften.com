@@ -18,11 +18,15 @@ Redirect 301 /projects/lyften-bloggie.html /projects/lyftenbloggie
 Redirect 301 /projects/lyften-bloggie/documentation.html /projects/lyftenbloggie/doc
 
 # Redirect errors
-ErrorDocument 404 http://lyften.com
+ErrorDocument 404 https://lyften.com
 
 # Projects is now the homepage
 RewriteRule ^projects/?$ / [L,R]
 
 # Redirect www urls to non-www
 RewriteCond %{HTTP_HOST} ^www\.lyften\.com [NC]
-RewriteRule (.*) http://lyften.com/$1 [R=301,L]
+RewriteRule (.*) https://lyften.com/$1 [R=301,L]
+
+# Force SSL Connection
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

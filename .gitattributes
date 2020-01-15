@@ -1,0 +1,27 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text eol=lf
+
+# Use detect blob languages, ignore binary or vendored files.
+*.css   linguist-vendored
+*.scss  linguist-vendored
+*.js    linguist-vendored
+
+# Denote all files that are truly binary and should not be modified.
+*.png   binary
+*.gif   binary
+*.jpeg  binary
+*.svg   binary
+*.jpg   binary
+*.eot   binary
+*.ttf   binary
+*.woff  binary
+*.woff2 binary
+*.otf   binary
+*.xls   binary
+*.xlsx  binary
+*.doc   binary
+*.docx  binary
+*.pdf   binary
+*.zip   binary
+*.tar   binary
+

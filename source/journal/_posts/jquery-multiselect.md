@@ -17,7 +17,7 @@ Primary jQuery file (`jquery.multiselect.js`):
  * @brief Support for multi-select dropdowns.
  * @author Daniel Stainback (Torann)
  * @version 0.1
- * @site http://lyften.com/journal/jquery-multiselect.html
+ * @site https://lyften.com/journal/jquery-multiselect.html
  * @license BSD 2-Clause
  */
 

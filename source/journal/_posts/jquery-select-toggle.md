@@ -16,7 +16,7 @@ Primary jQuery file (`jquery.select-toggle.js`):
  * @file jquery.select-toggle.js
  * @brief Toggle secondary items in a form.
  * @author Daniel Stainback (Torann)
- * @site http://lyften.com/journal/jquery-select-toggle.html
+ * @site https://lyften.com/journal/jquery-select-toggle.html
  * @version 0.1
  * @license BSD 2-Clause
  */

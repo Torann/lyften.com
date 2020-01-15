@@ -9,3 +9,5 @@ node_modules
 rev-manifest.json
 downloads.json
 /workbench
+npm-debug.log
+yarn-error.log

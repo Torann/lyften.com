@@ -40,14 +40,6 @@ $(document).ready(function () {
         }
     });
 
-    $('.show-tweets').tweet({
-        modpath: '/skosh.php?dispatch=twitter',
-        username: 'lyften',
-        join_text: 'auto',
-        loading_text: 'loading tweet...',
-        template: "<div class=\"tweet\">{text}<div class=\"date-tweet\">{time}</div></div>"
-    });
-
     $('.mobile-menu').on('touchend', function (ev) {
         ev && ev.preventDefault();
 

@@ -21,6 +21,7 @@ class Metadata extends AbstractExtension
      * Process description.
      *
      * @param  $page
+     *
      * @return string
      */
     public function getMetaDesc($page)
@@ -35,22 +36,23 @@ class Metadata extends AbstractExtension
     /**
      * Process description.
      *
-     * @param  \Skosh\Content\Content $page
-     * @param  mixed  $parent
-     * @param  string $default
+     * @param \Skosh\Content\Content $page
+     * @param mixed                  $parent
+     * @param string                 $default
+     *
      * @return string
      */
     public function getOpenGraphImage($page, $parent, $default = 'assets/images/share-og.png')
     {
-        if($page instanceof \Skosh\Content\Post) {
+        if ($page instanceof \Skosh\Content\Post) {
             return $page->image['thumb'];
         }
 
-        if($page instanceof \Skosh\Content\Page) {
+        if ($page instanceof \Skosh\Content\Page) {
             return $page->image('logo.png', $default);
         }
 
-        if($page instanceof \Skosh\Content\Doc && $parent instanceof \Skosh\Content\Page) {
+        if ($page instanceof \Skosh\Content\Doc && $parent instanceof \Skosh\Content\Page) {
             return $parent->image('logo.png', $default);
         }
 

@@ -67,7 +67,6 @@ gulp.task('js', function () {
         destFile = 'app.js';
 
     return gulp.src([
-            'source/assets/js/jquery.tweet.js',
             //'source/assets/js/imagesloaded.pkgd.js',
             'source/assets/js/waypoints.min.js',
             'source/assets/js/isotope.pkgd.js',

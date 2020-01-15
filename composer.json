@@ -1,11 +1,9 @@
 {
-  "name": "torann/skosh",
-  "description": "Skosh is a simple static site generator for PHP using Gulp.",
-  "keywords": ["static","generator","grunt","jekyll","static site"],
-  "license": "BSD 2-Clause",
-  "type": "project",
+  "name": "torann/lyften.com",
+  "description": "Source for Lyften.com using Skosh, the static site generator.",
+  "type": "website",
   "require": {
-    "torann/skosh-generator": "0.2.*"
+    "torann/skosh-generator": "0.3.*"
   },
   "autoload": {
     "psr-4": {
