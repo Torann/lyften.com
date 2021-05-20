@@ -26,7 +26,7 @@ Once installed you need to register the service provider with the application. O
 Run this on the command line from the root of your project:
 
 ```bash
-php artisan vendor:publish --provider="Torann\LocalizationHelpers\LocalizationHelpersServiceProvider"
+artisan vendor:publish --provider="Torann\LocalizationHelpers\LocalizationHelpersServiceProvider"
 ```
 
 #### Options

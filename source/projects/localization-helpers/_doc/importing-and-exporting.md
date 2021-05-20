@@ -3,42 +3,82 @@ title: Importing and Exporting
 template: documentation.twig::content_inner
 chapter: 3
 ---
-Importing and exporting is helpful when using a third party service such as [OneSkyApp.com](http://www.oneskyapp.com).
+Importing and exporting makes use of a Driver based approach to help simply the managing of different formats and remote services. Look under the Driver section of the config file for more information on setting this up. 
 
-### Command `localization:export`
+Supported drivers are: `json`, `csv`, and `one_sky`
 
-This command will create a CSV file based on the given locale and group. You have to pass the **locale** and the **group** as arguments. The group is the name of the language file without its extension. You may define options for your desired CSV format.
+## Commands
+
+### Export
+
+```bash
+artisan localization:export [options] [--] <locale> <group>
+```
+
+**Arguments**
+
+- `locale` - The application locale to be exported
+- `group` - The group or comma separated groups.
+
+**Options**
+
+- `--driver[=DRIVER]` - Driver to use for exporting (default is pulled from the config).
 
 #### Examples
 
-##### Export the navigation translation for english (en) 
+Export the navigation translation for english (en) using the default driver.
 
 ```bash
-php artisan localization:export en navigation
+artisan localization:export en navigation
 ```
 
-##### Optional example 
+Export the navigation translation for english (en) using the JSON driver.
 
 ```bash
-php artisan localization:export en navigation --path=/some/file
-php artisan localization:export en navigation --delimiter=";" --enclosure='"' --path=/some/file
+artisan localization:export en navigation --driver=json
 ```
 
-### Command `localization:import`
+Upload the navigation translation for english (en) to OneSky.
 
-This command import a CSV file based on the given locale and group. You have to pass  the **locale**, the **group** and the **path to the CSV file** as arguments. The group is the name of the language file without its extension. You may define options to match the CSV format of your input file.
+```bash
+artisan localization:export en navigation --driver=one_sky
+```
+
+> **Note** make sure you have [OneSky](http://www.oneskyapp.com). configured with your project ID and API key & secret
+
+### Import
+
+```bash
+artisan localization:import [options] [--] <locale> <group>
+```
+
+**Arguments**
+
+- `locale` - The application locale to be exported
+- `group` - The group or comma separated groups.
+
+**Options**
+
+- `--driver[=DRIVER]` - Driver to use for exporting (default is pulled from the config).
 
 #### Examples
 
-##### Import the navigation translation for english (en) 
+Import the navigation translation for english (en) using the default driver.
 
 ```bash
-php artisan localization:import en navigation
+artisan localization:import en navigation
 ```
 
-##### Optional example 
+Import the navigation translation for english (en) using the JSON driver.
 
 ```bash
-php artisan localization:import en navigation --path=/some/file
-php artisan localization:import en navigation --delimiter=";" --enclosure='"' --escape='\\' --path=/some/file
+artisan localization:import en navigation --driver=json
 ```
+
+Download the navigation translation for english (en) from OneSky.
+
+```bash
+artisan localization:import en navigation --driver=one_sky
+```
+
+> **Note** make sure you have [OneSky](http://www.oneskyapp.com) configured with your project ID and API key & secret

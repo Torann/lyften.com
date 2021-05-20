@@ -1,5 +1,5 @@
 ---
-title: Commands
+title: Missing Translations
 template: documentation.twig::content_inner
 chapter: 2
 ---
@@ -7,14 +7,14 @@ chapter: 2
 
 This command parses all your code and generate according lang files in all `lang/XXX/` directories.
 
-Use `php artisan localization:missing` for more information about options.
+Use `artisan localization:missing` for more information about options.
 
 #### Examples
 
 ##### Generate all lang files
 
 ```bash
-php artisan localization:missing
+artisan localization:missing
 ```
 
 ##### Generate all lang files and set new lemma values
@@ -22,9 +22,9 @@ php artisan localization:missing
 3 commands below produce the same output:
 
 ```bash
-php artisan localization:missing
-php artisan localization:missing --new-value
-php artisan localization:missing --new-value="%LEMMA"
+artisan localization:missing
+artisan localization:missing --new-value
+artisan localization:missing --new-value="%LEMMA"
 ```
 
 You can customize the default generated values for unknown lemmas.
@@ -32,19 +32,19 @@ You can customize the default generated values for unknown lemmas.
 The following command let new values empty:
 
 ```bash
-php artisan localization:missing --new-value=""
+artisan localization:missing --new-value=""
 ```
 
 The following command prefixes all lemmas values with "Please translate this : "
 
 ```bash
-php artisan localization:missing --new-value="Please translate this : %LEMMA"
+artisan localization:missing --new-value="Please translate this : %LEMMA"
 ```
 
 The following command prefixes all lemmas values with "Please translate this !"
 
 ```bash
-php artisan localization:missing --new-value='Please translate this!'
+artisan localization:missing --new-value='Please translate this!'
 ```
 
 ##### Dirty option for shell integration
