@@ -55,6 +55,17 @@ IPFINDER_API_KEY = YOUR_API_KEY
 'service' => 'ipfinder',
 ```
 
+
+### IPDATA API
+
+Register at [ipdata.co](https://dashboard.ipdata.co/sign-up.html) to get api key and add it into your env file as:
+IPDATA_API_KEY = YOUR_API_KEY
+
+
+```php
+'service' => 'ipdata',
+```
+
 ## Custom Service
 
 Services are stored in the GeoIP's config file `config/geoip.php`. Simply update the `service` with the name of your custom service and add it to the `services` specific configuration section with the `class` value as the custom classname.
