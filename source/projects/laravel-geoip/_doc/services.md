@@ -112,7 +112,7 @@ class FooBar extends AbstractService
         // Parse body content
         $json = json_decode($data[0]);
 
-        return [
+        return $this->hydrate([
             'ip' => $ip,
             'iso_code' => $json->iso_code,
             'country' => $json->country,
@@ -124,7 +124,7 @@ class FooBar extends AbstractService
             'lon' => $json->lon,
             'timezone' => $json->timezone,
             'continent' => $json->continent,
-        ];
+        ]);
     }
 
     /**
