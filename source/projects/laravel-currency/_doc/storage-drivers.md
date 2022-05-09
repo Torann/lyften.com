@@ -6,7 +6,7 @@ chapter: 6
 
 ### Database (default)
 
-Which database table to used is specified in the config file in the **drivers** section under `database`.
+The database table to use is specified in the config file in the **drivers** section under `database`.
 
 ```php
 'driver' => 'database',
