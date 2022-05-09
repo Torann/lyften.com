@@ -1,7 +1,7 @@
 ---
 title: Quick Start
 template: documentation.twig::content_inner
-chapter: 2
+chapter: 3
 ---
 In the document root of your application (most likely the public folder), create a folder named system and 
 grant your application write permissions to it.
@@ -9,12 +9,12 @@ grant your application write permissions to it.
 In your model:
 
 ```php
-use Torann\MediaSort\Eloquent\MediaSortInterface;
-use Torann\MediaSort\Eloquent\HasMediaTrait;
+use Torann\MediaSort\HasMedia;
+use Torann\MediaSort\SupportsMedia;
 
-class User extends Eloquent implements MediaSortInterface 
+class User extends Eloquent implements SupportsMedia 
 {
-    use HasMediaTrait;
+    use HasMedia;
 
     /**
      * Create a new Eloquent model instance.

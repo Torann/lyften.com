@@ -1,7 +1,7 @@
 ---
 title: Configuration
 template: documentation.twig::content_inner
-chapter: 3
+chapter: 4
 ---
 Configuration is available on both a per media item basis or globally through the configuration file settings.  MeidaSort is very flexible about how it processes configuration; global configuration options can be overwritten on a per media item basis so that you can easily cascade settings you would like to have on all media items while still having the freedom to customize an individual media item's configuration. To get started, the first thing you'll probably want to do is publish the default configuration options to your app/config directory. 
 
@@ -27,4 +27,4 @@ The following configuration settings apply to MeidaSort in general.
 -   **keep_old_files**: Set this to true in order to prevent older file uploads from being deleted from the file system when a record is updated.
 -   **preserve_files**: Set this to true in order to prevent a media item's file uploads from being deleted from the file system when an the media item object is destroyed (media item's are destroyed when their corresponding models are deleted/destroyed from the database).
 
-> For an always up to date list of configuration options, check the config file: [mediasort.php](https://github.com/Torann/mediasort/blob/master/config/mediasort.php)
+> For an always up-to-date list of configuration options, check the config file: [mediasort.php](https://github.com/Torann/mediasort/blob/master/config/mediasort.php)

@@ -1,7 +1,7 @@
 ---
 title: Image Processing
 template: documentation.twig::content_inner
-chapter: 5
+chapter: 6
 ---
 MeidaSort makes use of the [Imagine Image](https://packagist.org/packages/imagine/imagine) library for all image processing.  Out of the box, the following image processing patterns/directives will be recognized when defining MeidaSort styles:
 
@@ -29,9 +29,8 @@ To create styles for a media item, simply define them (you may use any style nam
 For more customized image processing you may also pass a [callable](http://php.net/manual/en/language.types.callable.php) type as the value for a given style definition.  MeidaSort will automatically inject in the uploaded file object instance as well as the Imagine\Image\ImagineInterface object instance for you to work with.  When you're done with your processing, simply return an instance of Imagine\Image\ImageInterface from the callable.  Using a callable for a style definition provides an incredibly amount of flexibilty when it comes to image processing. As an example of this, let's create a watermarked image using a closure (we'll do a smidge of image processing with Imagine):
 
  ````php
- 'styles' => [
-    'watermarked' => function($file, $imagine) 
-    {
+'styles' => [
+    'watermarked' => function($file, $imagine) {
         $watermark = $imagine->open('/path/to/images/watermark.png');   // Create an instance of ImageInterface for the watermark image.
         $image     = $imagine->open($file->getRealPath());              // Create an instance of ImageInterface for the uploaded image.
         $size      = $image->getSize();                                 // Get the size of the uploaded image.
@@ -43,10 +42,10 @@ For more customized image processing you may also pass a [callable](http://php.n
         // Paste the watermark onto the image.
         $image->paste($watermark, $bottomRight);
 
-        // Return the Imagine\Image\ImageInterface instance.
+        // Return the `Imagine\Image\ImageInterface` instance.
         return $image;
     }
- ]
+]
 ```` 
 
 ### Remote Images
@@ -54,7 +53,7 @@ For more customized image processing you may also pass a [callable](http://php.n
 Remote images can be fetched by assigning an absolute URL to a media item property that's defined on a model: 
 
 ```php 
-$profilePicture->photo = "http://foo.com/bar.jpg"; 
+$profile_picture->photo = "http://foo.com/bar.jpg"; 
 ```
 
 This is very useful when working with third party API's such as Facebook, Twitter, etc.  Note that this feature requires that the CURL extension is included as part of your PHP installation.

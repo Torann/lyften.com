@@ -1,9 +1,9 @@
 ---
 title: Interpolations
 template: documentation.twig::content_inner
-chapter: 4
+chapter: 5
 ---
-With MeidaSort, uploaded files are accessed by configuring/defining path, url, and default_url strings which point to you uploaded file assets. This is done via string interpolations.
+With MeidaSort, uploaded files are accessed by configuring/defining `path`, `url`, and `default_url` strings which point to you uploaded file assets. This is done via string interpolations.
 
 ## Global Interpolations
 

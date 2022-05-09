@@ -1,12 +1,12 @@
 ---
 title: Advanced Usage
 template: documentation.twig::content_inner
-chapter: 7
+chapter: 8
 ---
-When working with media items, there may come a point where you wish to do things outside of the normal workflow.  For example, suppose you wish to clear out a media item (empty the media item fields in the underlying table record and remove the uploaded file from storage) without having to destroy the record itself.  In situations where you wish to clear the uploaded file from storage without saving the record, you can use the media's destroy method:
+When working with media items, there may come a point where you wish to do things outside the normal workflow.  For example, suppose you wish to clear out a media item (empty the media item fields in the underlying table record and remove the uploaded file from storage) without having to destroy the record itself.  In situations where you wish to clear the uploaded file from storage without saving the record, you can use the media's destroy method:
 
 ```php
-// Remove all of the media's uploaded files and empty the media attributes on the model:
+// Remove all the media's uploaded files and empty the media attributes on the model:
 
 $profilePicture->photo->destroy();
 
@@ -14,7 +14,7 @@ $profilePicture->photo->destroy();
 $profilePicture->photo->destroy(['thumbnail']);
 ```
 
-You may also reprocess uploaded images on a media item by calling the reprocess() command (this is very useful for adding new styles to an existing media type where records have already been uploaded).
+You may also reprocess uploaded images on a media item by calling the `reprocess()` command (this is very useful for adding new styles to an existing media type where records have already been uploaded).
 
 ```php
 // Programmatically reprocess a media's uploaded images:
@@ -43,7 +43,7 @@ php artisan media:refresh TestPhoto --media="foo, bar, baz, etc"
 
 ### Queued Processing
 
-For larger files that may timeout the server when trying to upload them we can use a queue. This was added for a project I did that allowed for multiple images to be uploaded at once, and some of those images needed further processing.
+For larger files that may time out the server when trying to upload them we can use a queue. This was added for a project I did that allowed for multiple images to be uploaded at once, and some of those images needed further processing.
 
 To handing this the MediaSort config needs to be set to allow for queuing. This can be done globally in the `mediasort.php` or on a per attachment passes. See `loading_url`, `queueable`, and `queue_path` options in the config file.
 
@@ -59,7 +59,7 @@ dispatch(
 );
 ```
 
-This is the what a basic job file would look like:
+This is what a basic job file would look like:
  
 ```php
 <?php 
@@ -74,10 +74,7 @@ class ProcessAttachments implements ShouldQueue
 {
     use Queueable;
 
-    /**
-     * @var Model
-     */
-    public $model;
+    public Model $model;
 
     /**
      * Create a new job instance.

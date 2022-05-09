@@ -1,7 +1,7 @@
 ---
 title: Examples
 template: documentation.twig::content_inner
-chapter: 6
+chapter: 7
 ---
 Create a media item named 'picture', with both thumbnail (100x100) and large (300x300) styles, using custom url and default_url configurations.
 
@@ -68,7 +68,8 @@ public function __construct(array $attributes = [])
 }
 
 // A profile picture belongs to a user.
-public function user(){
+public function user() 
+{
     return $this->belongsTo('User');
 }
 ```
@@ -102,9 +103,9 @@ public function store()
     // 3. Attach the ProfilePicture instance to the user and save it.
     foreach(Input::file('photos') as $photo)
     {
-        $profilePicture = new ProfilePicture();             // (1)
-        $profilePicture->photo = $photo;                    // (2)
-        $user->profilePictures()->save($profilePicture);    // (3)
+        $profile_picture = new ProfilePicture();             // (1)
+        $profile_picture->photo = $photo;                    // (2)
+        $user->profilePictures()->save($profile_picture);    // (3)
     }
 }
 ```
@@ -113,13 +114,13 @@ Displaying uploaded files is also easy.  When working with a model instance, eac
 
 ```html
 // Display a resized thumbnail style image belonging to a user record:
-<img src="{{ asset($profilePicture->photo->url('thumbnail')) }}">
+<img src="{{ asset($profile_picture->photo->url('thumbnail')) }}">
 
 // Display the original image style (unmodified image):
-<img src="{{  asset($profilePicture->photo->url('original')) }}">
+<img src="{{  asset($profile_picture->photo->url('original')) }}">
 
 // This also displays the unmodified original image (unless the :default_style interpolation has been set to a different style):
-<img src="{{  asset($profilePicture->photo->url()) }}">
+<img src="{{  asset($profile_picture->photo->url()) }}">
 ```
 
 We can also retrieve the file path, size, original filename, etc of an uploaded file:

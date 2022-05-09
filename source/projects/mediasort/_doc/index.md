@@ -39,4 +39,4 @@ Run this on the command line from the root of your project:
 php artisan vendor:publish --provider="Torann\MediaSort\MediaSortServiceProvider"
 ```
 
-A configuration file will be publish to `config/mediasort.php`.
+A configuration file will be published to `config/mediasort.php`.
