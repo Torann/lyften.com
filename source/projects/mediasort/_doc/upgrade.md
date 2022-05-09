@@ -1,5 +1,5 @@
 ---
-title: Get Started
+title: Upgrade
 template: documentation.twig::content_inner
 chapter: 2
 ---
