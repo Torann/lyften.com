@@ -5,6 +5,8 @@ chapter: 4
 ---
 Searching is one of the most basic functions that is used on websites. Because of this Laravel Repository comes a simple yet powerful way of performing this.
 
+Also see Global Scopes under [Scope](/projects/laravel-repository/doc/scopes.html) for more Searching magic.
+
 ### Repository Search Method
 
 Within your repository sits a variable called **searchable**, it holds the table columns you wish to make searchable to the user. The reason for the array is for security reason, it restricts what is searchable by the user.
@@ -16,9 +18,9 @@ In the example bellow we are stating that we want the parameter *query* to searc
 
 namespace App\Repositories;
 
-use Torann\LaravelRepository\Repositories\AbstractRepository;
+use Torann\LaravelRepository\Repository;
 
-class UsersRepository extends AbstractRepository
+class UsersRepository extends Repository
 {
     /**
      * Specify Model class name
@@ -84,9 +86,9 @@ For a more complex search, we added the columns `confirmed` and `user_role_id` t
 
 namespace App\Repositories;
 
-use Torann\LaravelRepository\Repositories\AbstractRepository;
+use Torann\LaravelRepository\Repository;
 
-class UsersRepository extends AbstractRepository
+class UsersRepository extends Repository
 {
     /**
      * Specify Model class name
@@ -160,9 +162,9 @@ For example let's say we have a table that is called `profiles` and it is joined
 
 namespace App\Repositories;
 
-use Torann\LaravelRepository\Repositories\AbstractRepository;
+use Torann\LaravelRepository\Repository;
 
-class UsersRepository extends AbstractRepository
+class UsersRepository extends Repository
 {
     /**
      * Specify Model class name
@@ -204,9 +206,9 @@ joining_table:column,foreign_key,related_key,alias
 
 namespace App\Repositories;
 
-use Torann\LaravelRepository\Repositories\AbstractRepository;
+use Torann\LaravelRepository\Repository;
 
-class PostsRepository extends AbstractRepository
+class PostsRepository extends Repository
 {
     /**
      * Specify Model class name

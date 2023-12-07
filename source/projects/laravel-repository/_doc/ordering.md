@@ -5,14 +5,16 @@ chapter: 5
 ---
 Ordering can be setup by using the `$orderable` variable in your repository. The `$orderable` variable contains the names of the table columns that are used for ordering.
 
+Also see Global Scopes under [Scope](/projects/laravel-repository/doc/scopes.html) for more Ordering magic.
+
 ```php
 <?php
 
 namespace App\Repositories;
 
-use Torann\LaravelRepository\Repositories\AbstractRepository;
+use Torann\LaravelRepository\Repository;
 
-class UsersRepository extends AbstractRepository
+class UsersRepository extends Repository
 {
     /**
      * Specify Model class name
@@ -20,7 +22,7 @@ class UsersRepository extends AbstractRepository
     protected string $model = \App\User::class;
 
     /**
-     * Valid orderable columns.
+     * Orderable columns.
      */
     protected array $orderable = [
         'name',
@@ -71,16 +73,16 @@ class UsersController extends Controller
 
 ### Masking Table Columns
 
-To hide the true name of the table column, we simple create a _key/value_ pair. Where the _key_ is the name of the parameter the user sees and the _value_ is the name of the table column.
+To hide the true name of the table column, we simply create a _key/value_ pair. Where the _key_ is the name of the parameter the user sees and the _value_ is the name of the table column.
 
 ```php
 <?php
 
 namespace App\Repositories;
 
-use Torann\LaravelRepository\Repositories\AbstractRepository;
+use Torann\LaravelRepository\Repository;
 
-class UsersRepository extends AbstractRepository
+class UsersRepository extends Repository
 {
     /**
      * Specify Model class name
@@ -88,7 +90,7 @@ class UsersRepository extends AbstractRepository
     protected string $model = \App\User::class;
 
     /**
-     * Valid orderable columns.
+     * Orderable columns.
      */
     protected array $orderable = [
         'name',

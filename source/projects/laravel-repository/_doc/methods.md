@@ -3,13 +3,17 @@ title: Methods
 template: documentation.twig::content_inner
 chapter: 2
 ---
-The following methods are part of the `Torann\LaravelRepository\Contracts\RepositoryContract`.
+The following methods are part of the `Torann\LaravelRepository\Contracts\Repository`.
 
-### `getModel()`
+### `public function boot(): void`
+
+The boot method is called when a repository is instantiated. This method provides a convenient place to register global scopes or perform other setup tasks.
+
+### `public function getModel(): Model`
 
 Return model instance.
 
-### `getNew(array $attributes = [])`
+### `getNew(array $attributes = []): Model`
 
 Get a new entity instance
 
@@ -17,8 +21,7 @@ Get a new entity instance
 
 - `$attributes` - The array of attributes to fill the new model instance.
 
-
-### `newQuery($skipOrdering = false)`
+### `public function newQuery(bool $skipOrdering = false): static`
 
 Get a new query builder instance with the applied the order by and scopes.
 
@@ -26,8 +29,7 @@ Get a new query builder instance with the applied the order by and scopes.
 
 - `$skipOrdering` - Skip the preset order by options.
 
-### `find($id, $columns = ['*'])`
-
+### `find(mixed $id, $columns = ['*'])`
 
 Find data by its primary key.
 
@@ -36,15 +38,16 @@ Find data by its primary key.
 - `$id` - Entity's unique identifier.
 - `$columns` - Columns to return.
 
-### `findOrFail($id)`
+### `findOrFail(mixed $id, array $columns = ['*']): Model|null`
 
 Find a model by its primary key or throw an exception.
 
 **Arguments:**
 
 - `$id` - Entity's unique identifier.
+- `$columns` - Columns to return.
 
-### `findBy($field, $value, $columns = ['*'])`
+### `findBy(string $field, mixed $value, array $columns = ['*'])`
 
 Find data by field and value
 
@@ -54,7 +57,7 @@ Find data by field and value
 - `$value` - Table column value to search.
 - `$columns` - Columns to return.
 
-### `findAllBy($attribute, $value, $columns = ['*'])`
+### `findAllBy(string $attribute, mixed $value, array $columns = ['*'])`
 
 Find data by field
 
@@ -73,7 +76,7 @@ Find data by multiple fields
 - `$where` - An array of key value pairs.
 - `$columns` - Columns to return.
 
-### `orderBy($column, $direction)`
+### `orderBy(mixed $column, string|null $direction)`
 
 Order results by. For setup and more complex uses, see the **[Ordering](/projects/laravel-repository/doc/ordering.html)** section.
 
@@ -82,7 +85,7 @@ Order results by. For setup and more complex uses, see the **[Ordering](/project
 - `$column` - The column name used for ordering.
 - `$direction` - Must be **desc** or **asc**.
 
-### `search($queries)`
+### `search(string|array|null $queries)`
 
 Filter results by given query params. For setup and more complex uses, see the **[Searching](/projects/laravel-repository/doc/searching.html)** section.
 
@@ -90,7 +93,7 @@ Filter results by given query params. For setup and more complex uses, see the *
 
 - `$queries` - A single string term used to search or an array of params.
 
-### `all($columns = ['*'])`
+### `all(array $columns = ['*']): Collection`
 
 Retrieve all data of repository
 
@@ -98,7 +101,11 @@ Retrieve all data of repository
 
 - `$columns` - Columns to return.
 
-### `pluck($value, $key = null)`
+### `count(array $columns = ['*']): int`
+
+Get an array with the values of a given column(s).
+
+### `pluck(string $value, string $key = null): array`
 
 Get an array with the values of a given column(s).
 
@@ -107,25 +114,29 @@ Get an array with the values of a given column(s).
 - `$value` - Columns value to retrieve.
 - `$key` - Option third value to retrieve.
 
-### `paginate($limit = null, $columns = ['*'])`
+### `paginate(mixed $per_page = null, string|array $columns = ['*'], string $page_name = 'page', mixed $page = null)`
 
 Retrieve all data of repository, paginated
 
 **Arguments:**
 
-- `$limit` - When null it uses the system default.
+- `$per_page` - When null it uses the system default.
 - `$columns` - Columns to return.
+- `$page_name` - Page name used for pagincation.
+- `$page` - Current page.
 
-### `simplePaginate($limit = null, $columns = ['*'])`
+### `simplePaginate($perPage = null, $columns = ['*'], $pageName = 'page', $page = null)`
 
 Retrieve all data of repository, paginated using the `simplePaginate` method.
 
 **Arguments:**
 
-- `$limit` - When null it uses the system default.
+- `$per_page` - When null it uses the system default.
 - `$columns` - Columns to return.
+- `$page_name` - Page name used for pagincation.
+- `$page` - Current page.
 
-### `create(array $attributes)`
+### `create(array $attributes): Model|bool`
 
 Save a new entity in repository
 
@@ -133,7 +144,7 @@ Save a new entity in repository
 
 - `$attributes` - The new entity's attributes.
 
-### `update(Model $entity, array $attributes)`
+### `update(Model $entity, array $attributes): Model|bool`
 
 Update an entity with the given attributes and persist it
 
@@ -142,46 +153,104 @@ Update an entity with the given attributes and persist it
 - `$entity` - The entity to update.
 - `$attributes` - The attributes to update.
 
-### `delete($entity)`
+### `delete(mixed $entity): bool`
 
-Delete a entity in repository
+Delete an entity in repository
 
 **Arguments:**
 
 - `$entity` - The entity to delete.
 
-### `makeModel()`
+### `makeModel(): model`
 
 Create model instance.
 
-### `toSql()`
+### `getBuilder(bool $skipOrdering = false): Builder`
+
+Get a new query builder instance with the applied order by and scopes.
+
+### `toSql(): string`
 
 Get the raw SQL statements for the request
 
-### `getScopeQuery()`
+### `getScopeQuery(): array`
 
 Return query scope.
 
-### `addScopeQuery(Closure $scope)`
+### `addScopeQuery(Closure|Scope $scope): static`
+
+**Arguments:**
+
+- `$scope` - A closure or instance of `Torann\LaravelRepository\Contracts\Scope`.
+
+### `addJoin(string $alias, Closure $callback): string`
+
+Perform a join if the alias is not already set.
+
+**Arguments:**
+
+- `$alias` - Join alias to use.
+- `$callback` - Callback to actually perform the join.
 
 Add query scope.
 
-### `addError($message)`
+### `getMessageBag(): MessageBag`
 
-Add a message to the repository's error messages.
+Get the message bag instance.
+
+
+### `addMessage(string $message, string $key = 'message'): static`
+
+Add a message to the repository's message bag.
 
 **Arguments:**
 
 - `$message` - The message to add.
+- `$key` - Message key.
 
-### `getErrors()`
+### `hasMessage(string $key = 'message'): bool`
 
-Get the repository's error messages.
-
-### `getErrorMessage($default = '')`
-
-Get the repository's first error message.
+Determine of the repository has a message.
 
 **Arguments:**
 
-- `$default` - Which message bag to return.
+- `$key` - Message key.
+
+### `getMessage(string $key = null, string $format = null, string $default = ''): string`
+
+Get the first message matching the provided criteria.
+
+**Arguments:**
+
+- `$key` - Message key.
+- `$format` - Message format.
+- `$default` - Default message to return if the provided message criteria didn't return anything.
+
+### `addError(string $message): static`
+
+Add an error to the message bag.
+
+**Arguments:**
+
+- `$message` - Which message bag to return.
+
+
+### `hasErrors(): bool`
+
+Determine of the repository has any error messages.
+
+### `getErrors(string $format = null): array`
+
+Get all the repository's error messages.
+
+**Arguments:**
+
+- `$format` - Message format.
+- 
+### `getErrorMessage(string $default = ''): string`
+
+Return the repository's first error message.
+
+**Arguments:**
+
+- `$format` - Message format.

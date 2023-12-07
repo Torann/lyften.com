@@ -17,7 +17,7 @@ From the command line run:
 $ composer require torann/laravel-repository
 ```
 
-> **NOTE** The Service Provider and configuration file is not required for regular use. It is only required when using the [caching](#cache) feature.
+> **NOTE** The Service Provider and configuration file is not required for regular use. It is only required when using the [caching](/projects/laravel-repository/doc/cache.html) feature and global overriding of the global Search and Oder By scopes.
 
 ### Laravel (optional)
 
@@ -47,4 +47,4 @@ Run this on the command line from the root of your project:
 $ php artisan vendor:publish --provider="Torann\LaravelRepository\RepositoryServiceProvider" --tag=config
 ```
 
-A configuration file will be publish to `config/repositories.php`.
+A configuration file will be published to `config/repositories.php`.

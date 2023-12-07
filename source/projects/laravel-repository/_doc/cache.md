@@ -24,12 +24,12 @@ This is just a simple example of how caching could work for you.
 
 namespace App\Repositories;
 
-use Torann\LaravelRepository\Repositories\AbstractRepository;
+use Torann\LaravelRepository\Repository;
 
-class UserRepository extends AbstractRepository
+class UserRepository extends Repository
 {
     /**
-     * Find user by thier email.
+     * Find user by their email.
      *
      * @param mixed $id
      *
@@ -82,18 +82,18 @@ class UsersController extends Controller
 
 #### Cache Config
 
-Enabling and disabling the cache globally can be done in the settings file `config/repositories.php`.
+Enabling and disabling the cache globally can be done in the configuration file `config/repositories.php`.
 
-It is also possible to override the default settings directly in the repository.
+It is also possible to override the default configuration directly in the repository.
 
 ```php
 <?php
 
 namespace App\Repositories;
 
-use Torann\LaravelRepository\Repositories\AbstractRepository;
+use Torann\LaravelRepository\Repository;
 
-class UserRepository extends AbstractRepository
+class UserRepository extends Repository
 {
     /**
      * Lifetime of the cache.
@@ -108,15 +108,14 @@ class UserRepository extends AbstractRepository
 
 The repository cache can be automatically cleared whenever an item is created, modified or deleted. To do this you must set the `$eventFlushCache` value to `true` on in each repository that utilizes the caching method.
 
-
 ```php
 <?php
 
 namespace App\Repositories;
 
-use Torann\LaravelRepository\Repositories\AbstractRepository;
+use Torann\LaravelRepository\Repository;
 
-class UserRepository extends AbstractRepository
+class UserRepository extends Repository
 {
     /**
      * Flush the cache after create/update/delete events.

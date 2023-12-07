@@ -37,9 +37,9 @@ class User extends Model
 
 namespace App\Repositories;
 
-use Torann\LaravelRepository\Repositories\AbstractRepository;
+use Torann\LaravelRepository\Repository;
 
-class UsersRepository extends AbstractRepository
+class UsersRepository extends Repository
 {
     /**
      * Specify Model class name
