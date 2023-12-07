@@ -19,7 +19,7 @@ return $this->cacheCallback(__FUNCTION__, func_get_args(), function () use ($id,
 
 This is just a simple example of how caching could work for you.
 
-``` php
+```php
 <?php
 
 namespace App\Repositories;
@@ -33,9 +33,9 @@ class UserRepository extends AbstractRepository
      *
      * @param mixed $id
      *
-     * @return Model|Collection
+     * @return Model|null
      */
-    public function findByEmail($email)
+    public function findByEmail(mixed $email): Model|null
     {
         return $this->cacheCallback(__FUNCTION__, func_get_args(), function () use ($email) {
             $this->newQuery();
@@ -50,7 +50,7 @@ class UserRepository extends AbstractRepository
 
 And that's it! Now we just call
 
-``` php
+```php
 <?php
 
 namespace App\Http\Controllers;
@@ -59,10 +59,7 @@ use App\Repositories\UserRepository;
 
 class UsersController extends Controller
 {
-    /**
-     * @var UserRepository
-     */
-    protected $repository;
+    protected UserRepository $repository;
 
     public function __construct(UserRepository $repository)
     {
@@ -72,7 +69,7 @@ class UsersController extends Controller
     /**
      * Display a listing of users.
      *
-     * @return Response
+     * @return \Response
      */
     public function index()
     {
@@ -89,7 +86,7 @@ Enabling and disabling the cache globally can be done in the settings file `conf
 
 It is also possible to override the default settings directly in the repository.
 
-``` php
+```php
 <?php
 
 namespace App\Repositories;
@@ -100,10 +97,8 @@ class UserRepository extends AbstractRepository
 {
     /**
      * Lifetime of the cache.
-     *
-     * @var int
      */
-    protected $cacheMinutes = 10;
+    protected int $cacheMinutes = 10;
 
     ...
 }
@@ -114,7 +109,7 @@ class UserRepository extends AbstractRepository
 The repository cache can be automatically cleared whenever an item is created, modified or deleted. To do this you must set the `$eventFlushCache` value to `true` on in each repository that utilizes the caching method.
 
 
-``` php
+```php
 <?php
 
 namespace App\Repositories;
@@ -125,10 +120,8 @@ class UserRepository extends AbstractRepository
 {
     /**
      * Flush the cache after create/update/delete events.
-     *
-     * @var bool
      */
-    protected $eventFlushCache = true;
+    protected bool $eventFlushCache = true;
 
     ...
 }

@@ -23,7 +23,7 @@ $ composer require torann/laravel-repository
 
 Once installed you need to register the service provider with the application. Open up `config/app.php` and find the `providers` key.
 
-``` php
+```php
 'providers' => [
 
     \Torann\LaravelRepository\RepositoryServiceProvider::class,
@@ -35,7 +35,7 @@ Once installed you need to register the service provider with the application. O
 
 For Lumen register the service provider in `bootstrap/app.php`.
 
-``` php
+```php
 $app->register(\Torann\LaravelRepository\RepositoryServiceProvider::class);
 ```
 

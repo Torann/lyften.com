@@ -22,17 +22,13 @@ class UsersRepository extends AbstractRepository
 {
     /**
      * Specify Model class name
-     *
-     * @return string
      */
-    protected $model = \App\User::class;
+    protected string $model = \App\User::class;
 
     /**
      * Valid searchable columns
-     *
-     * @return array
      */
-    protected $searchable = [
+    protected array $searchable = [
         'query' => [
             'name',
             'email',
@@ -53,10 +49,7 @@ use App\Repositories\UserRepository;
 
 class UsersController extends Controller
 {
-    /**
-     * @var UserRepository
-     */
-    protected $repository;
+    protected UserRepository $repository;
 
     public function __construct(UserRepository $repository)
     {
@@ -67,7 +60,7 @@ class UsersController extends Controller
      * Display a listing of the resource.
      *
      * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function index(Request $request)
     {
@@ -97,17 +90,13 @@ class UsersRepository extends AbstractRepository
 {
     /**
      * Specify Model class name
-     *
-     * @return string
      */
-    protected $model = \App\User::class;
+    protected string $model = \App\User::class;
 
     /**
      * Valid searchable columns
-     *
-     * @return array
      */
-    protected $searchable = [
+    protected array $searchable = [
         'confirmed',
         'role' => 'user_role_id',
         'query' => [
@@ -134,10 +123,7 @@ use App\Repositories\UserRepository;
 
 class UsersController extends Controller
 {
-    /**
-     * @var UserRepository
-     */
-    protected $repository;
+    protected UserRepository $repository;
 
     public function __construct(UserRepository $repository)
     {
@@ -148,7 +134,7 @@ class UsersController extends Controller
      * Display a listing of the resource.
      *
      * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function index(Request $request)
     {
@@ -180,17 +166,13 @@ class UsersRepository extends AbstractRepository
 {
     /**
      * Specify Model class name
-     *
-     * @return string
      */
-    protected $model = \App\User::class;
+    protected string $model = \App\User::class;
 
     /**
      * Valid searchable columns
-     *
-     * @return array
      */
-    protected $searchable = [
+    protected array $searchable = [
         'query' => [
             'name',
             'profiles.slug',
@@ -228,17 +210,13 @@ class PostsRepository extends AbstractRepository
 {
     /**
      * Specify Model class name
-     *
-     * @return string
      */
-    protected $model = \App\Post::class;
+    protected string $model = \App\Post::class;
 
     /**
      * Valid searchable columns
-     *
-     * @return array
      */
-    protected $searchable = [
+    protected array $searchable = [
         'author' => 'users:name,id,user_id',
         'query' => [
             'title',

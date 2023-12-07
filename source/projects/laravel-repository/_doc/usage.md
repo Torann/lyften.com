@@ -11,7 +11,7 @@ The following example will be for a User repository using the default namespace 
 
 Create your model normally, but it is important to define the attributes that can be filled from the input form data.
 
-``` php
+```php
 <?php
 
 namespace App;
@@ -32,7 +32,7 @@ class User extends Model
 
 ### Create a Repository
 
-``` php
+```php
 <?php
 
 namespace App\Repositories;
@@ -43,16 +43,14 @@ class UsersRepository extends AbstractRepository
 {
     /**
      * Specify Model class name
-     *
-     * @return string
      */
-    protected $model = \App\User::class;
+    protected string $model = \App\User::class;
 }
 ```
 
 ### Use in a Controller
 
-``` php
+```php
 <?php
 
 namespace App\Http\Controllers;
@@ -61,10 +59,7 @@ use App\Repositories\UserRepository;
 
 class UsersController extends Controller
 {
-    /**
-     * @var UserRepository
-     */
-    protected $repository;
+    protected UserRepository $repository;
 
     public function __construct(UserRepository $repository)
     {
@@ -77,13 +72,13 @@ class UsersController extends Controller
 
 Find all results in Repository
 
-``` php
+```php
 $users = $this->repository->all();
 ```
 
 Find all results in Repository with pagination
 
-``` php
+```php
 $users = $this->repository->paginate($limit = null, $columns = ['*']);
 ```
 

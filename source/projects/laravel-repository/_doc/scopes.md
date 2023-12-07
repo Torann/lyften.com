@@ -5,7 +5,7 @@ chapter: 6
 ---
 Scopes are a way to change the repository of the query by applying specific conditions according to your needs. You can add multiple Criteria in your repository.
 
-``` php
+```php
 <?php
 
 namespace App\Repositories;
@@ -16,17 +16,15 @@ class UsersRepository extends AbstractRepository
 {
     /**
      * Specify Model class name
-     *
-     * @return string
      */
-    protected $model = \App\User::class;
+    protected string $model = \App\User::class;
 
     /**
      * Filter by author attribute
      *
-     * @return self
+     * @return static
      */
-    public function scopeAuthorsOnly()
+    public function scopeAuthorsOnly(): static
     {
         return $this->addScopeQuery(function($query) {
             return $query->where('is_author', '=', true);
@@ -37,7 +35,7 @@ class UsersRepository extends AbstractRepository
 
 ### Using the Scope in a Controller
 
-``` php
+```php
 <?php
 
 namespace App\Http\Controllers;
@@ -46,14 +44,9 @@ use App\Repositories\UserRepository;
 
 class UsersController extends Controller
 {
-    /**
-     * @var UserRepository
-     */
-    protected $repository;
+    protected UserRepository $repository;
 
     /**
-     * Create a new Controller instance.
-     *
      * @param UserRepository $repository
      */
     public function __construct(UserRepository $repository)
@@ -64,7 +57,7 @@ class UsersController extends Controller
     /**
      * Display a listing of authors.
      *
-     * @return Response
+     * @return \Response
      */
     public function index()
     {

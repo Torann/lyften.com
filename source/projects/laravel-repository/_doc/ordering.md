@@ -16,17 +16,13 @@ class UsersRepository extends AbstractRepository
 {
     /**
      * Specify Model class name
-     *
-     * @return string
      */
-    protected $model = \App\User::class;
+    protected string $model = \App\User::class;
 
     /**
      * Valid orderable columns.
-     *
-     * @return array
      */
-    protected $orderable = [
+    protected array $orderable = [
         'name',
         'confirmed',
         'user_role_id',
@@ -47,10 +43,7 @@ use App\Repositories\UserRepository;
 
 class UsersController extends Controller
 {
-    /**
-     * @var UserRepository
-     */
-    protected $repository;
+    protected UserRepository $repository;
 
     public function __construct(UserRepository $repository)
     {
@@ -61,7 +54,7 @@ class UsersController extends Controller
      * Display a listing of the resource.
      *
      * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function index(Request $request)
     {
@@ -91,17 +84,13 @@ class UsersRepository extends AbstractRepository
 {
     /**
      * Specify Model class name
-     *
-     * @return string
      */
-    protected $model = \App\User::class;
+    protected string $model = \App\User::class;
 
     /**
      * Valid orderable columns.
-     *
-     * @return array
      */
-    protected $orderable = [
+    protected array $orderable = [
         'name',
         'confirmed',
         'role' => 'user_role_id',
