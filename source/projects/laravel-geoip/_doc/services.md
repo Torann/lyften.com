@@ -60,7 +60,7 @@ IPDATA_API_KEY = YOUR_API_KEY
 
 ### IP-API
 
-They offer a free and pro service [ip-api.com](https://ip-api.com)
+They offer a free and pro service [ip-api.com](https://ip-api.com). See [config setup](https://github.com/Torann/laravel-geoip/commit/7b2a0b965b753e733e1d3dcd8dd4c58bbe346b80#diff-57605b023465a6c44d3ad4191ec2dd0947c008bdbe8c8f4564635351aa35aee4L68)
 
 ```php
 'service' => 'ipapi',
