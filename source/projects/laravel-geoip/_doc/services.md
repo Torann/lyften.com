@@ -9,14 +9,6 @@ Before using the MaxMind driver, you will need to install the appropriate packag
 
  - MaxMind: `geoip2/geoip2 ~2.1`
 
-### IP-API (default)
-
-They offer a free and pro service [ip-api.com](http://ip-api.com)
-
-```php
-'service' => 'ipapi',
-```
-
 ### MaxMind Database
 
 The database location to used is specified in the config file in the **services** section under `maxmind_database`. Along with the URL of where to download the database from when running the `php artisan geoip:update`. **Note:** The `geoip:update` command will need to be ran before the package will work.
@@ -64,6 +56,14 @@ IPDATA_API_KEY = YOUR_API_KEY
 
 ```php
 'service' => 'ipdata',
+```
+
+### IP-API
+
+They offer a free and pro service [ip-api.com](https://ip-api.com)
+
+```php
+'service' => 'ipapi',
 ```
 
 ## Custom Service
